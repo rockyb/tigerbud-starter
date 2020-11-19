@@ -95,7 +95,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-tigerbudstarter-demo-124856-deployment",
-					"S3Key": "amplify-builds/tigerbudstarter1d6ae0181d6ae018PostAuthentication-526839632f4249376a74-build.zip"
+					"S3Key": "amplify-builds/tigerbudstarter1d6ae0181d6ae018PostAuthentication-514c7978576b2b495558-build.zip"
 				}
 			}
 		},
@@ -172,6 +172,51 @@
 										},
 										"lambda": {
 											"Ref": "LambdaFunction"
+										}
+									}
+								]
+							}
+						},
+						{
+							"Effect": "Allow",
+							"Action": [
+								"dynamodb:GetItem",
+								"dynamodb:PutItem"
+							],
+							"Resource": {
+								"Fn::Sub": [
+									"arn:aws:dynamodb:${region}:${account}:table/User-*",
+									{
+										"region": {
+											"Ref": "AWS::Region"
+										},
+										"account": {
+											"Ref": "AWS::AccountId"
+										},
+										"env": {
+											"Ref": "env"
+										}
+									}
+								]
+							}
+						},
+						{
+							"Effect": "Allow",
+							"Action": [
+								"ssm:GetParameter"
+							],
+							"Resource": {
+								"Fn::Sub": [
+									"arn:aws:ssm:${region}:${account}:parameter/users-ddb-${env}",
+									{
+										"region": {
+											"Ref": "AWS::Region"
+										},
+										"account": {
+											"Ref": "AWS::AccountId"
+										},
+										"env": {
+											"Ref": "env"
 										}
 									}
 								]
