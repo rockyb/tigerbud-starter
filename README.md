@@ -4,7 +4,7 @@
 
 # &nbsp; Tigerbud Starter
 
-#### :star: &nbsp;  Star us on GitHub — it helps!
+#### :star: &nbsp; Star us on GitHub — it helps!
 
 Tigerbud is an essential starter kit to rapidly build mobile applications supported by modern, scalable, serverless AWS technologies. For beginners and professionals alike, for those who want to experiment, to learn and for those who already know enough, but want to give their budding project a head start.
 
@@ -21,6 +21,8 @@ Tigerbud is built in React Native and backed by AWS Amplify.
   - [Error Boundaries](#error-boundaries)
 - [Getting Started](#getting-started)
   - [Install Dependancies](#install-dependancies)
+  - [Initialise Project](#initialise-project)
+- [Customise Tigerbud](#customise-tigerbud)
 
 ## What do you get?
 
@@ -40,13 +42,38 @@ Stack, Tab and Drawer navigation
 
 ### Detox
 
+Example e2e test, fully configured for android and iOS automation
+
 ### Husky
+
+Pre-commit checks to ensure that generated VTL are not committed to the repo.
+Unit tests automated on commit
 
 ### Error Boundaries
 
 ## Getting Started
 
 ### Install Dependancies
+
+Install amplify globally
+
+
+### Initialise Project
+Run
+
+```
+amplify init --app git@github.com:tigerspike/tigerbud-starter.git
+```
+
+This will deploy a new amplify project into an enviroment named `sampledev`. To access your new environment run:
+
+```
+amplify console
+```
+
+
+
+## Customise Tigerbud
 
 ## License
 
