@@ -4,7 +4,7 @@
 
 # &nbsp; Tigerbud Starter
 
-:star: Star us on GitHub — it helps!
+#### :star: &nbsp;  Star us on GitHub — it helps!
 
 Tigerbud is an essential starter kit to rapidly build mobile applications supported by modern, scalable, serverless AWS technologies. For beginners and professionals alike, for those who want to experiment, to learn and for those who already know enough, but want to give their budding project a head start.
 
