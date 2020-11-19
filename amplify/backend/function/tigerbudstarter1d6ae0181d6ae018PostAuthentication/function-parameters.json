@@ -1,0 +1,14 @@
+{
+    "trigger": true,
+    "modules": [
+        "custom"
+    ],
+    "parentResource": "tigerbudstarter1d6ae0181d6ae018",
+    "functionName": "tigerbudstarter1d6ae0181d6ae018PostAuthentication",
+    "parentStack": "auth",
+    "triggerEnvs": "[]",
+    "triggerTemplate": "PostAuthentication.json.ejs",
+    "roleName": "tigerbudstarter1d6ae0181d6ae018PostAuthentication",
+    "skipEdit": true,
+    "resourceName": "tigerbudstarter1d6ae0181d6ae018PostAuthentication"
+}

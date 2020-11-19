@@ -1,0 +1,58 @@
+type User
+  @model(
+    mutations: {create: "createUser"}
+    queries: {get: "getUser"}
+    subscriptions: null
+  )
+  @auth(
+    rules: [
+      {allow: private, operations: [read]}
+      {allow: public, operations: [read]}
+    ]
+  ) {
+  id: ID!
+  things: [Thing] @connection(name: "UserThings", keyName: "createdAtSort")
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+# The Thing type can only be mutated by the Thing owner. The ownerField `thingUserId` is generated and can be found by looking at
+# the compiled schema.graphql file in the `build` directory of the API.
+#
+# Any "public" user (authorised using the API key) or "private" user (any logged in user who is not the owner) is able to read the Thing
+#
+# The @key directive allows the Things to be sorted. The `type` field is required to make this work and can contain any arbitrary string.
+# Note that this will filter results so make sure to set the same value for all the Things that should be returned in the sort query.
+# Example of the sorted query structure can be seen here: src/screens/userfeed/UserFeedScreen.js:21
+type Thing
+  @model(subscriptions: null)
+  @auth(
+    rules: [
+      {
+        allow: owner
+        ownerField: "thingUserId"
+        operations: [create, read, update, delete]
+      }
+      {allow: private, operations: [read]}
+      {allow: public, operations: [read]}
+    ]
+  )
+  @key(
+    fields: ["type", "createdAt"]
+    name: "createdAtSort"
+    queryField: "thingsByDate"
+  ) {
+  id: ID!
+  thingUserId: ID!
+  type: Type
+  user: User! @connection(name: "UserThings")
+  title: String!
+  image: String @function(name: "ThingImageResolver-${env}") # Resolves this to `https://picsum.photos/400/200?${Math.random()}`
+  description: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+enum Type {
+  card
+}
