@@ -11,7 +11,7 @@
     "storybook": "start-storybook -p 7007 --no-dll",
     "build-storybook": "build-storybook --no-dll",
     "setup-check": "node scripts/setup-check.js",
-    "postinstall": "husky install"
+    "postinstall": "husky install && sed -i '' '/s.resources/d' ./node_modules/react-native-vector-icons/RNVectorIcons.podspec"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.12.1",

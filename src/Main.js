@@ -1,18 +1,17 @@
-import React from 'react';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import MainNavigation from './navigation/TabNavigation';
-import TigerbudTheme from './styles/TigerbudTheme';
 import Amplify, {Auth} from 'aws-amplify';
+import React from 'react';
 import ErrorBoundary from 'react-native-error-boundary';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 /**
  * If aws-exports file does not exist then you need to configure the Amplify project.
  * Check the README for more information on how to do this.
  */
 import config from '../aws-exports';
-import {Text, View} from 'native-base';
-import {Button} from 'react-native';
+import Boundary from './components/errors/Boundary';
 import AuthProvider from './contexts/AuthProvider';
 import ThingProvider from './contexts/ThingProvider';
+import MainNavigation from './navigation/TabNavigation';
+import TigerbudTheme from './styles/TigerbudTheme';
 
 Amplify.configure({
   ...config,
@@ -29,20 +28,12 @@ Amplify.configure({
 });
 Auth.configure(config);
 
-const CustomFallback = ({error, resetError}) => (
-  <View>
-    <Text>Something happened!</Text>
-    <Text>{error.toString()}</Text>
-    <Button onPress={resetError} title={'Try again'} />
-  </View>
-);
-
 const Main = () => {
   return (
     <>
       <SafeAreaProvider>
         <TigerbudTheme>
-          <ErrorBoundary FallbackComponent={CustomFallback}>
+          <ErrorBoundary FallbackComponent={Boundary}>
             <AuthProvider>
               <ThingProvider>
                 <MainNavigation />

@@ -29,4 +29,6 @@ export default {
   details: 'Details',
   edit: 'Edit',
   delete: 'Delete',
+  whoops: 'Whoops',
+  try_again: 'Try again',
 };

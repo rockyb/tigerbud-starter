@@ -52,8 +52,9 @@ const styles = StyleSheet.create({
   logo: {
     marginTop: deviceHeight / 8,
     height: deviceHeight / 4,
-    resizeMode: 'center',
+    resizeMode: 'contain',
     alignSelf: 'center',
+    aspectRatio: 1,
   },
   title: {
     color: '#fff',

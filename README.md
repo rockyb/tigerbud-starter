@@ -29,6 +29,7 @@ Tigerbud is built in React Native and backed by AWS Amplify.
 ### AWS Amplify
 
 Pre-configured, Cognito, AppSync, Mutli Auth, CRUD, Authentication
+Tigerbud comes with a pre-configured Amplify backend
 
 ### Native Base
 

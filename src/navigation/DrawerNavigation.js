@@ -1,6 +1,5 @@
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import React from 'react';
-import CreateThing from '../screens/userstack/CreateThing';
 import DrawerContent from '../screens/drawer/DrawerContent';
 import {UserStack} from './StackNavigation';
 const Drawer = createDrawerNavigator();
