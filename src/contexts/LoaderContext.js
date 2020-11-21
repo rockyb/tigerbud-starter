@@ -1,6 +1,4 @@
-import {Spinner} from 'native-base';
-import React, {useState} from 'react';
-import {createContext} from 'react';
+import React, {createContext, useState} from 'react';
 import Loader from '../components/loader/Loader';
 
 const LoaderContext = createContext({

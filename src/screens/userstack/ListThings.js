@@ -37,6 +37,11 @@ const ThingsScreen = ({navigation}) => {
     });
   };
 
+  /**
+   * To render the buttons in the footer of the cards in the list
+   * 
+   * @param {object} props 
+   */
   const renderCardFooter = (props) => {
     return (
       <View style={styles.buttonContainer}>
@@ -56,6 +61,9 @@ const ThingsScreen = ({navigation}) => {
     );
   };
 
+  /**
+   * Gets a set of props for the card list
+   */
   const listProps = useThings({
     limit: 3,
     type: 'card', //<- this is required to make the sort work
