@@ -1,20 +1,22 @@
-import React, {useContext, useState} from 'react';
-import PropTypes from 'prop-types';
-import ThingForm from '../../components/things/ThingForm';
-import * as mutations from '../../graphql/mutations';
 import {API} from 'aws-amplify';
-import {Toast} from 'native-base';
-import AuthContext from '../../contexts/AuthContext';
 import get from 'lodash-es/get';
+import {Toast} from 'native-base';
+import React, {useContext, useState} from 'react';
+import ThingForm from '../../components/things/ThingForm';
+import AuthContext from '../../contexts/AuthContext';
+import LoaderContext from '../../contexts/LoaderContext';
+import * as mutations from '../../graphql/mutations';
 
 const CreateThing = ({navigation}) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const {loggedInUser} = useContext(AuthContext);
+  const {setLoading} = useContext(LoaderContext);
   /**
    *
    */
   const createThing = async () => {
+    setLoading(true);
     await API.graphql({
       query: mutations.createThing,
       variables: {
@@ -39,6 +41,7 @@ const CreateThing = ({navigation}) => {
     setTitle('');
     setDescription('');
     navigation.goBack();
+    setLoading(false);
   };
 
   /**

@@ -1,8 +1,9 @@
 import {API} from 'aws-amplify';
 import get from 'lodash-es/get';
 import {Toast} from 'native-base';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import ThingForm from '../../components/things/ThingForm';
+import LoaderContext from '../../contexts/LoaderContext';
 import * as mutations from '../../graphql/mutations';
 
 /**
@@ -13,11 +14,13 @@ const EditScreen = ({route: {params}}) => {
   const [current, setCurrent] = useState(params);
   const [title, setTitle] = useState(params.title);
   const [description, setDescription] = useState(params.description);
+  const {setLoading} = useContext(LoaderContext);
 
   /**
    *
    */
   const updateThing = async () => {
+    setLoading(true);
     let update = await API.graphql({
       query: mutations.updateThing,
       variables: {
@@ -35,6 +38,7 @@ const EditScreen = ({route: {params}}) => {
      */
     const thing = get(update, 'data.updateThing');
     setCurrent(thing);
+    setLoading(false);
 
     /**
      * Pop a toast to show it worked

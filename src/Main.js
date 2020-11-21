@@ -8,8 +8,9 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
  */
 import config from '../aws-exports';
 import Boundary from './components/errors/Boundary';
-import AuthProvider from './contexts/AuthProvider';
-import ThingProvider from './contexts/ThingProvider';
+import {AuthProvider} from './contexts/AuthContext';
+import {ThingProvider} from './contexts/ThingContext';
+import {LoaderProvider} from './contexts/LoaderContext';
 import MainNavigation from './navigation/TabNavigation';
 import TigerbudTheme from './styles/TigerbudTheme';
 
@@ -34,11 +35,13 @@ const Main = () => {
       <SafeAreaProvider>
         <TigerbudTheme>
           <ErrorBoundary FallbackComponent={Boundary}>
-            <AuthProvider>
-              <ThingProvider>
-                <MainNavigation />
-              </ThingProvider>
-            </AuthProvider>
+            <LoaderProvider>
+              <AuthProvider>
+                <ThingProvider>
+                  <MainNavigation />
+                </ThingProvider>
+              </AuthProvider>
+            </LoaderProvider>
           </ErrorBoundary>
         </TigerbudTheme>
       </SafeAreaProvider>

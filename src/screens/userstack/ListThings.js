@@ -10,12 +10,15 @@ import I18n from '../../localisation/I18n';
 import * as mutations from '../../graphql/mutations';
 import {API} from 'aws-amplify';
 import ThingContext from '../../contexts/ThingContext';
+import LoaderContext from '../../contexts/LoaderContext';
 
 const ThingsScreen = ({navigation}) => {
   const {loggedInUser} = useContext(AuthContext);
   const {setThings} = useContext(ThingContext);
+  const {setLoading} = useContext(LoaderContext);
 
   const deleteThing = async (id) => {
+    setLoading(true);
     await API.graphql({
       query: mutations.deleteThing,
       variables: {
@@ -24,6 +27,7 @@ const ThingsScreen = ({navigation}) => {
       authMode: 'AMAZON_COGNITO_USER_POOLS',
     });
     setThings((things) => things.filter((t) => t.id !== id));
+    setLoading(false);
     /**
      * Pop a toast to show it worked
      */
