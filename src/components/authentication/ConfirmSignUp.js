@@ -16,8 +16,8 @@ export default class ConfirmSignUp extends AConfirmSignUp {
             <Text>{I18n.t('confirm_sign_up')}</Text>
           </Header>
           {/*Adding a fast inline css just to "see a basic layout, this will be removed" */}
-          <View style={{display:"flex",height:200}}>
-            <Form style={{display:"flex",flex:1,justifyContent:"space-between"}}>
+          <View>
+            <Form>
               <Item>{this.renderUsernameField(theme)}</Item>
               <Item>
                 <Input
@@ -30,7 +30,7 @@ export default class ConfirmSignUp extends AConfirmSignUp {
                 />
               </Item>
                 <Button
-                style={{display:"flex",alignSelf:"center"}}
+                style={{display:"flex",marginTop:20,alignSelf:"center"}}
                   onPress={this.confirm}
                   disabled={!username || !this.state.code}
                   testID={TEST_IDS.AUTH.CONFIRM_BUTTON}>

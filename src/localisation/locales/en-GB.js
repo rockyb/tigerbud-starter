@@ -37,5 +37,8 @@ export default {
   confirmation_code: "Confirmation code",
   confirm_sign_up: "Confirm sign up",
   resend_code: "Resend code",
-  enter_confirmation_code: "Enter your confirmation code"
+  send:"Send",
+  reset_password:'Reset your password',
+  enter_confirmation_code: "Enter your confirmation code",
+  submit:"Submit"
 };
