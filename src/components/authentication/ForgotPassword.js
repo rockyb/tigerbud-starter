@@ -28,6 +28,7 @@ export default class ForgotPassword extends AForgotPassword {
           </Button>
         </View>
         <View style={{flex: 1}}>
+            {/* We can remove the error message when we are modifying the state */}
           <Text>{this.state.error}</Text>
         </View>
       </SafeAreaView>
