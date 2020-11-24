@@ -1,6 +1,5 @@
 import {
   ConfirmSignIn,
-  ForgotPassword,
   RequireNewPassword,
   SignUp,
   VerifyContact,
@@ -9,6 +8,7 @@ import {
 import React from 'react';
 import SignIn from '../components/authentication/SignIn';
 import ConfirmSignUp from '../components/authentication/ConfirmSignUp';
+import ForgotPassword from '../components/authentication/ForgotPassword';
 
 import {DrawerNavigation} from './DrawerNavigation';
 
