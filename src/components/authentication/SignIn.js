@@ -66,6 +66,7 @@ export default class SignIn extends ASignIn {
             </Form>
             <Button
               onPress={this.signIn}
+              //TODO: Need to check why its not disabled
               disabled={!!(!this.getUsernameFromInput() && this.state.password)}
               testID={TEST_IDS.AUTH.SIGN_IN_BUTTON}>
               <Text>{I18n.t('sign_in').toUpperCase()}</Text>

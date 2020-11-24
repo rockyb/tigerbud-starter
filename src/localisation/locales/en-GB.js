@@ -1,3 +1,4 @@
+//TODO: sort by A-Z, check if Capital letters too
 export default {
   welcome: 'Welcome',
   intro1:
@@ -31,4 +32,10 @@ export default {
   delete: 'Delete',
   whoops: 'Whoops',
   try_again: 'Try again',
+  back_to_sign_in: "Back to Sign In",
+  confirm:"Confirm",
+  confirmation_code: "Confirmation code",
+  confirm_sign_up: "Confirm sign up",
+  resend_code: "Resend code",
+  enter_confirmation_code: "Enter your confirmation code"
 };
