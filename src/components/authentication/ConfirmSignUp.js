@@ -61,6 +61,8 @@ export default class ConfirmSignUp extends AConfirmSignUp {
       </SafeAreaView>
     )
   }
+    //TODO: Consider refactor this, but we should pass props and then some functions to set the state with callback
+
     renderUsernameField(theme) {
     const value = this.getUsernameFromInput();
     const {usernameAttributes = []} = this.props;
