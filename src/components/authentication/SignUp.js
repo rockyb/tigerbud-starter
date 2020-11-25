@@ -8,11 +8,20 @@ import I18n from '../../localisation/I18n'
 import {TEST_IDS} from '../../constants/index'
 
 export default class SignUp extends ASignUp {
+
+  filterSignUpFields = (signupFields) => {
+    return (signupFields.key !== 'phone_number' &&
+            signupFields.key !== 'username')
+  }
+
   showComponent (theme) {
+    
+    this.sortFields()
+
     if (this.checkCustomSignUpFields()) {
       this.signUpFields = this.props.signUpConfig.signUpFields
     }
-    this.sortFields()
+   
     return (
       <SafeAreaView>
         <ScrollView>
@@ -21,52 +30,34 @@ export default class SignUp extends ASignUp {
           </Header>
           <View style={theme.sectionBody}>
             <Form>
-              {
-                this.signUpFields.map(field => {
-                  return field.key !== 'phone_number' ? (
-                    <Item>
-                      <Input
-                        key={field.key}
-                        onChangeText={text => {
-                          const stateObj = this.state
-                          stateObj[field.key] = text
-                          this.setState(stateObj)
-                        }}
-                        label={I18n.t(field.label)}
-                        placeholder={field.placeholder}
-                        testID={field.testID}
-						required={field.required}
-                        secureTextEntry={field.type === 'password'}
-                      />
-                    </Item>
-                  ) : (
-                    <Item last>
-                     {/** Check this default dial code*/}
-                      <Text style={{marginRight:20}}>{this.getDefaultDialCode()}</Text>
-                      <Input
-                        key={'phone_number'}
-                        onChangeText={text =>
-                          this.setState({phone_number: text})
-                        }
-                        label={I18n.t('phone_number')}
-                        placeholder={I18n.t('phone_number')}
-                        keyboardType='phone-pad'
-						required={field.required}
-                        testID={TEST_IDS.AUTH.PHONE_INPUT}
-
-                      />
-                    </Item>
-                  )
-                })}
+              {/* I had to add a sort because it was giving password and then email. we can directly set them and remove this*/}
+              {this.signUpFields.filter(this.filterSignUpFields).sort((a, b) => a<b).map(field => {
+                return  (
+                  <Item>
+                    <Input
+                      key={field.key}
+                      onChangeText={text => {
+                        const stateObj = this.state
+                        stateObj[field.key] = text
+                        this.setState(stateObj)
+                      }}
+                      label={I18n.t(field.label)}
+                      placeholder={field.placeholder}
+                      testID={field.testID}
+                      required={field.required}
+                      secureTextEntry={field.type === 'password'}
+                    />
+                  </Item>
+                )
+              })}
               <Button
-                style={{display: 'flex', alignSelf: 'center',marginTop:20}}
+                style={{display: 'flex', alignSelf: 'center', marginTop: 20}}
                 text={I18n.t('sign_up')}
                 onPress={this.signUp}
                 disabled={!this.isValid()}
-                testID={TEST_IDS.AUTH.SIGN_UP_BUTTON}
-              >
-              <Text>{I18n.t('sign_in').toUpperCase()}</Text>
-            </Button>
+                testID={TEST_IDS.AUTH.SIGN_UP_BUTTON}>
+                <Text>{I18n.t('sign_in').toUpperCase()}</Text>
+              </Button>
             </Form>
           </View>
           <View style={theme.sectionFooter}>
