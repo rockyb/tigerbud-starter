@@ -11,8 +11,15 @@ export default class SignUp extends ASignUp {
 
   filterSignUpFields = (signupFields) => {
     return (signupFields.key !== 'phone_number' &&
-            signupFields.key !== 'username')
+            signupFields.key !== 'email')
   }
+
+	isValid() {
+		for (const el of this.signUpFields) {
+			if (!this.state['username'] || !this.state['password']) return false;
+		}
+		return true;
+	}
 
   showComponent (theme) {
     
@@ -30,8 +37,7 @@ export default class SignUp extends ASignUp {
           </Header>
           <View style={theme.sectionBody}>
             <Form>
-              {/* I had to add a sort because it was giving password and then email. we can directly set them and remove this*/}
-              {this.signUpFields.filter(this.filterSignUpFields).sort((a, b) => a<b).map(field => {
+              {this.signUpFields.filter(this.filterSignUpFields).map(field => {
                 return  (
                   <Item>
                     <Input
@@ -56,7 +62,7 @@ export default class SignUp extends ASignUp {
                 onPress={this.signUp}
                 disabled={!this.isValid()}
                 testID={TEST_IDS.AUTH.SIGN_UP_BUTTON}>
-                <Text>{I18n.t('sign_in').toUpperCase()}</Text>
+                <Text>{I18n.t('sign_up').toUpperCase()}</Text>
               </Button>
             </Form>
           </View>
