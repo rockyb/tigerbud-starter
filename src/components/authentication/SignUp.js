@@ -8,27 +8,24 @@ import I18n from '../../localisation/I18n'
 import {TEST_IDS} from '../../constants/index'
 
 export default class SignUp extends ASignUp {
-
-  filterSignUpFields = (signupFields) => {
-    return (signupFields.key !== 'phone_number' &&
-            signupFields.key !== 'email')
+  filterSignUpFields = signupFields => {
+    return signupFields.key !== 'phone_number' && signupFields.key !== 'email'
   }
 
-	isValid() {
-		for (const el of this.signUpFields) {
-			if (!this.state['username'] || !this.state['password']) return false;
-		}
-		return true;
-	}
+  isValid () {
+    for (const el of this.signUpFields) {
+      if (!this.state['username'] || !this.state['password']) return false
+    }
+    return true
+  }
 
   showComponent (theme) {
-    
     this.sortFields()
 
     if (this.checkCustomSignUpFields()) {
       this.signUpFields = this.props.signUpConfig.signUpFields
     }
-   
+
     return (
       <SafeAreaView>
         <ScrollView>
@@ -38,7 +35,7 @@ export default class SignUp extends ASignUp {
           <View style={theme.sectionBody}>
             <Form>
               {this.signUpFields.filter(this.filterSignUpFields).map(field => {
-                return  (
+                return (
                   <Item>
                     <Input
                       key={field.key}

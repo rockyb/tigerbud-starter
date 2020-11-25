@@ -18,7 +18,7 @@ export default class ForgotPassword extends AForgotPassword {
           {!this.state.delivery && this.forgotBody(theme)}
           {this.state.delivery && this.submitBody(theme)}
         </View>
-        <View  style={{flex: 1}}>
+        <View style={{flex: 1}}>
           <Button
             transparent
             theme={theme}
@@ -28,13 +28,12 @@ export default class ForgotPassword extends AForgotPassword {
           </Button>
         </View>
         <View style={{flex: 1}}>
-            {/* We can remove the error message when we are modifying the state */}
+          {/* We can remove the error message when we are modifying the state */}
           <Text>{this.state.error}</Text>
         </View>
       </SafeAreaView>
     )
   }
-
 
   forgotBody (theme: AmplifyThemeType) {
     //We should check in "disabled" if the email is right formed since we are considering email instead of username
@@ -51,19 +50,18 @@ export default class ForgotPassword extends AForgotPassword {
       </Form>
     )
   }
-  
+
   renderUsernameField (theme) {
     const value = this.getUsernameFromInput()
-      //Here we trick the username as "Email"
-      return (
-        <Input
-          onChangeText={text => this.setState({username: text})}
-          label={I18n.t('email')}
-          placeholder={I18n.t('enter_email')}
-          testID={TEST_IDS.AUTH.EMAIL_INPUT}
-        />
-      )
-    
+    //Here we trick the username as "Email"
+    return (
+      <Input
+        onChangeText={text => this.setState({username: text})}
+        label={I18n.t('email')}
+        placeholder={I18n.t('enter_email')}
+        testID={TEST_IDS.AUTH.EMAIL_INPUT}
+      />
+    )
   }
 
   submitBody (theme: AmplifyThemeType) {
