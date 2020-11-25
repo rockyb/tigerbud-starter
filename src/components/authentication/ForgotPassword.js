@@ -35,7 +35,9 @@ export default class ForgotPassword extends AForgotPassword {
     )
   }
 
+
   forgotBody (theme: AmplifyThemeType) {
+    //We should check in "disabled" if the email is right formed since we are considering email instead of username
     return (
       <Form style={{display: 'flex', flex: 1, justifyContent: 'space-around'}}>
         <Item>{this.renderUsernameField(theme)}</Item>
@@ -49,43 +51,19 @@ export default class ForgotPassword extends AForgotPassword {
       </Form>
     )
   }
-  //TODO: Refactor this to common
+  
   renderUsernameField (theme) {
     const value = this.getUsernameFromInput()
-    const {usernameAttributes = []} = this.props
-    if (usernameAttributes === 'email') {
-      return (
-        <Input
-          onChangeText={text => this.setState({email: text})}
-          label={I18n.t('email')}
-          placeholder={I18n.t('enter_email')}
-          testID={TEST_IDS.AUTH.EMAIL_INPUT}
-          value={value}
-        />
-      )
-    } else if (usernameAttributes === 'phone_number') {
-      return (
-        <Input
-          key={'phone_number'}
-          onChangeText={text => this.setState({phone_number: text})}
-          label={I18n.t('phone_number')}
-          placeholder={I18n.t('enter_phone_number')}
-          keyboardType='phone-pad'
-          testID={TEST_IDS.AUTH.PHONE_INPUT}
-          value={value}
-        />
-      )
-    } else {
+      //Here we trick the username as "Email"
       return (
         <Input
           onChangeText={text => this.setState({username: text})}
-          label={I18n.t(this.getUsernameLabel())}
-          placeholder={I18n.t('enter_username')}
-          testID={TEST_IDS.AUTH.USERNAME_INPUT}
-          value={value}
+          label={I18n.t('email')}
+          placeholder={I18n.t('enter_email')}
+          testID={TEST_IDS.AUTH.EMAIL_INPUT}
         />
       )
-    }
+    
   }
 
   submitBody (theme: AmplifyThemeType) {
