@@ -95,7 +95,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-tigerbudstarter-demo-124856-deployment",
-					"S3Key": "amplify-builds/tigerbudstarter1d6ae0181d6ae018PostAuthentication-514c7978576b2b495558-build.zip"
+					"S3Key": "amplify-builds/tigerbudstarter1d6ae0181d6ae018PostAuthentication-554f6a6b6e46384d6569-build.zip"
 				}
 			}
 		},
@@ -185,13 +185,16 @@
 							],
 							"Resource": {
 								"Fn::Sub": [
-									"arn:aws:dynamodb:${region}:${account}:table/User-*",
+									"arn:aws:dynamodb:${region}:${account}:table/User-*-${env}",
 									{
 										"region": {
 											"Ref": "AWS::Region"
 										},
 										"account": {
 											"Ref": "AWS::AccountId"
+										},
+										"env": {
+											"Ref": "env"
 										}
 									}
 								]

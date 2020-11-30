@@ -31,7 +31,7 @@
       "Type": "Custom::EmptyResource",
       "Condition": "AlwaysFalse"
     },
-    "UsersDdbTableParam": {
+    "AppSyncApiIdParam": {
       "Type": "AWS::SSM::Parameter",
       "Properties": {
         "Description": "To share reference to the API ID with Cognito triggers.",
