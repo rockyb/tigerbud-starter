@@ -192,9 +192,6 @@
 										},
 										"account": {
 											"Ref": "AWS::AccountId"
-										},
-										"env": {
-											"Ref": "env"
 										}
 									}
 								]
@@ -207,7 +204,7 @@
 							],
 							"Resource": {
 								"Fn::Sub": [
-									"arn:aws:ssm:${region}:${account}:parameter/users-ddb-${env}",
+									"arn:aws:ssm:${region}:${account}:parameter/APPSYNC-API-ID-${env}",
 									{
 										"region": {
 											"Ref": "AWS::Region"

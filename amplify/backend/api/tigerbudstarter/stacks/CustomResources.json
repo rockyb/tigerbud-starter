@@ -39,7 +39,7 @@
           "Fn::Join": [
             "-",
             [
-              "users-ddb",
+              "APPSYNC-API-ID",
               {
                 "Ref": "env"
               }
@@ -47,18 +47,7 @@
           ]
         },
         "Value": {
-          "Fn::Join": [
-            "-",
-            [
-              "User",
-              {
-                "Ref": "AppSyncApiId"
-              },
-              {
-                "Ref": "env"
-              }
-            ]
-          ]
+          "Ref": "AppSyncApiId"
         },
         "Type": "String"
       }

@@ -76,6 +76,8 @@ amplify console
 
 ## Customise Tigerbud
 
+
+
 ## License
 
 The Aimeos TYPO3 extension is licensed under the terms of the GPL Open Source

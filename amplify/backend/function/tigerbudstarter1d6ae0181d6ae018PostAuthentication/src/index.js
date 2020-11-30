@@ -11,11 +11,11 @@ exports.handler = async (event) => {
   const userId = event.request.userAttributes.sub;
 
   let data = await ssm
-    .getParameter({Name: `users-ddb-${process.env.ENV}`})
+    .getParameter({Name: `APPSYNC-API-ID-${process.env.ENV}`})
     .promise();
 
-  //Building this table name is the key
-  const TableName = data.Parameter.Value;
+  //Building the table name
+  const TableName = `User-${data.Parameter.Value}-${process.env.ENV}`;
 
   // check if user exists in dynamo,
   // if not, add it
