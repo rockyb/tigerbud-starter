@@ -67,30 +67,34 @@ export default class ForgotPassword extends AForgotPassword {
   submitBody (theme: AmplifyThemeType) {
     return (
       <Form style={theme.sectionBody}>
-        <Input
-          theme={theme}
-          onChangeText={text => this.setState({code: text})}
-          label={I18n.t('confirmation_code')}
-          placeholder={I18n.t('enter_confirmation_code')}
-          required={true}
-          testID={TEST_IDS.AUTH.CONFIRMATION_CODE_INPUT}
-        />
-        <Input
-          theme={theme}
-          onChangeText={text => this.setState({password: text})}
-          label={I18n.t('password')}
-          placeholder={I18n.t('enter_password')}
-          secureTextEntry={true}
-          required={true}
-          testID={TEST_IDS.AUTH.PASSWORD_INPUT}
-        />
-        <Button
-          theme={theme}
-          onPress={this.submit}
-          disabled={!(this.state.code && this.state.password)}
-          testID={TEST_IDS.AUTH.SUBMIT_BUTTON}>
-          <Text>{I18n.t('submit')}</Text>
-        </Button>
+        <Item>
+          <Input
+            theme={theme}
+            onChangeText={text => this.setState({code: text})}
+            label={I18n.t('confirmation_code')}
+            placeholder={I18n.t('enter_confirmation_code')}
+            required={true}
+            testID={TEST_IDS.AUTH.CONFIRMATION_CODE_INPUT}
+          />
+        </Item>
+        <Item>
+          <Input
+            theme={theme}
+            onChangeText={text => this.setState({password: text})}
+            label={I18n.t('password')}
+            placeholder={I18n.t('enter_password')}
+            secureTextEntry={true}
+            required={true}
+            testID={TEST_IDS.AUTH.PASSWORD_INPUT}
+          />
+        </Item>
+          <Button
+            theme={theme}
+            onPress={this.submit}
+            disabled={!(this.state.code && this.state.password)}
+            testID={TEST_IDS.AUTH.SUBMIT_BUTTON}>
+            <Text>{I18n.t('submit')}</Text>
+          </Button>
       </Form>
     )
   }
