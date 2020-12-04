@@ -1,3 +1,4 @@
+//TODO: sort by A-Z, check if Capital letters too
 export default {
   welcome: 'Welcome',
   intro1:
@@ -6,6 +7,7 @@ export default {
     'Tigerbud is for beginners and professionals alike, for those who want to experiment, to learn and for those who already know enough, but want to give their budding project a head start.',
   home: 'Home',
   login: 'Login',
+  create_account:"Create a new account",
   user: 'Account',
   storybook: 'Storybook',
   password: 'Password',
@@ -31,4 +33,14 @@ export default {
   delete: 'Delete',
   whoops: 'Whoops',
   try_again: 'Try again',
+  back_to_sign_in: "Back to Sign In",
+  confirm:"Confirm",
+  confirmation_code: "Confirmation code",
+  confirm_code: "Confirm a code",
+  confirm_sign_up: "Confirm sign up",
+  resend_code: "Resend code",
+  send:"Send",
+  reset_password:'Reset your password',
+  enter_confirmation_code: "Enter your confirmation code",
+  submit:"Submit"
 };

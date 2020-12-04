@@ -6,13 +6,7 @@ import StoryBook from '../../../storybook';
 
 const StorybookScreen = (props) => {
   return (
-    <SafeAreaView>
-      <Container>
-        <Content>
-          <StoryBook {...props} />
-        </Content>
-      </Container>
-    </SafeAreaView>
+    <StoryBook {...props} />
   );
 };
 
