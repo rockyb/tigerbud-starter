@@ -1,7 +1,6 @@
 import {Container, Content, Spinner} from 'native-base';
 import React from 'react';
-import {Dimensions, ImageBackground, StyleSheet, View} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {Dimensions, StyleSheet} from 'react-native';
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
@@ -10,6 +9,7 @@ const Loader = () => {
   const styles = StyleSheet.create({
     container: {
       position: 'absolute',
+      height: deviceHeight,
     },
     content: {
       width: deviceWidth,
