@@ -1,14 +1,16 @@
 import {
   ConfirmSignIn,
-  ConfirmSignUp,
-  ForgotPassword,
   RequireNewPassword,
-  SignUp,
   VerifyContact,
   withAuthenticator,
 } from 'aws-amplify-react-native';
+
 import React from 'react';
 import SignIn from '../components/authentication/SignIn';
+import ConfirmSignUp from '../components/authentication/ConfirmSignUp';
+import ForgotPassword from '../components/authentication/ForgotPassword';
+import SignUp from '../components/authentication/SignUp';
+
 import {DrawerNavigation} from './DrawerNavigation';
 
 export default withAuthenticator(

@@ -4,9 +4,16 @@ import {Text, View, Header, Form, Item, Input, Button} from 'native-base';
 import React from 'react';
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
+import {SafeAreaView, ScrollView} from 'react-native';
 //node_modules/aws-amplify-react-native/src/Auth/SignIn.tsx:1
 
 export default class SignIn extends ASignIn {
+  isValid() {
+    if (!this.state.username || !this.state.password) {
+      return false;
+    }
+    return true;
+  }
   renderUsernameField(theme) {
     const value = this.getUsernameFromInput();
     const {usernameAttributes = []} = this.props;
@@ -46,8 +53,8 @@ export default class SignIn extends ASignIn {
   }
   showComponent(theme) {
     return (
-      <View style={theme.section}>
-        <View>
+      <SafeAreaView>
+        <ScrollView>
           <Header>
             <Text>{I18n.t('sign_in_intro')}</Text>
           </Header>
@@ -65,8 +72,9 @@ export default class SignIn extends ASignIn {
               </Item>
             </Form>
             <Button
+              style={{display: 'flex', alignSelf: 'center', marginTop: 20}}
               onPress={this.signIn}
-              disabled={!!(!this.getUsernameFromInput() && this.state.password)}
+              disabled={!this.isValid()}
               testID={TEST_IDS.AUTH.SIGN_IN_BUTTON}>
               <Text>{I18n.t('sign_in').toUpperCase()}</Text>
             </Button>
@@ -86,8 +94,8 @@ export default class SignIn extends ASignIn {
             </Button>
           </View>
           <Text>{this.state.error}</Text>
-        </View>
-      </View>
+        </ScrollView>
+      </SafeAreaView>
     );
   }
 }
