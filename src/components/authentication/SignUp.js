@@ -1,6 +1,6 @@
 import React from 'react';
 import {SignUp as ASignUp} from 'aws-amplify-react-native';
-import {Text, View, Header, Form, Item, Input, Button} from 'native-base';
+import {Text, View, Header, Form, Item, Input, Button, Body} from 'native-base';
 import {SafeAreaView, ScrollView} from 'react-native';
 
 //node_modules/aws-amplify-react-native/src/Auth/SignUp.tsx:1
@@ -32,7 +32,9 @@ export default class SignUp extends ASignUp {
       <SafeAreaView>
         <ScrollView>
           <Header theme={theme} testID={TEST_IDS.AUTH.SIGN_UP_TEXT}>
-            <Text>{I18n.t('create_account')}</Text>
+            <Body>
+              <Text>{I18n.t('create_account')}</Text>
+            </Body>
           </Header>
           <View style={theme.sectionBody}>
             <Form>

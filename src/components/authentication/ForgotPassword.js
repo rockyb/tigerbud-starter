@@ -1,18 +1,20 @@
-import React from 'react'
-import {ForgotPassword as AForgotPassword} from 'aws-amplify-react-native'
-import {Text, View, Header, Form, Item, Input, Button} from 'native-base'
-import {SafeAreaView} from 'react-native'
+import React from 'react';
+import {ForgotPassword as AForgotPassword} from 'aws-amplify-react-native';
+import {Text, View, Header, Form, Item, Input, Button, Body} from 'native-base';
+import {SafeAreaView} from 'react-native';
 
 //node_modules/aws-amplify-react-native/src/Auth/ForgotPassword.tsx:1
-import I18n from '../../localisation/I18n'
-import {TEST_IDS} from '../../constants/index'
+import I18n from '../../localisation/I18n';
+import {TEST_IDS} from '../../constants/index';
 
 export default class ForgotPassword extends AForgotPassword {
-  showComponent (theme) {
+  showComponent(theme) {
     return (
       <SafeAreaView style={theme.section}>
         <Header testID={TEST_IDS.AUTH.FORGOT_PASSWORD_TEXT}>
-          <Text>{I18n.t('reset_password')}</Text>
+          <Body>
+            <Text>{I18n.t('reset_password')}</Text>
+          </Body>
         </Header>
         <View style={{flex: 1}}>
           {!this.state.delivery && this.forgotBody(theme)}
@@ -32,10 +34,10 @@ export default class ForgotPassword extends AForgotPassword {
           <Text>{this.state.error}</Text>
         </View>
       </SafeAreaView>
-    )
+    );
   }
 
-  forgotBody (theme: AmplifyThemeType) {
+  forgotBody(theme: AmplifyThemeType) {
     //We should check in "disabled" if the email is right formed since we are considering email instead of username
     return (
       <Form style={{display: 'flex', flex: 1, justifyContent: 'space-around'}}>
@@ -48,29 +50,29 @@ export default class ForgotPassword extends AForgotPassword {
           <Text>{I18n.t('send').toUpperCase()} </Text>
         </Button>
       </Form>
-    )
+    );
   }
 
-  renderUsernameField (theme) {
-    const value = this.getUsernameFromInput()
+  renderUsernameField(theme) {
+    const value = this.getUsernameFromInput();
     //Here we trick the username as "Email"
     return (
       <Input
-        onChangeText={text => this.setState({username: text})}
+        onChangeText={(text) => this.setState({username: text})}
         label={I18n.t('email')}
         placeholder={I18n.t('enter_email')}
         testID={TEST_IDS.AUTH.EMAIL_INPUT}
       />
-    )
+    );
   }
 
-  submitBody (theme: AmplifyThemeType) {
+  submitBody(theme: AmplifyThemeType) {
     return (
       <Form style={theme.sectionBody}>
         <Item>
           <Input
             theme={theme}
-            onChangeText={text => this.setState({code: text})}
+            onChangeText={(text) => this.setState({code: text})}
             label={I18n.t('confirmation_code')}
             placeholder={I18n.t('enter_confirmation_code')}
             required={true}
@@ -80,7 +82,7 @@ export default class ForgotPassword extends AForgotPassword {
         <Item>
           <Input
             theme={theme}
-            onChangeText={text => this.setState({password: text})}
+            onChangeText={(text) => this.setState({password: text})}
             label={I18n.t('password')}
             placeholder={I18n.t('enter_password')}
             secureTextEntry={true}
@@ -88,14 +90,14 @@ export default class ForgotPassword extends AForgotPassword {
             testID={TEST_IDS.AUTH.PASSWORD_INPUT}
           />
         </Item>
-          <Button
-            theme={theme}
-            onPress={this.submit}
-            disabled={!(this.state.code && this.state.password)}
-            testID={TEST_IDS.AUTH.SUBMIT_BUTTON}>
-            <Text>{I18n.t('submit')}</Text>
-          </Button>
+        <Button
+          theme={theme}
+          onPress={this.submit}
+          disabled={!(this.state.code && this.state.password)}
+          testID={TEST_IDS.AUTH.SUBMIT_BUTTON}>
+          <Text>{I18n.t('submit')}</Text>
+        </Button>
       </Form>
-    )
+    );
   }
 }

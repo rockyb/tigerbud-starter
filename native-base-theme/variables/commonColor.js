@@ -1,13 +1,13 @@
 // @flow
 
 import color from 'color';
-import { Platform, Dimensions, PixelRatio } from 'react-native';
+import {Platform, Dimensions, PixelRatio} from 'react-native';
 
 export const PLATFORM = {
   ANDROID: 'android',
   IOS: 'ios',
   MATERIAL: 'material',
-  WEB: 'web'
+  WEB: 'web',
 };
 
 const deviceHeight = Dimensions.get('window').height;
@@ -49,7 +49,7 @@ export default {
   androidRipple: true,
   androidRippleColor: 'rgba(256, 256, 256, 0.3)',
   androidRippleColorDark: 'rgba(0, 0, 0, 0.15)',
-  buttonUppercaseAndroidText: true,
+  buttonUppercaseAndroidText: false,
 
   // Badge
   badgeBg: '#ED1727',
@@ -57,7 +57,7 @@ export default {
   badgePadding: platform === PLATFORM.IOS ? 3 : 0,
 
   // Button
-  buttonFontFamily: platform === PLATFORM.IOS ? 'System' : 'Roboto_medium',
+  buttonFontFamily: platform === PLATFORM.IOS ? 'Poppins' : 'System',
   buttonDisabledBg: '#b5b5b5',
   buttonPadding: 6,
   get buttonPrimaryBg() {
@@ -187,14 +187,10 @@ export default {
   iosStatusbar: 'dark-content',
   toolbarDefaultBorder: platform === PLATFORM.IOS ? '#a7a6ab' : '#3F51B5',
   get statusBarColor() {
-    return color(this.toolbarDefaultBg)
-      .darken(0.2)
-      .hex();
+    return color(this.toolbarDefaultBg).darken(0.2).hex();
   },
   get darkenHeader() {
-    return color(this.tabBgColor)
-      .darken(0.03)
-      .hex();
+    return color(this.tabBgColor).darken(0.03).hex();
   },
 
   // Icon
@@ -299,13 +295,13 @@ export default {
       topInset: 24,
       leftInset: 0,
       rightInset: 0,
-      bottomInset: 34
+      bottomInset: 34,
     },
     landscape: {
       topInset: 0,
       leftInset: 44,
       rightInset: 44,
-      bottomInset: 21
-    }
-  }
+      bottomInset: 21,
+    },
+  },
 };

@@ -1,10 +1,20 @@
 // @ts-ignore
 import {SignIn as ASignIn} from 'aws-amplify-react-native';
-import {Text, View, Header, Form, Item, Input, Button} from 'native-base';
+import {
+  Text,
+  View,
+  Header,
+  Item,
+  Input,
+  Button,
+  Body,
+  Content,
+  Container,
+} from 'native-base';
 import React from 'react';
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
-import {SafeAreaView, ScrollView} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 //node_modules/aws-amplify-react-native/src/Auth/SignIn.tsx:1
 
 export default class SignIn extends ASignIn {
@@ -56,12 +66,16 @@ export default class SignIn extends ASignIn {
       <SafeAreaView>
         <ScrollView>
           <Header>
-            <Text>{I18n.t('sign_in_intro')}</Text>
+            <Body>
+              <Text>{I18n.t('sign_in_intro')}</Text>
+            </Body>
           </Header>
-          <View style={theme.sectionBody}>
-            <Form>
-              <Item>{this.renderUsernameField(theme)}</Item>
-              <Item last>
+          <Container style={styles.container}>
+            <Content style={styles.content}>
+              <Item rounded style={styles.input}>
+                {this.renderUsernameField(theme)}
+              </Item>
+              <Item rounded>
                 <Input
                   label={I18n.t('password')}
                   placeholder={I18n.t('enter_password')}
@@ -70,32 +84,89 @@ export default class SignIn extends ASignIn {
                   testID={TEST_IDS.AUTH.PASSWORD_INPUT}
                 />
               </Item>
-            </Form>
-            <Button
-              style={{display: 'flex', alignSelf: 'center', marginTop: 20}}
-              onPress={this.signIn}
-              disabled={!this.isValid()}
-              testID={TEST_IDS.AUTH.SIGN_IN_BUTTON}>
-              <Text>{I18n.t('sign_in').toUpperCase()}</Text>
-            </Button>
-          </View>
-          <View style={theme.sectionFooter}>
-            <Button
-              transparent
-              onPress={() => this.changeState('forgotPassword')}
-              testID={TEST_IDS.AUTH.FORGOT_PASSWORD_BUTTON}>
-              <Text>{I18n.t('forgot_password')}</Text>
-            </Button>
-            <Button
-              transparent
-              onPress={() => this.changeState('signUp')}
-              testID={TEST_IDS.AUTH.SIGN_UP_BUTTON}>
-              <Text>{I18n.t('sign_up')}</Text>
-            </Button>
-          </View>
-          <Text>{this.state.error}</Text>
+              <View>
+                <Text errorMessage style={styles.errorMessage}>
+                  {this.state.error}
+                </Text>
+              </View>
+
+              <View style={theme.sectionBody}>
+                <Button
+                  small
+                  style={styles.buttonForgotPassword}
+                  transparent
+                  onPress={() => this.changeState('forgotPassword')}
+                  testID={TEST_IDS.AUTH.FORGOT_PASSWORD_BUTTON}>
+                  <Text>{I18n.t('forgot_password')}</Text>
+                </Button>
+
+                <Button
+                  style={styles.button}
+                  onPress={this.signIn}
+                  disabled={!this.isValid()}
+                  testID={TEST_IDS.AUTH.SIGN_IN_BUTTON}>
+                  <Text>{I18n.t('sign_in')}</Text>
+                </Button>
+
+                <View style={styles.sectionFooter}>
+                  <Button
+                    bordered
+                    style={styles.button}
+                    onPress={() => this.changeState('signUp')}
+                    testID={TEST_IDS.AUTH.SIGN_UP_BUTTON}>
+                    <Text>{I18n.t('sign_up')}</Text>
+                  </Button>
+                </View>
+              </View>
+            </Content>
+          </Container>
         </ScrollView>
       </SafeAreaView>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flex: 1,
+    display: 'flex',
+    minWidth: 410,
+    maxWidth: '100%',
+  },
+  content: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignContent: 'center',
+    flex: 1,
+    paddingTop: 46,
+    padding: 10,
+  },
+  input: {
+    marginBottom: 38,
+  },
+  button: {
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%',
+    alignSelf: 'center',
+    marginTop: 10,
+  },
+  buttonForgotPassword: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    width: '100%',
+    alignSelf: 'center',
+    paddingTop: 0,
+    marginRight: -30,
+  },
+  errorMessage: {
+    paddingTop: 5,
+  },
+  sectionFooter: {
+    height: 370,
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
+});

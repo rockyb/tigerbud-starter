@@ -106,7 +106,7 @@ export default {
     return this.fontSizeBase * 3.8;
   },
   get iconSizeLarge() {
-    return this.iconFontSize * 1.5;
+    return this.iconFontSize * 1.2;
   },
   get iconSizeSmall() {
     return this.iconFontSize * 0.6;
@@ -133,7 +133,7 @@ export default {
   checkboxTextShadowRadius: 0,
 
   // Color
-  brandPrimary: '#6825AD',
+  brandPrimary: '#AF52DE',
   brandInfo: '#b9c430',
   brandSuccess: '#00441f',
   brandDanger: '#d9534f',
@@ -310,7 +310,7 @@ export default {
   deviceWidth,
   deviceHeight,
   isIphoneX,
-  inputGroupRoundedBorderRadius: 30,
+  inputGroupRoundedBorderRadius: 4,
 
   // iPhoneX SafeArea
   Inset: {
