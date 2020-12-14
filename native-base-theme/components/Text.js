@@ -15,6 +15,11 @@ export default (variables /* : * */ = variable) => {
       color: '#FF3B30',
       fontSize: variables.noteFontSize,
     },
+    '.headerTitle': {
+      fontSize: variables.headerFontSize,
+      color: '#AF52DE',
+      fontWeight: '500',
+    },
   };
 
   return textTheme;
