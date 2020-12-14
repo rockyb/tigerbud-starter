@@ -81,8 +81,9 @@ export default class ForgotPassword extends AForgotPassword {
   submitBody(theme: AmplifyThemeType) {
     return (
       <Content style={styles.content}>
-        <Item rounded>
+        <Item rounded style={styles.input}>
           <Input
+            rounded
             theme={theme}
             onChangeText={(text) => this.setState({code: text})}
             label={I18n.t('confirmation_code')}

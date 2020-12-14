@@ -63,6 +63,7 @@ export default class ConfirmSignUp extends AConfirmSignUp {
 
               <Button
                 onPress={this.confirm}
+                style={styles.button}
                 disabled={!username || !this.state.code}
                 testID={TEST_IDS.AUTH.CONFIRM_BUTTON}>
                 <Text> {I18n.t('confirm')}</Text>
