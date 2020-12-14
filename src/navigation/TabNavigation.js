@@ -8,19 +8,37 @@ import StorybookScreen from '../screens/storybook/StorybookScreen';
 import WelcomeScreen from '../screens/welcome/WelcomeScreen';
 import AuthContainer from './AuthContainer';
 import {FeedStack} from './StackNavigation';
+import {Icon} from 'native-base';
 
 //Tabnavigation
 const Tab = createBottomTabNavigator();
+const Home = I18n.t('home');
+const User = I18n.t('user');
+const Storybook = I18n.t('storybook');
+
 const Tabs = () => (
   <NavigationContainer>
     <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarIcon: ({focused, color, size}) => {
+          let iconName;
+          if (route.name === Home) {
+            iconName = focused ? 'apps' : 'apps';
+          } else if (route.name === User) {
+            iconName = focused ? 'apps' : 'home';
+          } else if (route.name === Storybook) {
+            iconName = 'home';
+          }
+          return <Icon name={iconName} size={size} color={color} />;
+        },
+      })}
       tabBarOptions={{
         activeTintColor: '#B586F8',
         inactiveTintColor: '#131313',
         showLabel: true,
         labelStyle: {
           fontSize: 14,
-          fontWeight: '100',
+          fontWeight: '500',
         },
         style: {
           borderTopWidth: 1,
@@ -34,21 +52,21 @@ const Tabs = () => (
         },
       }}>
       <Tab.Screen
-        name={I18n.t('home')}
+        name={Home}
         component={FeedStack}
         options={{
           tabBarTestID: TEST_IDS.NAV.TABS.FEED,
         }}
       />
       <Tab.Screen
-        name={I18n.t('user')}
+        name={User}
         component={AuthContainer}
         options={{
           tabBarTestID: TEST_IDS.NAV.TABS.LOGIN,
         }}
       />
       <Tab.Screen
-        name={I18n.t('storybook')}
+        name={Storybook}
         component={StorybookScreen}
         options={{
           tabBarTestID: TEST_IDS.NAV.TABS.STORYBOOK,
