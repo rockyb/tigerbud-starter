@@ -23,9 +23,12 @@ export default class ConfirmSignUp extends AConfirmSignUp {
     const username = this.getUsernameFromInput();
     return (
       <SafeAreaView>
-        <Header theme={theme} testID={TEST_IDS.AUTH.CONFIRM_SIGN_UP_TEXT}>
+        <Header
+          headerTitle
+          theme={theme}
+          testID={TEST_IDS.AUTH.CONFIRM_SIGN_UP_TEXT}>
           <Body>
-            <Text>{I18n.t('confirm_sign_up')}</Text>
+            <Text headerTitle>{I18n.t('confirm_sign_up')}</Text>
           </Body>
         </Header>
         {/*Adding a fast inline css just to "see a basic layout, this will be removed" */}
@@ -53,7 +56,7 @@ export default class ConfirmSignUp extends AConfirmSignUp {
             <View style={theme.sectionBody}>
               <Button
                 small
-                style={styles.buttonForgotPassword}
+                style={styles.buttonBackSignIn}
                 transparent
                 theme={theme}
                 onPress={() => this.changeState('signIn')}
@@ -68,18 +71,15 @@ export default class ConfirmSignUp extends AConfirmSignUp {
                 testID={TEST_IDS.AUTH.CONFIRM_BUTTON}>
                 <Text> {I18n.t('confirm')}</Text>
               </Button>
-
-              <View style={styles.sectionFooter}>
-                <Button
-                  bordered
-                  style={styles.button}
-                  theme={theme}
-                  onPress={this.resend}
-                  disabled={!this.state.username}
-                  testID={TEST_IDS.AUTH.RESEND_CODE_BUTTON}>
-                  <Text>{I18n.t('resend_code')}</Text>
-                </Button>
-              </View>
+              <Button
+                bordered
+                style={styles.button}
+                theme={theme}
+                onPress={this.resend}
+                disabled={!this.state.username}
+                testID={TEST_IDS.AUTH.RESEND_CODE_BUTTON}>
+                <Text>{I18n.t('resend_code')}</Text>
+              </Button>
             </View>
           </Content>
         </Container>
@@ -152,14 +152,16 @@ const styles = StyleSheet.create({
     width: '100%',
     alignSelf: 'center',
     marginTop: 10,
+    marginBottom: 14,
   },
-  buttonForgotPassword: {
+  buttonBackSignIn: {
     display: 'flex',
     justifyContent: 'flex-end',
     width: '100%',
     alignSelf: 'center',
     paddingTop: 0,
     marginRight: -30,
+    marginTop: -12,
   },
   errorMessage: {
     paddingTop: 5,

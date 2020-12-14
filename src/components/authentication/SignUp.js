@@ -44,7 +44,7 @@ export default class SignUp extends ASignUp {
         <ScrollView>
           <Header theme={theme} testID={TEST_IDS.AUTH.SIGN_UP_TEXT}>
             <Body>
-              <Text>{I18n.t('create_account')}</Text>
+              <Text headerTitle>{I18n.t('create_account')}</Text>
             </Body>
           </Header>
           <Container style={styles.container}>
@@ -92,16 +92,14 @@ export default class SignUp extends ASignUp {
                   <Text>{I18n.t('sign_up')}</Text>
                 </Button>
 
-                <View style={styles.sectionFooter}>
-                  <Button
-                    bordered
-                    theme={theme}
-                    style={styles.button}
-                    onPress={() => this.changeState('confirmSignUp')}
-                    testID={TEST_IDS.AUTH.CONFIRM_A_CODE_BUTTON}>
-                    <Text>{I18n.t('confirm_code')}</Text>
-                  </Button>
-                </View>
+                <Button
+                  bordered
+                  theme={theme}
+                  style={styles.button}
+                  onPress={() => this.changeState('confirmSignUp')}
+                  testID={TEST_IDS.AUTH.CONFIRM_A_CODE_BUTTON}>
+                  <Text>{I18n.t('confirm_code')}</Text>
+                </Button>
               </View>
             </Content>
           </Container>
@@ -136,6 +134,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignSelf: 'center',
     marginTop: 10,
+    marginBottom: 14,
   },
   buttonSignIn: {
     display: 'flex',
@@ -144,14 +143,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     paddingTop: 0,
     marginRight: -30,
-    marginTop: -45,
+    marginTop: -10,
   },
   errorMessage: {
-    paddingTop: 5,
-  },
-  sectionFooter: {
-    height: 370,
-    flex: 1,
-    justifyContent: 'flex-end',
+    marginTop: -30,
+    width: 320,
   },
 });

@@ -24,7 +24,7 @@ export default class ForgotPassword extends AForgotPassword {
       <SafeAreaView>
         <Header testID={TEST_IDS.AUTH.FORGOT_PASSWORD_TEXT}>
           <Body>
-            <Text>{I18n.t('reset_password')}</Text>
+            <Text headerTitle>{I18n.t('reset_password')}</Text>
           </Body>
         </Header>
         <Container style={styles.container}>
@@ -47,7 +47,7 @@ export default class ForgotPassword extends AForgotPassword {
           <Button
             small
             transparent
-            style={styles.buttonForgotPassword}
+            style={styles.buttonBackSignIn}
             theme={theme}
             onPress={() => this.changeState('signIn')}
             testID={TEST_IDS.AUTH.BACK_TO_SIGN_IN_BUTTON}>
@@ -92,7 +92,7 @@ export default class ForgotPassword extends AForgotPassword {
             testID={TEST_IDS.AUTH.CONFIRMATION_CODE_INPUT}
           />
         </Item>
-        <Item rounded style={styles.input}>
+        <Item rounded>
           <Input
             theme={theme}
             onChangeText={(text) => this.setState({password: text})}
@@ -145,13 +145,12 @@ const styles = StyleSheet.create({
     width: '100%',
     alignSelf: 'center',
   },
-  buttonForgotPassword: {
+  buttonBackSignIn: {
     display: 'flex',
     justifyContent: 'flex-end',
     width: '100%',
     alignSelf: 'center',
     marginBottom: 14,
-    marginTop: 10,
     marginRight: -30,
   },
   errorMessage: {
