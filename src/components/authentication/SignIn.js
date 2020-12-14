@@ -65,7 +65,7 @@ export default class SignIn extends ASignIn {
     return (
       <SafeAreaView>
         <ScrollView>
-          <Header>
+          <Header theme={theme}>
             <Body>
               <Text>{I18n.t('sign_in_intro')}</Text>
             </Body>
@@ -141,7 +141,6 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     flex: 1,
     paddingTop: 46,
-    padding: 10,
   },
   input: {
     marginBottom: 38,
