@@ -20,7 +20,7 @@ const Loader = () => {
   return (
     <Container style={styles.container}>
       <Content style={styles.content}>
-        <Spinner />
+        <Spinner color="#B586F8" />
       </Content>
     </Container>
   );

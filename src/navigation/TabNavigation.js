@@ -8,7 +8,8 @@ import StorybookScreen from '../screens/storybook/StorybookScreen';
 import WelcomeScreen from '../screens/welcome/WelcomeScreen';
 import AuthContainer from './AuthContainer';
 import {FeedStack} from './StackNavigation';
-import {Icon} from 'native-base';
+//import {Icon} from 'native-base';
+import {Icon} from '../components/icon/Icon';
 
 //Tabnavigation
 const Tab = createBottomTabNavigator();
@@ -23,13 +24,15 @@ const Tabs = () => (
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
           if (route.name === Home) {
-            iconName = focused ? 'apps' : 'apps';
+            iconName = focused ? 'HomeActive' : 'Home';
           } else if (route.name === User) {
-            iconName = focused ? 'apps' : 'home';
+            iconName = focused ? 'Log' : 'Log';
           } else if (route.name === Storybook) {
-            iconName = 'home';
+            iconName = focused ? 'StoryBook' : 'StoryBook';
           }
-          return <Icon name={iconName} size={size} color={color} />;
+          return (
+            <Icon name={iconName} height={size} width={size} fill={color} />
+          );
         },
       })}
       tabBarOptions={{
