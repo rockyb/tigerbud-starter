@@ -1,6 +1,7 @@
 import {API} from 'aws-amplify';
 import get from 'lodash-es/get';
-import {Toast} from 'native-base';
+import {Content, Container, Toast} from 'native-base';
+import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import React, {useContext, useState} from 'react';
 import ThingForm from '../../components/things/ThingForm';
 import LoaderContext from '../../contexts/LoaderContext';
@@ -59,16 +60,42 @@ const EditScreen = ({route: {params}}) => {
     !description;
 
   return (
-    <ThingForm
-      image={params.image}
-      title={title}
-      setTitle={setTitle}
-      description={description}
-      setDescription={setDescription}
-      buttonDisabled={isDisabled}
-      buttonHandler={updateThing}
-    />
+    <SafeAreaView>
+      <ScrollView>
+        <Container style={styles.container}>
+          <Content style={styles.content}>
+            <ThingForm
+              image={params.image}
+              title={title}
+              setTitle={setTitle}
+              description={description}
+              setDescription={setDescription}
+              buttonDisabled={isDisabled}
+              buttonHandler={updateThing}
+            />
+          </Content>
+        </Container>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flex: 1,
+    display: 'flex',
+  },
+  content: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignContent: 'center',
+    flex: 1,
+    paddingTop: 20,
+    padding: 10,
+    minWidth: 410,
+  },
+});
 
 export default EditScreen;
