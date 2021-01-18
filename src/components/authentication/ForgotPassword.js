@@ -38,30 +38,33 @@ export default class ForgotPassword extends AForgotPassword {
   forgotBody(theme: AmplifyThemeType) {
     //We should check in "disabled" if the email is right formed since we are considering email instead of username
     return (
-      <Content style={styles.content}>
-        <Item rounded>{this.renderUsernameField(theme)}</Item>
-        <View>
-          <Text errorMessage>{this.state.error}</Text>
-        </View>
-        <View style={theme.sectionBody}>
-          <Button
-            small
-            transparent
-            style={styles.buttonBackSignIn}
-            theme={theme}
-            onPress={() => this.changeState('signIn')}
-            testID={TEST_IDS.AUTH.BACK_TO_SIGN_IN_BUTTON}>
-            <Text>{I18n.t('back_to_sign_in')}</Text>
-          </Button>
-          <Button
-            style={styles.button}
-            onPress={this.send}
-            disabled={!this.getUsernameFromInput()}
-            testID={TEST_IDS.AUTH.SEND_BUTTON}>
-            <Text>{I18n.t('send').toUpperCase()} </Text>
-          </Button>
-        </View>
-      </Content>
+      <>
+        <Content style={styles.content}>
+          <Item rounded>{this.renderUsernameField(theme)}</Item>
+          <Text errorMessage style={styles.errorMessage}>
+            {this.state.error}
+          </Text>
+          <View style={theme.sectionBody}>
+            <Button
+              small
+              transparent
+              style={styles.buttonBackSignIn}
+              theme={theme}
+              onPress={() => this.changeState('signIn')}
+              testID={TEST_IDS.AUTH.BACK_TO_SIGN_IN_BUTTON}>
+              <Text>{I18n.t('back_to_sign_in')}</Text>
+            </Button>
+
+            <Button
+              style={styles.button}
+              onPress={this.send}
+              disabled={!this.getUsernameFromInput()}
+              testID={TEST_IDS.AUTH.SEND_BUTTON}>
+              <Text>{I18n.t('submit')} </Text>
+            </Button>
+          </View>
+        </Content>
+      </>
     );
   }
 
@@ -103,17 +106,19 @@ export default class ForgotPassword extends AForgotPassword {
             testID={TEST_IDS.AUTH.PASSWORD_INPUT}
           />
         </Item>
-        <View>
-          <Text errorMessage>{this.state.error}</Text>
+        <Text errorMessage style={styles.errorMessage}>
+          {this.state.error}
+        </Text>
+        <View style={theme.sectionBody}>
+          <Button
+            style={styles.button}
+            theme={theme}
+            onPress={this.submit}
+            disabled={!(this.state.code && this.state.password)}
+            testID={TEST_IDS.AUTH.SUBMIT_BUTTON}>
+            <Text>{I18n.t('submit')}</Text>
+          </Button>
         </View>
-        <Button
-          style={styles.button}
-          theme={theme}
-          onPress={this.submit}
-          disabled={!(this.state.code && this.state.password)}
-          testID={TEST_IDS.AUTH.SUBMIT_BUTTON}>
-          <Text>{I18n.t('submit')}</Text>
-        </Button>
       </Content>
     );
   }
@@ -125,7 +130,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flex: 1,
     display: 'flex',
-    maxWidth: '100%',
   },
   content: {
     display: 'flex',
@@ -137,23 +141,27 @@ const styles = StyleSheet.create({
     minWidth: 410,
   },
   input: {
-    marginBottom: 28,
+    marginBottom: 38,
   },
   button: {
     display: 'flex',
     justifyContent: 'center',
     width: '100%',
     alignSelf: 'center',
+    marginTop: 24,
   },
   buttonBackSignIn: {
     display: 'flex',
     justifyContent: 'flex-end',
     width: '100%',
     alignSelf: 'center',
-    marginBottom: 14,
+
     marginRight: -30,
   },
   errorMessage: {
-    paddingTop: 5,
+    width: '100%',
+    lineHeight: 20,
+    marginLeft: 5,
+    fontWeight: '300',
   },
 });

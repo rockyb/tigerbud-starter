@@ -90,7 +90,16 @@ export default class SignIn extends ASignIn {
                 </Text>
               </View>
 
-              <View style={theme.sectionBody}>
+              <View style={styles.sectionButtons}>
+                <Button
+                  small
+                  transparent
+                  style={styles.buttonSigUp}
+                  onPress={() => this.changeState('signUp')}
+                  testID={TEST_IDS.AUTH.SIGN_UP_BUTTON}>
+                  <Text>{I18n.t('sign_up')}</Text>
+                </Button>
+
                 <Button
                   small
                   style={styles.buttonForgotPassword}
@@ -99,25 +108,14 @@ export default class SignIn extends ASignIn {
                   testID={TEST_IDS.AUTH.FORGOT_PASSWORD_BUTTON}>
                   <Text>{I18n.t('forgot_password')}</Text>
                 </Button>
-
-                <Button
-                  style={styles.button}
-                  onPress={this.signIn}
-                  disabled={!this.isValid()}
-                  testID={TEST_IDS.AUTH.SIGN_IN_BUTTON}>
-                  <Text>{I18n.t('sign_in')}</Text>
-                </Button>
-
-                <View style={styles.sectionFooter}>
-                  <Button
-                    bordered
-                    style={styles.button}
-                    onPress={() => this.changeState('signUp')}
-                    testID={TEST_IDS.AUTH.SIGN_UP_BUTTON}>
-                    <Text>{I18n.t('sign_up')}</Text>
-                  </Button>
-                </View>
               </View>
+              <Button
+                style={styles.button}
+                onPress={this.signIn}
+                disabled={!this.isValid()}
+                testID={TEST_IDS.AUTH.SIGN_IN_BUTTON}>
+                <Text>{I18n.t('sign_in')}</Text>
+              </Button>
             </Content>
           </Container>
         </ScrollView>
@@ -132,8 +130,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flex: 1,
     display: 'flex',
-    minWidth: 410,
-    maxWidth: '100%',
   },
   content: {
     display: 'flex',
@@ -141,6 +137,8 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     flex: 1,
     paddingTop: 46,
+    padding: 10,
+    minWidth: 410,
   },
   input: {
     marginBottom: 38,
@@ -148,24 +146,26 @@ const styles = StyleSheet.create({
   button: {
     display: 'flex',
     justifyContent: 'center',
-    width: '100%',
+    width: '98%',
     alignSelf: 'center',
-    marginTop: 10,
+    marginTop: 24,
+  },
+  sectionButtons: {
+    flexDirection: 'row',
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  buttonSigUp: {
+    marginLeft: -10,
+    alignSelf: 'flex-start',
   },
   buttonForgotPassword: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    width: '100%',
-    alignSelf: 'center',
-    marginRight: -30,
-    marginTop: -10,
+    alignSelf: 'flex-end',
+    marginRight: -10,
   },
   errorMessage: {
-    paddingTop: 5,
-  },
-  sectionFooter: {
-    height: 370,
-    flex: 1,
-    justifyContent: 'flex-end',
+    lineHeight: 20,
+    marginLeft: 5,
+    fontWeight: '300',
   },
 });
