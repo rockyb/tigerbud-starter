@@ -13,11 +13,10 @@ import {
   Content,
 } from 'native-base';
 import {SafeAreaView, StyleSheet} from 'react-native';
-
 //node_modules/aws-amplify-react-native/src/Auth/ForgotPassword.tsx:1
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
-
+import styles from './styles';
 export default class ForgotPassword extends AForgotPassword {
   showComponent(theme) {
     return (
@@ -123,45 +122,3 @@ export default class ForgotPassword extends AForgotPassword {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flex: 1,
-    display: 'flex',
-  },
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignContent: 'center',
-    flex: 1,
-    paddingTop: 46,
-    padding: 10,
-    minWidth: 410,
-  },
-  input: {
-    marginBottom: 38,
-  },
-  button: {
-    display: 'flex',
-    justifyContent: 'center',
-    width: '100%',
-    alignSelf: 'center',
-    marginTop: 24,
-  },
-  buttonBackSignIn: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    width: '100%',
-    alignSelf: 'center',
-
-    marginRight: -30,
-  },
-  errorMessage: {
-    width: '100%',
-    lineHeight: 20,
-    marginLeft: 5,
-    fontWeight: '300',
-  },
-});

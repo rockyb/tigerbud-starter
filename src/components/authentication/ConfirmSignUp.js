@@ -13,11 +13,10 @@ import {
   Content,
 } from 'native-base';
 import {SafeAreaView, StyleSheet} from 'react-native';
-
 //node_modules/aws-amplify-react-native/src/Auth/ConfirmSignUp.tsx:1
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
-
+import styles from './styles';
 export default class ConfirmSignUp extends AConfirmSignUp {
   showComponent(theme) {
     const username = this.getUsernameFromInput();
@@ -126,49 +125,3 @@ export default class ConfirmSignUp extends AConfirmSignUp {
     }
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flex: 1,
-    display: 'flex',
-    minWidth: 410,
-    maxWidth: '100%',
-  },
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignContent: 'center',
-    flex: 1,
-    paddingTop: 46,
-  },
-  input: {
-    marginBottom: 38,
-  },
-  button: {
-    display: 'flex',
-    justifyContent: 'center',
-    width: '100%',
-    alignSelf: 'center',
-    marginTop: 10,
-    marginBottom: 14,
-  },
-  buttonBackSignIn: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    width: '100%',
-    alignSelf: 'center',
-    paddingTop: 0,
-    marginRight: -30,
-    marginTop: -12,
-  },
-  errorMessage: {
-    paddingTop: 5,
-  },
-  sectionFooter: {
-    height: 370,
-    flex: 1,
-    justifyContent: 'flex-end',
-  },
-});

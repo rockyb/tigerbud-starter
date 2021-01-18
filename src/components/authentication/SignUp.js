@@ -13,11 +13,10 @@ import {
   Content,
 } from 'native-base';
 import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
-
 //node_modules/aws-amplify-react-native/src/Auth/SignUp.tsx:1
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
-
+import styles from './styles';
 export default class SignUp extends ASignUp {
   filterSignUpFields = (signupFields) => {
     return signupFields.key !== 'phone_number' && signupFields.key !== 'email';
@@ -72,7 +71,17 @@ export default class SignUp extends ASignUp {
               <Text errorMessage style={styles.errorMessage} theme={theme}>
                 {this.state.error}
               </Text>
-              <View style={theme.sectionBody}>
+              <View style={styles.sectionButtonsSignUp}>
+                <Button
+                  small
+                  transparent
+                  theme={theme}
+                  style={styles.buttonConfirmCode}
+                  onPress={() => this.changeState('confirmSignUp')}
+                  testID={TEST_IDS.AUTH.CONFIRM_A_CODE_BUTTON}>
+                  <Text>{I18n.t('confirm_code')}</Text>
+                </Button>
+
                 <Button
                   small
                   transparent
@@ -82,25 +91,15 @@ export default class SignUp extends ASignUp {
                   testID={TEST_IDS.AUTH.SIGN_IN_BUTTON}>
                   <Text>{I18n.t('sign_in')}</Text>
                 </Button>
-
-                <Button
-                  style={styles.button}
-                  text={I18n.t('sign_up')}
-                  onPress={this.signUp}
-                  disabled={!this.isValid()}
-                  testID={TEST_IDS.AUTH.SIGN_UP_BUTTON}>
-                  <Text>{I18n.t('sign_up')}</Text>
-                </Button>
-
-                <Button
-                  bordered
-                  theme={theme}
-                  style={styles.button}
-                  onPress={() => this.changeState('confirmSignUp')}
-                  testID={TEST_IDS.AUTH.CONFIRM_A_CODE_BUTTON}>
-                  <Text>{I18n.t('confirm_code')}</Text>
-                </Button>
               </View>
+              <Button
+                style={styles.button}
+                text={I18n.t('sign_up')}
+                onPress={this.signUp}
+                disabled={!this.isValid()}
+                testID={TEST_IDS.AUTH.SIGN_UP_BUTTON}>
+                <Text>{I18n.t('sign_up')}</Text>
+              </Button>
             </Content>
           </Container>
         </ScrollView>
@@ -108,45 +107,3 @@ export default class SignUp extends ASignUp {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flex: 1,
-    display: 'flex',
-    minWidth: 410,
-    maxWidth: '100%',
-  },
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignContent: 'center',
-    flex: 1,
-    paddingTop: 46,
-  },
-  input: {
-    marginBottom: 38,
-  },
-  button: {
-    display: 'flex',
-    justifyContent: 'center',
-    width: '100%',
-    alignSelf: 'center',
-    marginTop: 10,
-    marginBottom: 14,
-  },
-  buttonSignIn: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    width: '100%',
-    alignSelf: 'center',
-    paddingTop: 0,
-    marginRight: -30,
-    marginTop: -10,
-  },
-  errorMessage: {
-    marginTop: -30,
-    width: 320,
-  },
-});

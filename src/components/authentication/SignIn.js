@@ -16,7 +16,7 @@ import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
 import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 //node_modules/aws-amplify-react-native/src/Auth/SignIn.tsx:1
-
+import styles from './styles';
 export default class SignIn extends ASignIn {
   isValid() {
     if (!this.state.username || !this.state.password) {
@@ -124,48 +124,48 @@ export default class SignIn extends ASignIn {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flex: 1,
-    display: 'flex',
-  },
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignContent: 'center',
-    flex: 1,
-    paddingTop: 46,
-    padding: 10,
-    minWidth: 410,
-  },
-  input: {
-    marginBottom: 38,
-  },
-  button: {
-    display: 'flex',
-    justifyContent: 'center',
-    width: '98%',
-    alignSelf: 'center',
-    marginTop: 24,
-  },
-  sectionButtons: {
-    flexDirection: 'row',
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  buttonSigUp: {
-    marginLeft: -10,
-    alignSelf: 'flex-start',
-  },
-  buttonForgotPassword: {
-    alignSelf: 'flex-end',
-    marginRight: -10,
-  },
-  errorMessage: {
-    lineHeight: 20,
-    marginLeft: 5,
-    fontWeight: '300',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     alignItems: 'center',
+//     justifyContent: 'space-between',
+//     flex: 1,
+//     display: 'flex',
+//   },
+//   content: {
+//     display: 'flex',
+//     flexDirection: 'column',
+//     alignContent: 'center',
+//     flex: 1,
+//     paddingTop: 46,
+//     padding: 10,
+//     minWidth: 410,
+//   },
+//   input: {
+//     marginBottom: 38,
+//   },
+//   button: {
+//     display: 'flex',
+//     justifyContent: 'center',
+//     width: '98%',
+//     alignSelf: 'center',
+//     marginTop: 24,
+//   },
+//   sectionButtons: {
+//     flexDirection: 'row',
+//     display: 'flex',
+//     justifyContent: 'space-between',
+//   },
+//   buttonSigUp: {
+//     marginLeft: -10,
+//     alignSelf: 'flex-start',
+//   },
+//   buttonForgotPassword: {
+//     alignSelf: 'flex-end',
+//     marginRight: -10,
+//   },
+//   errorMessage: {
+//     lineHeight: 20,
+//     marginLeft: 5,
+//     fontWeight: '300',
+//   },
+// });
