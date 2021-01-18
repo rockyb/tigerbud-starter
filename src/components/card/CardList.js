@@ -27,7 +27,7 @@ const CardList = ({things, hasNext, fetchNext, renderCardFooter}) => {
     );
   };
   return (
-    <Container style={{paddingBottom: 100}}>
+    <Container>
       <FlatList
         data={things}
         ListFooterComponent={renderFooter}
