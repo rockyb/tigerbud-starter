@@ -1,7 +1,7 @@
 import get from 'lodash-es/get';
-import {Button, Text, Toast, View} from 'native-base';
+import {Button, Text, Content, Container, Toast, View, Icon} from 'native-base';
 import React, {useContext} from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import CardList from '../../components/card/CardList';
 import {TEST_IDS} from '../../constants';
 import AuthContext from '../../contexts/AuthContext';
@@ -39,22 +39,28 @@ const ThingsScreen = ({navigation}) => {
 
   /**
    * To render the buttons in the footer of the cards in the list
-   * 
-   * @param {object} props 
+   *
+   * @param {object} props
    */
   const renderCardFooter = (props) => {
     return (
       <View style={styles.buttonContainer}>
         <Button
-          transparent
+          iconLeft
+          bordered
+          style={styles.buttonRightPadding}
           onPress={() => navigation.navigate('Edit', props)}
           testID={TEST_IDS.THINGS.EDIT.BUTTON}>
+          <Icon type="FontAwesome" name="edit" />
           <Text>{I18n.t('edit')}</Text>
         </Button>
         <Button
-          transparent
+          iconLeft
+          bordered
+          dark
           onPress={() => deleteThing(props.id)}
           testID={TEST_IDS.THINGS.DELETE.BUTTON}>
+          <Icon type="FontAwesome" name="trash" />
           <Text>{I18n.t('delete')}</Text>
         </Button>
       </View>
@@ -75,14 +81,42 @@ const ThingsScreen = ({navigation}) => {
     },
   });
 
-  return <CardList {...listProps} renderCardFooter={renderCardFooter} />;
+  return (
+    <SafeAreaView>
+      <ScrollView>
+        <Container style={styles.container}>
+          <Content style={styles.content}>
+            <CardList {...listProps} renderCardFooter={renderCardFooter} />
+          </Content>
+        </Container>
+      </ScrollView>
+    </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flex: 1,
+    display: 'flex',
+  },
+  content: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignContent: 'center',
+    flex: 1,
+    paddingTop: 20,
+    padding: 10,
+    minWidth: 410,
+  },
   buttonContainer: {
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
+  },
+  buttonRightPadding: {
+    marginRight: 20,
   },
 });
 
