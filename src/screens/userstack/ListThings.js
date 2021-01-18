@@ -11,7 +11,7 @@ import * as mutations from '../../graphql/mutations';
 import {API} from 'aws-amplify';
 import ThingContext from '../../contexts/ThingContext';
 import LoaderContext from '../../contexts/LoaderContext';
-
+import variables from '../../../native-base-theme/variables/tigerbud';
 const ThingsScreen = ({navigation}) => {
   const {loggedInUser} = useContext(AuthContext);
   const {setThings} = useContext(ThingContext);
@@ -58,6 +58,7 @@ const ThingsScreen = ({navigation}) => {
           iconLeft
           bordered
           dark
+          style={styles.buttonBlack}
           onPress={() => deleteThing(props.id)}
           testID={TEST_IDS.THINGS.DELETE.BUTTON}>
           <Icon type="FontAwesome" name="trash" />
@@ -117,6 +118,9 @@ const styles = StyleSheet.create({
   },
   buttonRightPadding: {
     marginRight: 20,
+  },
+  buttonBlack: {
+    color: variables.brandDark,
   },
 });
 

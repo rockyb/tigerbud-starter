@@ -6,10 +6,9 @@ const OpenDrawerButton = ({navigation}) => {
   return (
     <Button onPress={navigation.toggleDrawer} transparent>
       <Icon
-        active
-        ios="ios-menu"
-        android="md-menu"
-        style={{color: variables.brandDark}}
+        type="MaterialIcons"
+        name="menu"
+        style={{color: variables.brandPrimary, fontSize: 28}}
       />
     </Button>
   );
