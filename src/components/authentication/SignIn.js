@@ -14,7 +14,7 @@ import {
 import React from 'react';
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
-import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
+import {SafeAreaView, ScrollView} from 'react-native';
 //node_modules/aws-amplify-react-native/src/Auth/SignIn.tsx:1
 import styles from './styles';
 export default class SignIn extends ASignIn {

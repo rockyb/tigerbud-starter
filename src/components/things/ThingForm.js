@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Button, Form, Input, Item, Text, Textarea} from 'native-base';
+import {Button, Form, Input, Item, Text, Textarea, Icon} from 'native-base';
 import I18n from '../../localisation/I18n';
 import {Image, StyleSheet} from 'react-native';
 import {TEST_IDS} from '../../constants';
@@ -46,10 +46,17 @@ const ThingForm = ({
       </Item>
 
       <Button
+        iconLeft
+        bordered
         style={styles.button}
         onPress={buttonHandler}
         disabled={buttonDisabled}
         testID={TEST_IDS.THINGS.EDIT.SAVE}>
+        <Icon
+          type="FontAwesome"
+          name="save"
+          style={{color: buttonDisabled ? '#b5b5b5' : '#AF52DE'}}
+        />
         <Text>{I18n.t('save_thing')}</Text>
       </Button>
     </Form>
