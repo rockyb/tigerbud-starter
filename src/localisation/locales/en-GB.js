@@ -29,6 +29,8 @@ export default {
   save_thing: 'Save',
   more: 'Load more',
   details: 'Details',
+  feed: 'Feed',
+  create_new_post: 'Create new post',
   edit: 'Edit',
   delete: 'Delete',
   whoops: 'Whoops',

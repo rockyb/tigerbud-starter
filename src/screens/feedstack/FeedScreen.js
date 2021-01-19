@@ -1,6 +1,17 @@
 /* eslint-disable react/display-name */
 import React from 'react';
-import {Button, Content, Text, Container} from 'native-base';
+import {
+  Button,
+  Content,
+  Text,
+  Container,
+  Header,
+  Left,
+  Icon,
+  Title,
+  Body,
+  Right,
+} from 'native-base';
 import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import CardList from '../../components/card/CardList';
 import {TEST_IDS} from '../../constants';
@@ -27,6 +38,11 @@ const FeedScreen = ({navigation}) => {
     <>
       <SafeAreaView>
         <ScrollView>
+          <Header>
+            <Body>
+              <Text headerTitle>{I18n.t('feed')}</Text>
+            </Body>
+          </Header>
           <Container style={styles.container}>
             <Content style={styles.content}>
               <CardList {...listProps} renderCardFooter={renderCardFooter} />

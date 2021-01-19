@@ -10,6 +10,7 @@ import AuthContainer from './AuthContainer';
 import {FeedStack} from './StackNavigation';
 //import {Icon} from 'native-base';
 import {Icon} from '../components/icon/Icon';
+import variables from '../../native-base-theme/variables/tigerbud';
 
 //Tabnavigation
 const Tab = createBottomTabNavigator();
@@ -36,17 +37,20 @@ const Tabs = () => (
         },
       })}
       tabBarOptions={{
-        activeTintColor: '#B586F8',
+        activeTintColor: '#6825AD',
         inactiveTintColor: '#131313',
         showLabel: true,
         labelStyle: {
-          fontSize: 14,
-          fontWeight: '500',
+          fontSize: 11,
+          paddingTop: 5,
+          fontWeight: '400',
         },
         style: {
-          borderTopWidth: 1,
+          paddingTop: 10,
+          borderTopWidth: 0,
           position: 'absolute',
-          elevation: 0,
+          elevation: 1,
+          backgroundColor: variables.brandBgLight,
         },
         tabStyle: {
           justifyContent: 'center',
