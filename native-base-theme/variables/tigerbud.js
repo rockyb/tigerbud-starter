@@ -141,6 +141,9 @@ export default {
   brandDark: '#131313',
   brandLight: '#b586f8',
 
+  //Background
+  brandBgLight: '#F9F9F9',
+
   // Container
   containerBgColor: '#fff',
 
