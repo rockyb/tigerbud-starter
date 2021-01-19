@@ -8,21 +8,41 @@ import ListThings from '../screens/userstack/ListThings';
 import OpenDrawerButton from './OpenDrawerButton';
 
 const User = createStackNavigator();
+
+const optionsScreen = {
+  headerMode: 'none',
+  headerShown: false,
+};
+
 export const UserStack = () => (
   <User.Navigator
     screenOptions={({navigation}) => ({
       headerRight: () => <OpenDrawerButton navigation={navigation} />,
     })}>
-    <User.Screen name="Your Things" component={ListThings} />
-    <User.Screen name="Edit" component={EditThing} />
-    <User.Screen name="Create" component={CreateThing} />
+    <User.Screen
+      name="Your Things"
+      options={optionsScreen}
+      component={ListThings}
+    />
+    <User.Screen name="Edit" component={EditThing} options={optionsScreen} />
+    <User.Screen
+      name="Create"
+      component={CreateThing}
+      options={optionsScreen}
+    />
   </User.Navigator>
 );
 
 const Feed = createStackNavigator();
 export const FeedStack = () => (
-  <Feed.Navigator initialRouteName={'Feed'}>
-    <Feed.Screen name="Feed" component={FeedScreen} />
-    <Feed.Screen name="Details" component={DetailsScreen} />
+  <Feed.Navigator
+    navigationOptions={{headerMode: 'none'}}
+    initialRouteName={'Feed'}>
+    <Feed.Screen name="Feed" options={optionsScreen} component={FeedScreen} />
+    <Feed.Screen
+      options={optionsScreen}
+      name="Details"
+      component={DetailsScreen}
+    />
   </Feed.Navigator>
 );

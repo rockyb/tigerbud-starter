@@ -1,12 +1,26 @@
 import {API} from 'aws-amplify';
 import get from 'lodash-es/get';
-import {Content, Container, Toast} from 'native-base';
+import {
+  Content,
+  Container,
+  Toast,
+  Header,
+  Left,
+  Right,
+  Text,
+  Body,
+  Button,
+  Icon,
+} from 'native-base';
 import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import React, {useContext, useState} from 'react';
 import ThingForm from '../../components/things/ThingForm';
 import AuthContext from '../../contexts/AuthContext';
 import LoaderContext from '../../contexts/LoaderContext';
 import * as mutations from '../../graphql/mutations';
+import OpenDrawerButton from '../../navigation/OpenDrawerButton';
+import I18n from '../../localisation/I18n';
+import CustomHeader from '../../components/customHeader/CustomHeader';
 
 const CreateThing = ({navigation}) => {
   const [title, setTitle] = useState('');
@@ -53,6 +67,12 @@ const CreateThing = ({navigation}) => {
   return (
     <SafeAreaView>
       <ScrollView>
+        <CustomHeader
+          title={I18n.t('create_new_post')}
+          onPress={() => navigation.goBack('Feed')}>
+          <OpenDrawerButton navigation={navigation} />
+        </CustomHeader>
+
         <Container style={styles.container}>
           <Content style={styles.content}>
             <ThingForm

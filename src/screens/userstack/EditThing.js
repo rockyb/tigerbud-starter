@@ -6,6 +6,9 @@ import React, {useContext, useState} from 'react';
 import ThingForm from '../../components/things/ThingForm';
 import LoaderContext from '../../contexts/LoaderContext';
 import * as mutations from '../../graphql/mutations';
+import CustomHeader from '../../components/customHeader/CustomHeader';
+import OpenDrawerButton from '../../navigation/OpenDrawerButton';
+import I18n from '../../localisation/I18n';
 
 /**
  *
@@ -62,6 +65,11 @@ const EditScreen = ({route: {params}, navigation}) => {
   return (
     <SafeAreaView>
       <ScrollView>
+        <CustomHeader
+          title={I18n.t('edit')}
+          onPress={() => navigation.goBack('Feed')}>
+          <OpenDrawerButton navigation={navigation} />
+        </CustomHeader>
         <Container style={styles.container}>
           <Content style={styles.content}>
             <ThingForm

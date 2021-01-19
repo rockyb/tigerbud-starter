@@ -1,5 +1,17 @@
 import get from 'lodash-es/get';
-import {Button, Text, Content, Container, Toast, View, Icon} from 'native-base';
+import {
+  Button,
+  Text,
+  Content,
+  Container,
+  Toast,
+  View,
+  Icon,
+  Header,
+  Right,
+  Left,
+  Body,
+} from 'native-base';
 import React, {useContext} from 'react';
 import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import CardList from '../../components/card/CardList';
@@ -12,6 +24,9 @@ import {API} from 'aws-amplify';
 import ThingContext from '../../contexts/ThingContext';
 import LoaderContext from '../../contexts/LoaderContext';
 import variables from '../../../native-base-theme/variables/tigerbud';
+import OpenDrawerButton from '../../navigation/OpenDrawerButton';
+import CustomHeader from '../../components/customHeader/CustomHeader';
+
 const ThingsScreen = ({navigation}) => {
   const {loggedInUser} = useContext(AuthContext);
   const {setThings} = useContext(ThingContext);
@@ -85,6 +100,10 @@ const ThingsScreen = ({navigation}) => {
   return (
     <SafeAreaView>
       <ScrollView>
+        <CustomHeader title={I18n.t('your_things')}>
+          <OpenDrawerButton navigation={navigation} />
+        </CustomHeader>
+
         <Container style={styles.container}>
           <Content style={styles.content}>
             <CardList {...listProps} renderCardFooter={renderCardFooter} />

@@ -31,6 +31,7 @@ export default {
   details: 'Details',
   feed: 'Feed',
   create_new_post: 'Create new post',
+  your_things: 'Your Things',
   edit: 'Edit',
   delete: 'Delete',
   whoops: 'Whoops',
