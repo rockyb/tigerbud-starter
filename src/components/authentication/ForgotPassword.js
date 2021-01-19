@@ -12,7 +12,7 @@ import {
   Container,
   Content,
 } from 'native-base';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView} from 'react-native';
 //node_modules/aws-amplify-react-native/src/Auth/ForgotPassword.tsx:1
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
@@ -22,11 +22,12 @@ import CustomHeader from '../customHeader/CustomHeader';
 export default class ForgotPassword extends AForgotPassword {
   showComponent(theme) {
     return (
-      <SafeAreaView>
+      <SafeAreaView style={{backgroundColor: '#fff'}}>
         <CustomHeader
           testID={TEST_IDS.AUTH.FORGOT_PASSWORD_TEXT}
           title={I18n.t('reset_password')}
         />
+
         <Container style={styles.container}>
           {!this.state.delivery && this.forgotBody(theme)}
           {this.state.delivery && this.submitBody(theme)}

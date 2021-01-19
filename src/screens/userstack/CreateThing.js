@@ -65,14 +65,13 @@ const CreateThing = ({navigation}) => {
   const isDisabled = !title || !description;
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: '#fff'}}>
+      <CustomHeader
+        title={I18n.t('create_new_post')}
+        onPress={() => navigation.goBack('Feed')}>
+        <OpenDrawerButton navigation={navigation} />
+      </CustomHeader>
       <ScrollView>
-        <CustomHeader
-          title={I18n.t('create_new_post')}
-          onPress={() => navigation.goBack('Feed')}>
-          <OpenDrawerButton navigation={navigation} />
-        </CustomHeader>
-
         <Container style={styles.container}>
           <Content style={styles.content}>
             <ThingForm

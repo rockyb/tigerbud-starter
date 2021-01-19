@@ -37,9 +37,9 @@ const FeedScreen = ({navigation}) => {
   });
   return (
     <>
-      <SafeAreaView>
+      <SafeAreaView style={{backgroundColor: '#fff'}}>
+        <CustomHeader title={I18n.t('feed')} />
         <ScrollView>
-          <CustomHeader title={I18n.t('feed')} />
           <Container style={styles.container}>
             <Content style={styles.content}>
               <CardList {...listProps} renderCardFooter={renderCardFooter} />

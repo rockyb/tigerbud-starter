@@ -63,13 +63,13 @@ const EditScreen = ({route: {params}, navigation}) => {
     !description;
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: '#fff'}}>
+      <CustomHeader
+        title={I18n.t('edit')}
+        onPress={() => navigation.goBack('Feed')}>
+        <OpenDrawerButton navigation={navigation} />
+      </CustomHeader>
       <ScrollView>
-        <CustomHeader
-          title={I18n.t('edit')}
-          onPress={() => navigation.goBack('Feed')}>
-          <OpenDrawerButton navigation={navigation} />
-        </CustomHeader>
         <Container style={styles.container}>
           <Content style={styles.content}>
             <ThingForm

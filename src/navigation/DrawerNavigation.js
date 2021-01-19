@@ -4,6 +4,10 @@ import DrawerContent from '../screens/drawer/DrawerContent';
 import {UserStack} from './StackNavigation';
 
 const Drawer = createDrawerNavigator();
+const optionsScreen = {
+  headerMode: 'none',
+  headerShown: false,
+};
 
 export const DrawerNavigation = () => {
   return (

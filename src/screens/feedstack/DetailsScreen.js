@@ -17,12 +17,12 @@ import CustomHeader from '../../components/customHeader/CustomHeader';
 
 const DetailsScreen = ({route: {params}, navigation}) => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: '#fff'}}>
+      <CustomHeader
+        onPress={() => navigation.goBack('Feed')}
+        title={I18n.t('details')}
+      />
       <ScrollView>
-        <CustomHeader
-          onPress={() => navigation.goBack('Feed')}
-          title={I18n.t('details')}
-        />
         <Container style={styles.container}>
           <Content style={styles.content}>
             <Card {...params} renderFooter={null} />

@@ -7,13 +7,12 @@ import EditThing from '../screens/userstack/EditThing';
 import ListThings from '../screens/userstack/ListThings';
 import OpenDrawerButton from './OpenDrawerButton';
 
-const User = createStackNavigator();
-
 const optionsScreen = {
   headerMode: 'none',
   headerShown: false,
 };
 
+const User = createStackNavigator();
 export const UserStack = () => (
   <User.Navigator
     screenOptions={({navigation}) => ({
@@ -35,9 +34,7 @@ export const UserStack = () => (
 
 const Feed = createStackNavigator();
 export const FeedStack = () => (
-  <Feed.Navigator
-    navigationOptions={{headerMode: 'none'}}
-    initialRouteName={'Feed'}>
+  <Feed.Navigator initialRouteName={'Feed'}>
     <Feed.Screen name="Feed" options={optionsScreen} component={FeedScreen} />
     <Feed.Screen
       options={optionsScreen}

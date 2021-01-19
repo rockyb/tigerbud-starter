@@ -43,8 +43,8 @@ export default (variables /* : * */ = variable) => {
       },
     },
     '.transparent': {
-      // backgroundColor: 'transparent',
-      //borderBottomColor: 'transparent',
+      backgroundColor: 'transparent',
+      borderBottomColor: 'transparent',
       borderBottomColor: variables.toolbarDefaultBorder,
       elevation: 0,
       shadowColor: null,

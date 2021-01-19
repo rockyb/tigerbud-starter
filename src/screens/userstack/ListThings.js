@@ -98,12 +98,12 @@ const ThingsScreen = ({navigation}) => {
   });
 
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <CustomHeader title={I18n.t('your_things')}>
-          <OpenDrawerButton navigation={navigation} />
-        </CustomHeader>
+    <SafeAreaView style={{backgroundColor: '#fff'}}>
+      <CustomHeader title={I18n.t('your_things')}>
+        <OpenDrawerButton navigation={navigation} />
+      </CustomHeader>
 
+      <ScrollView>
         <Container style={styles.container}>
           <Content style={styles.content}>
             <CardList {...listProps} renderCardFooter={renderCardFooter} />

@@ -1,8 +1,6 @@
-import React, {useContext, useState} from 'react';
+import React from 'react';
 import {Header, Left, Right, Text, Body, Button, Icon} from 'native-base';
-import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
-import OpenDrawerButton from '../../navigation/OpenDrawerButton';
-import I18n from '../../localisation/I18n';
+import {StyleSheet} from 'react-native';
 
 const CustomHeader = ({children, onPress, title}) => {
   return (
@@ -28,7 +26,7 @@ const CustomHeader = ({children, onPress, title}) => {
       {!onPress && !children && title && (
         <Header>
           <Body>
-            <Text headerTitle>{title} </Text>
+            <Text headerTitle> {title} </Text>
           </Body>
         </Header>
       )}

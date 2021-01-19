@@ -64,10 +64,9 @@ export default class SignIn extends ASignIn {
   }
   showComponent(theme) {
     return (
-      <SafeAreaView>
+      <SafeAreaView style={{backgroundColor: '#fff'}}>
+        <CustomHeader title={I18n.t('sign_in_intro')} />
         <ScrollView>
-          <CustomHeader title={I18n.t('sign_in_intro')} />
-
           <Container style={styles.container}>
             <Content style={styles.content}>
               <Item rounded style={styles.input}>
