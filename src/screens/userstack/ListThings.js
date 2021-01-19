@@ -48,7 +48,7 @@ const ThingsScreen = ({navigation}) => {
         <Button
           iconLeft
           bordered
-          style={styles.buttonRightPadding}
+          style={styles.buttonEdit}
           onPress={() => navigation.navigate('Edit', props)}
           testID={TEST_IDS.THINGS.EDIT.BUTTON}>
           <Icon type="FontAwesome" name="edit" />
@@ -58,7 +58,7 @@ const ThingsScreen = ({navigation}) => {
           iconLeft
           bordered
           dark
-          style={styles.buttonBlack}
+          style={styles.buttonDelete}
           onPress={() => deleteThing(props.id)}
           testID={TEST_IDS.THINGS.DELETE.BUTTON}>
           <Icon type="FontAwesome" name="trash" />
@@ -116,10 +116,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
   },
-  buttonRightPadding: {
+  buttonEdit: {
     marginRight: 20,
   },
-  buttonBlack: {
+  buttonDelete: {
     color: variables.brandDark,
   },
 });

@@ -11,7 +11,7 @@ import * as mutations from '../../graphql/mutations';
  *
  * @param {*} param0
  */
-const EditScreen = ({route: {params}}) => {
+const EditScreen = ({route: {params}, navigation}) => {
   const [current, setCurrent] = useState(params);
   const [title, setTitle] = useState(params.title);
   const [description, setDescription] = useState(params.description);
@@ -40,7 +40,7 @@ const EditScreen = ({route: {params}}) => {
     const thing = get(update, 'data.updateThing');
     setCurrent(thing);
     setLoading(false);
-
+    navigation.goBack();
     /**
      * Pop a toast to show it worked
      */
