@@ -17,6 +17,7 @@ import CardList from '../../components/card/CardList';
 import {TEST_IDS} from '../../constants';
 import useThings from '../../hooks/useThings';
 import I18n from '../../localisation/I18n';
+import CustomHeader from '../../components/customHeader/CustomHeader';
 
 const FeedScreen = ({navigation}) => {
   const renderCardFooter = (props) => {
@@ -38,11 +39,7 @@ const FeedScreen = ({navigation}) => {
     <>
       <SafeAreaView>
         <ScrollView>
-          <Header>
-            <Body>
-              <Text headerTitle>{I18n.t('feed')}</Text>
-            </Body>
-          </Header>
+          <CustomHeader title={I18n.t('feed')} />
           <Container style={styles.container}>
             <Content style={styles.content}>
               <CardList {...listProps} renderCardFooter={renderCardFooter} />

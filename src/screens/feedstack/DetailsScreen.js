@@ -13,28 +13,16 @@ import {
 } from 'native-base';
 import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import I18n from '../../localisation/I18n';
+import CustomHeader from '../../components/customHeader/CustomHeader';
 
 const DetailsScreen = ({route: {params}, navigation}) => {
   return (
     <SafeAreaView>
       <ScrollView>
-        <Header>
-          <Left>
-            <Button transparent onPress={() => navigation.goBack('Feed')}>
-              <Icon
-                type="MaterialIcons"
-                style={{fontSize: 28, color: '#AF52DE'}}
-                name="arrow-back"
-              />
-            </Button>
-          </Left>
-
-          <Body>
-            <Text headerTitle>{I18n.t('details')}</Text>
-          </Body>
-          <Right />
-        </Header>
-
+        <CustomHeader
+          onPress={() => navigation.goBack('Feed')}
+          title={I18n.t('details')}
+        />
         <Container style={styles.container}>
           <Content style={styles.content}>
             <Card {...params} renderFooter={null} />

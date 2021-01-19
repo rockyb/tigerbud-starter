@@ -17,15 +17,16 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
 import styles from './styles';
+import CustomHeader from '../customHeader/CustomHeader';
+
 export default class ForgotPassword extends AForgotPassword {
   showComponent(theme) {
     return (
       <SafeAreaView>
-        <Header testID={TEST_IDS.AUTH.FORGOT_PASSWORD_TEXT}>
-          <Body>
-            <Text headerTitle>{I18n.t('reset_password')}</Text>
-          </Body>
-        </Header>
+        <CustomHeader
+          testID={TEST_IDS.AUTH.FORGOT_PASSWORD_TEXT}
+          title={I18n.t('reset_password')}
+        />
         <Container style={styles.container}>
           {!this.state.delivery && this.forgotBody(theme)}
           {this.state.delivery && this.submitBody(theme)}

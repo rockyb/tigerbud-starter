@@ -17,6 +17,7 @@ import {TEST_IDS} from '../../constants/index';
 import {SafeAreaView, ScrollView} from 'react-native';
 //node_modules/aws-amplify-react-native/src/Auth/SignIn.tsx:1
 import styles from './styles';
+import CustomHeader from '../customHeader/CustomHeader';
 export default class SignIn extends ASignIn {
   isValid() {
     if (!this.state.username || !this.state.password) {
@@ -65,11 +66,8 @@ export default class SignIn extends ASignIn {
     return (
       <SafeAreaView>
         <ScrollView>
-          <Header>
-            <Body>
-              <Text headerTitle>{I18n.t('sign_in_intro')}</Text>
-            </Body>
-          </Header>
+          <CustomHeader title={I18n.t('sign_in_intro')} />
+
           <Container style={styles.container}>
             <Content style={styles.content}>
               <Item rounded style={styles.input}>

@@ -17,6 +17,8 @@ import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
 import styles from './styles';
+import CustomHeader from '../customHeader/CustomHeader';
+
 export default class SignUp extends ASignUp {
   filterSignUpFields = (signupFields) => {
     return signupFields.key !== 'phone_number' && signupFields.key !== 'email';
@@ -41,11 +43,11 @@ export default class SignUp extends ASignUp {
     return (
       <SafeAreaView>
         <ScrollView>
-          <Header theme={theme} testID={TEST_IDS.AUTH.SIGN_UP_TEXT}>
-            <Body>
-              <Text headerTitle>{I18n.t('create_account')}</Text>
-            </Body>
-          </Header>
+          <CustomHeader
+            testID={TEST_IDS.AUTH.SIGN_UP_TEXT}
+            title={I18n.t('create_account')}
+          />
+
           <Container style={styles.container}>
             <Content style={styles.content}>
               {this.signUpFields

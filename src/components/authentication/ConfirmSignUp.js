@@ -17,19 +17,18 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
 import styles from './styles';
+import CustomHeader from '../customHeader/CustomHeader';
+
 export default class ConfirmSignUp extends AConfirmSignUp {
   showComponent(theme) {
     const username = this.getUsernameFromInput();
     return (
       <SafeAreaView>
-        <Header
-          headerTitle
-          theme={theme}
-          testID={TEST_IDS.AUTH.CONFIRM_SIGN_UP_TEXT}>
-          <Body>
-            <Text headerTitle>{I18n.t('confirm_sign_up')}</Text>
-          </Body>
-        </Header>
+        <CustomHeader
+          testID={TEST_IDS.AUTH.CONFIRM_SIGN_UP_TEXT}
+          title={I18n.t('confirm_sign_up')}
+        />
+
         {/*Adding a fast inline css just to "see a basic layout, this will be removed" */}
         <Container style={styles.container}>
           <Content style={styles.content}>
