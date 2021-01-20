@@ -8,8 +8,8 @@
     "start": "yarn setup-check && react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "storybook": "start-storybook -p 7007 --no-dll",
-    "build-storybook": "build-storybook --no-dll",
+    "storybook": "start-storybook -p 7007 ",
+    "build-storybook": "build-storybook ",
     "setup-check": "node scripts/setup-check.js",
     "postinstall": "husky install && sed -i '' '/s.resources/d' ./node_modules/react-native-vector-icons/RNVectorIcons.podspec"
   },
