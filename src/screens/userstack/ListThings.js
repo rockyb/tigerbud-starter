@@ -66,7 +66,7 @@ const ThingsScreen = ({navigation}) => {
           style={styles.buttonEdit}
           onPress={() => navigation.navigate('Edit', props)}
           testID={TEST_IDS.THINGS.EDIT.BUTTON}>
-          <Icon type="FontAwesome" name="edit" />
+          <Icon type="MaterialIcons" name="edit" />
           <Text>{I18n.t('edit')}</Text>
         </Button>
         <Button
@@ -76,7 +76,7 @@ const ThingsScreen = ({navigation}) => {
           style={styles.buttonDelete}
           onPress={() => deleteThing(props.id)}
           testID={TEST_IDS.THINGS.DELETE.BUTTON}>
-          <Icon type="FontAwesome" name="trash" />
+          <Icon type="MaterialIcons" name="delete" />
           <Text>{I18n.t('delete')}</Text>
         </Button>
       </View>

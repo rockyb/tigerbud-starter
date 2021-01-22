@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   logo: {
-    marginTop: deviceHeight / 10,
+    marginTop: deviceHeight / 20,
     height: deviceHeight / 5,
     resizeMode: 'contain',
     alignSelf: 'center',
@@ -75,6 +75,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     minWidth: '90%',
     alignSelf: 'center',
-    marginTop: 150,
+    marginTop: deviceHeight / 10,
   },
 });
