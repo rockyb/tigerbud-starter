@@ -1,7 +1,6 @@
 import React from 'react';
 import {Header, Left, Right, Text, Body, Button, Icon} from 'native-base';
-import {StyleSheet} from 'react-native';
-
+import PropTypes from 'prop-types';
 const CustomHeader = ({children, onPress, title}) => {
   return (
     <>
@@ -61,6 +60,10 @@ const CustomHeader = ({children, onPress, title}) => {
   );
 };
 
-const styles = StyleSheet.create({});
+CustomHeader.propTypes = {
+  onPress: PropTypes.func,
+  title: PropTypes.string,
+  children: PropTypes.any,
+};
 
 export default CustomHeader;

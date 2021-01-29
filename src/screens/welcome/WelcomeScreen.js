@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import {Button, Container, Content, H1, Text} from 'native-base';
 import React from 'react';
 import {Dimensions, Image, StyleSheet} from 'react-native';

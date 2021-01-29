@@ -1,8 +1,6 @@
 /* eslint-disable react/display-name */
 import React from 'react';
 import {SafeAreaView, Dimensions, StyleSheet} from 'react-native';
-
-// import SafeAreaView from 'react-native-safe-area-view';
 import StoryBook from '../../../storybook';
 
 const deviceHeight = Dimensions.get('window').height;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet, SafeAreaView} from 'react-native';
+import {FlatList, StyleSheet} from 'react-native';
 import Card from './Card';
 import {Button, Text, View} from 'native-base';
 import I18n from '../../localisation/I18n';

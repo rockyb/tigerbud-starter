@@ -1,7 +1,6 @@
 import React from 'react';
-import {Button, Container, Content, H1, Text, View} from 'native-base';
+import {Button, Container, Content, H1, Text} from 'native-base';
 import I18n from '../../localisation/I18n';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import {StyleSheet} from 'react-native';
 
 const Boundary = ({error, resetError}) => {
@@ -50,7 +49,5 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 });
-
-//marginVertical: 10, lineHeight: 23, fontWeight: '500'
 
 export default Boundary;
