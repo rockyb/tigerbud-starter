@@ -4,7 +4,6 @@ import {Button, Form, Input, Item, Text, Textarea, Icon} from 'native-base';
 import I18n from '../../localisation/I18n';
 import {Image, StyleSheet} from 'react-native';
 import {TEST_IDS} from '../../constants';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
 const ThingForm = ({
   image,
@@ -61,6 +60,14 @@ const ThingForm = ({
       </Button>
     </Form>
   );
+};
+
+ThingForm.PropTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  buttonDisabled: PropTypes.bool,
+  buttonHandler: PropTypes.bool,
 };
 
 const styles = StyleSheet.create({

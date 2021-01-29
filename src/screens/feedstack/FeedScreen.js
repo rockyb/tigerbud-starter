@@ -1,7 +1,6 @@
-/* eslint-disable react/display-name */
 import React from 'react';
 import {Button, Content, Text, Container} from 'native-base';
-import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import CardList from '../../components/card/CardList';
 import {TEST_IDS} from '../../constants';
 import useThings from '../../hooks/useThings';
@@ -25,28 +24,18 @@ const FeedScreen = ({navigation}) => {
     sortDirection: 'DESC',
   });
   return (
-    <>
-      <SafeAreaView style={{backgroundColor: '#fff'}}>
-        <CustomHeader title={I18n.t('feed')} />
-        <ScrollView>
-          <Container style={styles.container}>
-            <Content style={styles.content}>
-              <CardList {...listProps} renderCardFooter={renderCardFooter} />
-            </Content>
-          </Container>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <Container>
+      <CustomHeader title={I18n.t('feed')} />
+      <Container>
+        <Content style={styles.content}>
+          <CardList {...listProps} renderCardFooter={renderCardFooter} />
+        </Content>
+      </Container>
+    </Container>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flex: 1,
-    display: 'flex',
-  },
   content: {
     display: 'flex',
     flexDirection: 'column',
@@ -54,7 +43,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 20,
     padding: 10,
-    minWidth: 410,
   },
 });
 

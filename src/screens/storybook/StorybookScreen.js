@@ -1,21 +1,7 @@
 /* eslint-disable react/display-name */
-import {
-  Container,
-  Header,
-  Title,
-  Content,
-  Footer,
-  FooterTab,
-  Button,
-  Left,
-  Right,
-  Body,
-  Icon,
-  Text,
-} from 'native-base';
-import {SafeAreaView, Dimensions, View, StyleSheet} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import React from 'react';
+import {SafeAreaView, Dimensions, StyleSheet} from 'react-native';
+
 // import SafeAreaView from 'react-native-safe-area-view';
 import StoryBook from '../../../storybook';
 

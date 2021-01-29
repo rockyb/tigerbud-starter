@@ -1,17 +1,5 @@
 import get from 'lodash-es/get';
-import {
-  Button,
-  Text,
-  Content,
-  Container,
-  Toast,
-  View,
-  Icon,
-  Header,
-  Right,
-  Left,
-  Body,
-} from 'native-base';
+import {Button, Text, Content, Container, Toast, View, Icon} from 'native-base';
 import React, {useContext} from 'react';
 import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import CardList from '../../components/card/CardList';
@@ -98,29 +86,18 @@ const ThingsScreen = ({navigation}) => {
   });
 
   return (
-    <SafeAreaView style={{backgroundColor: '#fff'}}>
+    <Container>
       <CustomHeader title={I18n.t('your_things')}>
         <OpenDrawerButton navigation={navigation} />
       </CustomHeader>
-
-      <ScrollView>
-        <Container style={styles.container}>
-          <Content style={styles.content}>
-            <CardList {...listProps} renderCardFooter={renderCardFooter} />
-          </Content>
-        </Container>
-      </ScrollView>
-    </SafeAreaView>
+      <Content style={styles.content}>
+        <CardList {...listProps} renderCardFooter={renderCardFooter} />
+      </Content>
+    </Container>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flex: 1,
-    display: 'flex',
-  },
   content: {
     display: 'flex',
     flexDirection: 'column',

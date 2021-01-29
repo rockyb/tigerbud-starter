@@ -1,18 +1,7 @@
 import {API} from 'aws-amplify';
 import get from 'lodash-es/get';
-import {
-  Content,
-  Container,
-  Toast,
-  Header,
-  Left,
-  Right,
-  Text,
-  Body,
-  Button,
-  Icon,
-} from 'native-base';
-import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import {Content, Container, Toast} from 'native-base';
+import {StyleSheet} from 'react-native';
 import React, {useContext, useState} from 'react';
 import ThingForm from '../../components/things/ThingForm';
 import AuthContext from '../../contexts/AuthContext';
@@ -60,43 +49,33 @@ const CreateThing = ({navigation}) => {
   };
 
   /**
-   * Save button should be disabled if the title or description are falsey (ie the inputs are empty)
+   * Save button should be disabled if the title or description are false y (ie the inputs are empty)
    */
   const isDisabled = !title || !description;
 
   return (
-    <SafeAreaView style={{backgroundColor: '#fff'}}>
+    <Container style={{backgroundColor: '#fff'}}>
       <CustomHeader
         title={I18n.t('create_new_post')}
         onPress={() => navigation.goBack('Feed')}>
         <OpenDrawerButton navigation={navigation} />
       </CustomHeader>
-      <ScrollView>
-        <Container style={styles.container}>
-          <Content style={styles.content}>
-            <ThingForm
-              image={null}
-              title={title}
-              setTitle={setTitle}
-              description={description}
-              setDescription={setDescription}
-              buttonDisabled={isDisabled}
-              buttonHandler={createThing}
-            />
-          </Content>
-        </Container>
-      </ScrollView>
-    </SafeAreaView>
+      <Content style={styles.content}>
+        <ThingForm
+          image={null}
+          title={title}
+          setTitle={setTitle}
+          description={description}
+          setDescription={setDescription}
+          buttonDisabled={isDisabled}
+          buttonHandler={createThing}
+        />
+      </Content>
+    </Container>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flex: 1,
-    display: 'flex',
-  },
   content: {
     display: 'flex',
     flexDirection: 'column',
@@ -104,7 +83,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 20,
     padding: 10,
-    minWidth: 410,
   },
 });
 

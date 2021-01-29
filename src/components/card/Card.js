@@ -1,4 +1,6 @@
-import {Body, Card as NBCard, CardItem, Text, Title, H2} from 'native-base';
+import {isNull} from 'lodash';
+import {Body, Card as NBCard, CardItem, Text, H2} from 'native-base';
+import PropTypes from 'prop-types';
 import React from 'react';
 import {Image, StyleSheet} from 'react-native';
 import {TEST_IDS} from '../../constants';
@@ -26,6 +28,13 @@ const Card = ({navigate, ...props}) => {
       </CardItem>
     </NBCard>
   );
+};
+
+Card.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  renderFooter: PropTypes.func,
 };
 
 const styles = StyleSheet.create({
