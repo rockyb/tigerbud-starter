@@ -1,0 +1,9 @@
+{
+  "name": "@tigerbud/documentation",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "lerna-wizard": "^1.1.1"
+  }
+}
