@@ -8,7 +8,6 @@ import StorybookScreen from '../screens/storybook/StorybookScreen';
 import WelcomeScreen from '../screens/welcome/WelcomeScreen';
 import AuthContainer from './AuthContainer';
 import {FeedStack} from './StackNavigation';
-//import {Icon} from 'native-base';
 import {Icon} from '../components/icon/Icon';
 import variables from '../../native-base-theme/variables/tigerbud';
 

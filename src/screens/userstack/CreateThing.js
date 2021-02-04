@@ -54,7 +54,7 @@ const CreateThing = ({navigation}) => {
   const isDisabled = !title || !description;
 
   return (
-    <Container style={{backgroundColor: '#fff'}}>
+    <Container>
       <CustomHeader
         title={I18n.t('create_new_post')}
         onPress={() => navigation.goBack('Feed')}>

@@ -55,7 +55,7 @@ const EditScreen = ({route: {params}, navigation}) => {
 
   /**
    * Save button should be disabled if the title & description are unchanged
-   * or, if the title or description are falsey (ie the inputs are empty)
+   * or, if the title or description are false  (ie the inputs are empty)
    */
   const isDisabled =
     (title === current.title && description === current.description) ||

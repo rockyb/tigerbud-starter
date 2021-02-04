@@ -1,7 +1,6 @@
-import {isNull} from 'lodash';
-import {Body, Card as NBCard, CardItem, Text, H2} from 'native-base';
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
+import {Body, Card as NBCard, CardItem, Text, H2} from 'native-base';
 import {Image, StyleSheet} from 'react-native';
 import {TEST_IDS} from '../../constants';
 
@@ -41,7 +40,12 @@ const styles = StyleSheet.create({
   card: {
     marginBottom: 40,
   },
-  image: {height: 200, width: null, flex: 1, resizeMode: 'cover'},
+  image: {
+    height: 200,
+    width: null,
+    flex: 1,
+    resizeMode: 'cover',
+  },
   title: {
     fontSize: 28,
   },

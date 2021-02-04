@@ -5,7 +5,7 @@ import {SafeAreaView, ScrollView} from 'react-native';
 //node_modules/aws-amplify-react-native/src/Auth/SignUp.tsx:1
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
-import styles from './styles';
+import {styles} from './styles';
 import CustomHeader from '../customHeader/CustomHeader';
 
 export default class SignUp extends ASignUp {
@@ -30,70 +30,65 @@ export default class SignUp extends ASignUp {
     }
 
     return (
-      <SafeAreaView style={{backgroundColor: '#fff'}}>
+      <Container>
         <CustomHeader
           testID={TEST_IDS.AUTH.SIGN_UP_TEXT}
           title={I18n.t('create_account')}
         />
-        <ScrollView>
-          <Container style={styles.container}>
-            <Content style={styles.content}>
-              {this.signUpFields
-                .filter(this.filterSignUpFields)
-                .map((field) => {
-                  return (
-                    <Item key={field.key} rounded style={styles.input}>
-                      <Input
-                        onChangeText={(text) => {
-                          const stateObj = this.state;
-                          stateObj[field.key] = text;
-                          this.setState(stateObj);
-                        }}
-                        label={I18n.t(field.label)}
-                        placeholder={field.placeholder}
-                        testID={field.testID}
-                        required={field.required}
-                        secureTextEntry={field.type === 'password'}
-                      />
-                    </Item>
-                  );
-                })}
-              <Text errorMessage style={styles.errorMessage} theme={theme}>
-                {this.state.error}
-              </Text>
-              <View style={styles.sectionButtonsSignUp}>
-                <Button
-                  small
-                  transparent
-                  theme={theme}
-                  style={styles.buttonConfirmCode}
-                  onPress={() => this.changeState('confirmSignUp')}
-                  testID={TEST_IDS.AUTH.CONFIRM_A_CODE_BUTTON}>
-                  <Text>{I18n.t('confirm_code')}</Text>
-                </Button>
+        <Content style={styles.content}>
+          {this.signUpFields.filter(this.filterSignUpFields).map((field) => {
+            return (
+              <Item key={field.key} rounded style={styles.input}>
+                <Input
+                  onChangeText={(text) => {
+                    const stateObj = this.state;
+                    stateObj[field.key] = text;
+                    this.setState(stateObj);
+                  }}
+                  label={I18n.t(field.label)}
+                  placeholder={field.placeholder}
+                  testID={field.testID}
+                  required={field.required}
+                  secureTextEntry={field.type === 'password'}
+                  autoCapitalize="none"
+                />
+              </Item>
+            );
+          })}
+          <Text errorMessage style={styles.errorMessage} theme={theme}>
+            {this.state.error}
+          </Text>
+          <View style={styles.sectionButtonsSignUp}>
+            <Button
+              small
+              transparent
+              theme={theme}
+              style={styles.buttonConfirmCode}
+              onPress={() => this.changeState('confirmSignUp')}
+              testID={TEST_IDS.AUTH.CONFIRM_A_CODE_BUTTON}>
+              <Text>{I18n.t('confirm_code')}</Text>
+            </Button>
 
-                <Button
-                  small
-                  transparent
-                  style={styles.buttonSignIn}
-                  theme={theme}
-                  onPress={() => this.changeState('signIn')}
-                  testID={TEST_IDS.AUTH.SIGN_IN_BUTTON}>
-                  <Text>{I18n.t('sign_in')}</Text>
-                </Button>
-              </View>
-              <Button
-                style={styles.button}
-                text={I18n.t('sign_up')}
-                onPress={this.signUp}
-                disabled={!this.isValid()}
-                testID={TEST_IDS.AUTH.SIGN_UP_BUTTON}>
-                <Text>{I18n.t('sign_up')}</Text>
-              </Button>
-            </Content>
-          </Container>
-        </ScrollView>
-      </SafeAreaView>
+            <Button
+              small
+              transparent
+              style={styles.buttonSignIn}
+              theme={theme}
+              onPress={() => this.changeState('signIn')}
+              testID={TEST_IDS.AUTH.SIGN_IN_BUTTON}>
+              <Text>{I18n.t('sign_in')}</Text>
+            </Button>
+          </View>
+          <Button
+            style={styles.button}
+            text={I18n.t('sign_up')}
+            onPress={this.signUp}
+            disabled={!this.isValid()}
+            testID={TEST_IDS.AUTH.SIGN_UP_BUTTON}>
+            <Text>{I18n.t('sign_up')}</Text>
+          </Button>
+        </Content>
+      </Container>
     );
   }
 }

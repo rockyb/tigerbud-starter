@@ -1,7 +1,7 @@
 import get from 'lodash-es/get';
 import {Button, Text, Content, Container, Toast, View, Icon} from 'native-base';
 import React, {useContext} from 'react';
-import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import {StyleSheet} from 'react-native';
 import CardList from '../../components/card/CardList';
 import {TEST_IDS} from '../../constants';
 import AuthContext from '../../contexts/AuthContext';

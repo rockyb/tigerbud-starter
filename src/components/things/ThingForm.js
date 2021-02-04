@@ -52,8 +52,8 @@ const ThingForm = ({
         disabled={buttonDisabled}
         testID={TEST_IDS.THINGS.EDIT.SAVE}>
         <Icon
-          type="Ionicons"
-          name="save-outline"
+          type="MaterialIcons"
+          name="save"
           style={{color: buttonDisabled ? '#b5b5b5' : '#AF52DE'}}
         />
         <Text>{I18n.t('save_thing')}</Text>

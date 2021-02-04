@@ -1,38 +1,23 @@
 import React from 'react';
 import {ForgotPassword as AForgotPassword} from 'aws-amplify-react-native';
-import {
-  Text,
-  View,
-  Header,
-  Form,
-  Item,
-  Input,
-  Button,
-  Body,
-  Container,
-  Content,
-} from 'native-base';
-import {SafeAreaView} from 'react-native';
+import {Text, View, Item, Input, Button, Container, Content} from 'native-base';
 //node_modules/aws-amplify-react-native/src/Auth/ForgotPassword.tsx:1
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
-import styles from './styles';
+import {styles} from './styles';
 import CustomHeader from '../customHeader/CustomHeader';
 
 export default class ForgotPassword extends AForgotPassword {
   showComponent(theme) {
     return (
-      <SafeAreaView style={{backgroundColor: '#fff'}}>
+      <Container>
         <CustomHeader
           testID={TEST_IDS.AUTH.FORGOT_PASSWORD_TEXT}
           title={I18n.t('reset_password')}
         />
-
-        <Container style={styles.container}>
-          {!this.state.delivery && this.forgotBody(theme)}
-          {this.state.delivery && this.submitBody(theme)}
-        </Container>
-      </SafeAreaView>
+        {!this.state.delivery && this.forgotBody(theme)}
+        {this.state.delivery && this.submitBody(theme)}
+      </Container>
     );
   }
 
@@ -70,7 +55,6 @@ export default class ForgotPassword extends AForgotPassword {
   }
 
   renderUsernameField(theme) {
-    const value = this.getUsernameFromInput();
     //Here we trick the username as "Email"
     return (
       <Input

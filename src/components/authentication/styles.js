@@ -1,13 +1,7 @@
-import React from 'react';
 import {StyleSheet} from 'react-native';
+import React from 'react';
 
-export default styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flex: 1,
-    display: 'flex',
-  },
+export const styles = StyleSheet.create({
   content: {
     display: 'flex',
     flexDirection: 'column',
@@ -42,7 +36,6 @@ export default styles = StyleSheet.create({
     alignSelf: 'flex-end',
     marginRight: -10,
   },
-  //forgotPWD
   buttonBackSignIn: {
     display: 'flex',
     justifyContent: 'flex-end',
@@ -50,17 +43,6 @@ export default styles = StyleSheet.create({
     alignSelf: 'center',
     marginRight: -30,
   },
-  //ConfirmSignUp
-  buttonBackSignIn: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    width: '100%',
-    alignSelf: 'center',
-    paddingTop: 0,
-    marginRight: -30,
-    marginTop: -12,
-  },
-
   sectionButtons: {
     flexDirection: 'row',
     display: 'flex',
