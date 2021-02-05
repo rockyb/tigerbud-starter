@@ -14,7 +14,7 @@
     "postinstall": "husky install && sed -i '' '/s.resources/d' ./node_modules/react-native-vector-icons/RNVectorIcons.podspec"
   },
   "dependencies": {
-    "@react-native-community/async-storage": "^1.12.1",
+    "@react-native-async-storage/async-storage": "^1.13.4",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-native-community/netinfo": "4.7.0",
     "@react-navigation/bottom-tabs": "^5.11.1",
