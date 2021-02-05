@@ -11,7 +11,7 @@ const dataArray = [
   {title: 'Third Element', content: 'Lorem ipsum dolor sit amet'},
 ];
 
-storiesOf('Accordion')
+storiesOf('Accordion', module)
   .addDecorator(withKnobs)
   .add(
     'Accordion',

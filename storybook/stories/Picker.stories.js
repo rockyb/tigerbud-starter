@@ -1,9 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import { Container, Header, Icon, Picker, Form, Text } from 'native-base';
-import { withKnobs } from '@storybook/addon-knobs';
+import {storiesOf} from '@storybook/react-native';
+import {Container, Header, Icon, Picker, Form, Text} from 'native-base';
+import {withKnobs} from '@storybook/addon-knobs';
 
-storiesOf('Picker')
+storiesOf('Picker', module)
   .addDecorator(withKnobs)
   .add(
     'Picker',
@@ -17,9 +17,8 @@ storiesOf('Picker')
             mode="dropdown"
             iosHeader="Select your SIM"
             iosIcon={<Icon name="arrow-down" />}
-            style={{ width: undefined }}
-            selectedValue="ATM Card"
-          >
+            style={{width: undefined}}
+            selectedValue="ATM Card">
             <Picker.Item label="Wallet" value="key0" />
             <Picker.Item label="ATM Card" value="key1" />
             <Picker.Item label="Debit Card" value="key2" />
@@ -30,6 +29,6 @@ storiesOf('Picker')
       </Container>
     ),
     {
-      notes: ' Note: ...'
-    }
+      notes: ' Note: ...',
+    },
   );

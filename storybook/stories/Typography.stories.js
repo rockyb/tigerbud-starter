@@ -1,19 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import {
-  Container,
-  Header,
-  Content,
-  H1,
-  H2,
-  H3,
-  Text,
-  Title
-} from 'native-base';
+import {storiesOf} from '@storybook/react-native';
+import {Container, Header, Content, H1, H2, H3, Text, Title} from 'native-base';
 
-import { withKnobs } from '@storybook/addon-knobs';
+import {withKnobs} from '@storybook/addon-knobs';
 
-storiesOf('Typografy')
+storiesOf('Typografy', module)
   .addDecorator(withKnobs)
   .add(
     'Typografy',
@@ -31,6 +22,6 @@ storiesOf('Typografy')
       </Container>
     ),
     {
-      notes: ' Note: ...'
-    }
+      notes: ' Note: ...',
+    },
   );

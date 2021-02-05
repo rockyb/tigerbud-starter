@@ -4,7 +4,7 @@ import {loadStories} from './storyLoader';
 import './rn-addons';
 
 // import stories
-// use loadStories when run yanr storybook they creat the storyLoader.js file with the imports
+// use loadStories when run yarn storybook they creat the storyLoader.js file with the imports
 configure(() => {
   loadStories();
 }, module);

@@ -1,9 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import { Container, Header, Content, DatePicker, Text } from 'native-base';
-import { withKnobs } from '@storybook/addon-knobs';
+import {storiesOf} from '@storybook/react-native';
+import {Container, Header, Content, DatePicker, Text} from 'native-base';
+import {withKnobs} from '@storybook/addon-knobs';
 
-storiesOf('DataPicker')
+storiesOf('DataPicker', module)
   .addDecorator(withKnobs)
   .add(
     'DataPicker',
@@ -23,12 +23,12 @@ storiesOf('DataPicker')
             animationType={'fade'}
             androidMode={'default'}
             placeHolderText="Select date"
-            textStyle={{ color: 'green' }}
-            placeHolderTextStyle={{ color: '#d3d3d3' }}
+            textStyle={{color: 'green'}}
+            placeHolderTextStyle={{color: '#d3d3d3'}}
             disabled={false}
           />
         </Content>
       </Container>
     ),
-    { notes: ' Accordion setup notes...' }
+    {notes: ' Accordion setup notes...'},
   );

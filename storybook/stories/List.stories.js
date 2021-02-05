@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import {storiesOf} from '@storybook/react-native';
 import {
   Container,
   Header,
@@ -14,14 +14,13 @@ import {
   Right,
   Switch,
   Thumbnail,
-  Separator
+  Separator,
 } from 'native-base';
 
-import { withKnobs } from '@storybook/addon-knobs';
+import {withKnobs} from '@storybook/addon-knobs';
 const uri = 'https://facebook.github.io/react-native/docs/assets/favicon.png';
 
-storiesOf('List')
-  //.addDecorator(BufferView)
+storiesOf('List', module)
   .addDecorator(withKnobs)
   .add(
     'List',
@@ -34,7 +33,7 @@ storiesOf('List')
           <List>
             <ListItem icon>
               <Left>
-                <Button style={{ backgroundColor: '#FF9501' }}>
+                <Button style={{backgroundColor: '#FF9501'}}>
                   <Icon active name="airplane" />
                 </Button>
               </Left>
@@ -51,7 +50,7 @@ storiesOf('List')
 
             <ListItem icon>
               <Left>
-                <Button style={{ backgroundColor: '#007AFF' }}>
+                <Button style={{backgroundColor: '#007AFF'}}>
                   <Icon active name="wifi" />
                 </Button>
               </Left>
@@ -92,7 +91,7 @@ storiesOf('List')
 
             <ListItem avatar>
               <Left>
-                <Thumbnail source={{ uri: uri }} />
+                <Thumbnail source={{uri: uri}} />
               </Left>
               <Body>
                 <Text>Kumar Pratik</Text>
@@ -112,6 +111,6 @@ storiesOf('List')
       </Container>
     ),
     {
-      notes: ' Note: ...'
-    }
+      notes: ' Note: ...',
+    },
   );

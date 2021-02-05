@@ -1,10 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import { Container, Header, Content, Spinner, Text } from 'native-base';
+import {storiesOf} from '@storybook/react-native';
+import {Container, Header, Content, Spinner, Text} from 'native-base';
 
-import { withKnobs } from '@storybook/addon-knobs';
+import {withKnobs} from '@storybook/addon-knobs';
 
-storiesOf('Spinner')
+storiesOf('Spinner', module)
   .addDecorator(withKnobs)
   .add(
     'Spinner',
@@ -22,6 +22,6 @@ storiesOf('Spinner')
       </Container>
     ),
     {
-      notes: ' Note: ...'
-    }
+      notes: ' Note: ...',
+    },
   );

@@ -1,16 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import {
-  Container,
-  Content,
-  ListItem,
-  CheckBox,
-  Text,
-  Body
-} from 'native-base';
-import { withKnobs } from '@storybook/addon-knobs';
+import {storiesOf} from '@storybook/react-native';
+import {Container, Content, ListItem, CheckBox, Text, Body} from 'native-base';
+import {withKnobs} from '@storybook/addon-knobs';
 
-storiesOf('Checkbox')
+storiesOf('Checkbox', module)
   .addDecorator(withKnobs)
   .add(
     'Checkbox',
@@ -39,6 +32,6 @@ storiesOf('Checkbox')
       </Container>
     ),
     {
-      notes: '  notes...'
-    }
+      notes: '  notes...',
+    },
   );

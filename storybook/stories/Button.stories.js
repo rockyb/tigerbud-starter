@@ -14,7 +14,7 @@ const styles = {
   },
 };
 
-storiesOf('Button')
+storiesOf('Button', module)
   .addDecorator(BufferView)
   .addDecorator(withKnobs)
   .add(
