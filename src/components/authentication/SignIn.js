@@ -7,6 +7,7 @@ import {TEST_IDS} from '../../constants/index';
 //node_modules/aws-amplify-react-native/src/Auth/SignIn.tsx:1
 import {styles} from './styles';
 import CustomHeader from '../customHeader/CustomHeader';
+import CustomInputPassword from '../customInputPassword/CustomInputPassword';
 export default class SignIn extends ASignIn {
   isValid() {
     if (!this.state.username || !this.state.password) {
@@ -20,6 +21,7 @@ export default class SignIn extends ASignIn {
     if (usernameAttributes === 'email') {
       return (
         <Input
+          rounded
           onChangeText={(text) => this.setState({email: text})}
           label={I18n.t('email')}
           placeholder={I18n.t('enter_email')}
@@ -43,14 +45,16 @@ export default class SignIn extends ASignIn {
       );
     } else {
       return (
-        <Input
-          onChangeText={(text) => this.setState({username: text})}
-          label={I18n.t(this.getUsernameLabel())}
-          placeholder={I18n.t('enter_username')}
-          testID={TEST_IDS.AUTH.USERNAME_INPUT}
-          value={value}
-          autoCapitalize="none"
-        />
+        <>
+          <Input
+            onChangeText={(text) => this.setState({username: text})}
+            label={I18n.t(this.getUsernameLabel())}
+            placeholder={I18n.t('enter_username')}
+            testID={TEST_IDS.AUTH.USERNAME_INPUT}
+            value={value}
+            autoCapitalize="none"
+          />
+        </>
       );
     }
   }
@@ -58,17 +62,20 @@ export default class SignIn extends ASignIn {
     return (
       <Container>
         <CustomHeader title={I18n.t('sign_in_intro')} />
+
         <Content style={styles.content}>
           <Item rounded style={styles.input}>
             {this.renderUsernameField(theme)}
           </Item>
+          {/* There is a bug in fontFamily RN Input with secureTextEntry we stop use this once is solved */}
           <Item rounded>
-            <Input
+            <CustomInputPassword
               label={I18n.t('password')}
               placeholder={I18n.t('enter_password')}
               onChangeText={(text) => this.setState({password: text})}
               secureTextEntry={true}
               testID={TEST_IDS.AUTH.PASSWORD_INPUT}
+              autoCapitalize="none"
             />
           </Item>
           <View>
@@ -76,7 +83,6 @@ export default class SignIn extends ASignIn {
               {this.state.error}
             </Text>
           </View>
-
           <View style={styles.sectionButtons}>
             <Button
               small

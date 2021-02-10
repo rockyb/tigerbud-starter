@@ -233,7 +233,7 @@ export default {
     return this.textColor;
   },
   get inputColorPlaceholder() {
-    return '#575757';
+    return '#999999';
   },
 
   // Line Height

@@ -1,5 +1,6 @@
-import {StyleSheet} from 'react-native';
-import React from 'react';
+import {StyleSheet, Dimensions} from 'react-native';
+
+const deviceWidth = Dimensions.get('window').width;
 
 export const styles = StyleSheet.create({
   content: {
@@ -7,13 +8,14 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
     alignContent: 'center',
     flex: 1,
-    paddingTop: 46,
     padding: 10,
-    minWidth: 410,
+    minWidth: deviceWidth,
   },
   input: {
     marginBottom: 38,
+    fontWeight: '400',
   },
+
   button: {
     display: 'flex',
     justifyContent: 'center',

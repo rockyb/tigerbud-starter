@@ -26,11 +26,9 @@ const FeedScreen = ({navigation}) => {
   return (
     <Container>
       <CustomHeader title={I18n.t('feed')} />
-      <Container>
-        <Content style={styles.content}>
-          <CardList {...listProps} renderCardFooter={renderCardFooter} />
-        </Content>
-      </Container>
+      <Content style={styles.content}>
+        <CardList {...listProps} renderCardFooter={renderCardFooter} />
+      </Content>
     </Container>
   );
 };

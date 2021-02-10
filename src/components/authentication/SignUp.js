@@ -7,6 +7,7 @@ import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
 import {styles} from './styles';
 import CustomHeader from '../customHeader/CustomHeader';
+import CustomInputPassword from '../customInputPassword/CustomInputPassword';
 
 export default class SignUp extends ASignUp {
   filterSignUpFields = (signupFields) => {
@@ -39,7 +40,7 @@ export default class SignUp extends ASignUp {
           {this.signUpFields.filter(this.filterSignUpFields).map((field) => {
             return (
               <Item key={field.key} rounded style={styles.input}>
-                <Input
+                <CustomInputPassword
                   onChangeText={(text) => {
                     const stateObj = this.state;
                     stateObj[field.key] = text;
