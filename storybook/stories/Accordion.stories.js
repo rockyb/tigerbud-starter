@@ -21,14 +21,14 @@ storiesOf('Accordion', module)
           <Text>Accordion Example</Text>
         </Header>
         <Content padder>
-          {/* <Accordion
+          <Accordion
             dataArray={dataArray}
             expanded={0}
             icon="add"
             expandedIcon="remove"
-            headerStyle={{ backgroundColor: '#b7daf8' }}
-            contentStyle={{ backgroundColor: '#ddecf8' }}
-          /> */}
+            headerStyle={{backgroundColor: '#b7daf8'}}
+            contentStyle={{backgroundColor: '#ddecf8'}}
+          />
         </Content>
       </Container>
     ),

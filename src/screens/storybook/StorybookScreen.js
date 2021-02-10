@@ -8,7 +8,7 @@ const deviceHeight = Dimensions.get('window').height;
 const StorybookScreen = (props) => {
   const styles = StyleSheet.create({
     container: {
-      height: deviceHeight - 80,
+      height: Platform.OS === 'android' ? deviceHeight - 50 : deviceHeight - 80,
     },
   });
 
@@ -17,12 +17,6 @@ const StorybookScreen = (props) => {
       <StoryBook {...props} />
     </SafeAreaView>
   );
-};
-
-StorybookScreen.navigationOptions = () => {
-  return {
-    headerShown: false,
-  };
 };
 
 export default StorybookScreen;
