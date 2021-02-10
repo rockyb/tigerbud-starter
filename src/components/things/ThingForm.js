@@ -62,12 +62,12 @@ const ThingForm = ({
   );
 };
 
-ThingForm.PropTypes = {
+ThingForm.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
   buttonDisabled: PropTypes.bool,
-  buttonHandler: PropTypes.bool,
+  buttonHandler: PropTypes.func,
 };
 
 const styles = StyleSheet.create({

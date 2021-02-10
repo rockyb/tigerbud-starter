@@ -10,6 +10,7 @@ import OpenDrawerButton from './OpenDrawerButton';
 const optionsScreen = {
   headerMode: 'none',
   headerShown: false,
+  animationEnabled: false,
 };
 
 const User = createStackNavigator();
