@@ -1,9 +1,19 @@
 import React from 'react';
 import Card from '../../components/card/Card';
-import {Content, Container} from 'native-base';
+import {
+  Content,
+  Container,
+  Header,
+  Left,
+  Button,
+  Icon,
+  Body,
+  Text,
+} from 'native-base';
 import {StyleSheet} from 'react-native';
 import I18n from '../../localisation/I18n';
 import CustomHeader from '../../components/customHeader/CustomHeader';
+import {styles} from './styles';
 
 const DetailsScreen = ({route: {params}, navigation}) => {
   return (
@@ -19,16 +29,5 @@ const DetailsScreen = ({route: {params}, navigation}) => {
     </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignContent: 'center',
-    flex: 1,
-    paddingTop: 20,
-    padding: 10,
-  },
-});
 
 export default DetailsScreen;

@@ -13,22 +13,13 @@ export const styles = StyleSheet.create({
   },
   input: {
     marginBottom: 38,
-    fontWeight: '400',
   },
-
   button: {
     display: 'flex',
     justifyContent: 'center',
     width: '98%',
     alignSelf: 'center',
     marginTop: 24,
-  },
-  //SignUp
-  sectionButtonsSignUp: {
-    flexDirection: 'row',
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginTop: -38,
   },
   buttonConfirmCode: {
     marginLeft: -10,

@@ -16,7 +16,7 @@ export default (variables /* : * */ = variable) => {
       fontSize: variables.noteFontSize,
     },
     '.headerTitle': {
-      fontSize: variables.headerFontSize,
+      fontFamily: 'Poppins',
       color: '#AF52DE',
       fontWeight: '500',
     },

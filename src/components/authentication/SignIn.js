@@ -1,12 +1,22 @@
 // @ts-ignore
 import {SignIn as ASignIn} from 'aws-amplify-react-native';
-import {Text, View, Input, Button, Content, Container, Item} from 'native-base';
+import {
+  Text,
+  View,
+  Input,
+  Button,
+  Content,
+  Container,
+  Item,
+  Header,
+  Body,
+} from 'native-base';
+import {SafeAreaView, StyleSheet} from 'react-native';
 import React from 'react';
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
 //node_modules/aws-amplify-react-native/src/Auth/SignIn.tsx:1
 import {styles} from './styles';
-import CustomHeader from '../customHeader/CustomHeader';
 import CustomInputPassword from '../customInputPassword/CustomInputPassword';
 export default class SignIn extends ASignIn {
   isValid() {
@@ -60,8 +70,12 @@ export default class SignIn extends ASignIn {
   }
   showComponent(theme) {
     return (
-      <Container>
-        <CustomHeader title={I18n.t('sign_in_intro')} />
+      <SafeAreaView>
+        <Header noShadow>
+          <Body>
+            <Text headerTitle>{I18n.t('sign_in_intro')} </Text>
+          </Body>
+        </Header>
 
         <Content style={styles.content}>
           <Item rounded style={styles.input}>
@@ -110,7 +124,7 @@ export default class SignIn extends ASignIn {
             <Text>{I18n.t('sign_in')}</Text>
           </Button>
         </Content>
-      </Container>
+      </SafeAreaView>
     );
   }
 }

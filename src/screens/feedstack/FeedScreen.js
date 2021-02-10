@@ -1,12 +1,11 @@
 import React from 'react';
-import {Button, Content, Text, Container} from 'native-base';
-import {StyleSheet} from 'react-native';
+import {Button, Content, Text, Container, Header, Body} from 'native-base';
 import CardList from '../../components/card/CardList';
 import {TEST_IDS} from '../../constants';
 import useThings from '../../hooks/useThings';
 import I18n from '../../localisation/I18n';
+import {styles} from './styles';
 import CustomHeader from '../../components/customHeader/CustomHeader';
-
 const FeedScreen = ({navigation}) => {
   const renderCardFooter = (props) => {
     return (
@@ -32,16 +31,5 @@ const FeedScreen = ({navigation}) => {
     </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignContent: 'center',
-    flex: 1,
-    paddingTop: 20,
-    padding: 10,
-  },
-});
 
 export default FeedScreen;

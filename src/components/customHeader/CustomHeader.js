@@ -2,7 +2,6 @@ import React from 'react';
 import {Header, Left, Right, Text, Body, Button, Icon} from 'native-base';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import PropTypes from 'prop-types';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 const CustomHeader = ({children, onPress, title}) => {
   return (
@@ -77,8 +76,6 @@ const styles = StyleSheet.create({
     color: '#AF52DE',
   },
   droidSafeArea: {
-    borderBottomColor: Platform.OS === 'android' ? '#d3d3d3' : null,
-    borderBottomWidth: Platform.OS === 'android' ? 1 : 0,
     paddingTop: Platform.OS === 'android' ? 20 : 0,
   },
 });

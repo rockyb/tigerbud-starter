@@ -45,7 +45,6 @@ export default (variables /* : * */ = variable) => {
     '.transparent': {
       backgroundColor: 'transparent',
       borderBottomColor: 'transparent',
-      borderBottomColor: variables.toolbarDefaultBorder,
       elevation: 0,
       shadowColor: null,
       shadowOffset: null,
@@ -387,18 +386,14 @@ export default (variables /* : * */ = variable) => {
     },
     backgroundColor: 'transparent',
     flexDirection: 'row',
-    // paddingHorizontal: 10,
+    paddingHorizontal: 10,
     paddingLeft:
       platform === PLATFORM.IOS && variables.platformStyle !== PLATFORM.MATERIAL
         ? 6
         : 10,
     paddingRight: 10,
     justifyContent: 'center',
-    // paddingTop: platform === PLATFORM.IOS ? 18 : 0,
-    borderBottomWidth:
-      platform === PLATFORM.IOS
-        ? 1 / PixelRatio.getPixelSizeForLayoutSize(1)
-        : 0,
+    borderBottomWidth: 1 / PixelRatio.getPixelSizeForLayoutSize(1),
     borderBottomColor: variables.toolbarDefaultBorder,
     height:
       variables.platform === PLATFORM.IOS &&

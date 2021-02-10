@@ -14,9 +14,7 @@ const CustomInputPassword = ({
 
   useEffect(() => {
     inputElement.current.setNativeProps({
-      style: {
-        fontFamily: 'Poppins',
-      },
+      style: {fontFamily: Platform.OS === 'android' ? 'Poppins' : undefined},
     });
   }, []);
 

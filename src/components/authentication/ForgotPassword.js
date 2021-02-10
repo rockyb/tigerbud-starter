@@ -1,20 +1,30 @@
 import React from 'react';
 import {ForgotPassword as AForgotPassword} from 'aws-amplify-react-native';
-import {Text, View, Item, Input, Button, Container, Content} from 'native-base';
+import {
+  Text,
+  View,
+  Item,
+  Input,
+  Button,
+  Container,
+  Content,
+  Header,
+  Body,
+} from 'native-base';
 //node_modules/aws-amplify-react-native/src/Auth/ForgotPassword.tsx:1
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
 import {styles} from './styles';
-import CustomHeader from '../customHeader/CustomHeader';
-
 export default class ForgotPassword extends AForgotPassword {
   showComponent(theme) {
     return (
       <Container>
-        <CustomHeader
-          testID={TEST_IDS.AUTH.FORGOT_PASSWORD_TEXT}
-          title={I18n.t('reset_password')}
-        />
+        <Header testID={TEST_IDS.AUTH.FORGOT_PASSWORD_TEXT} noShadow>
+          <Body>
+            <Text headerTitle> {I18n.t('reset_password')} </Text>
+          </Body>
+        </Header>
+
         {!this.state.delivery && this.forgotBody(theme)}
         {this.state.delivery && this.submitBody(theme)}
       </Container>
