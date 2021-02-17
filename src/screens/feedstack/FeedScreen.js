@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Content, Text, Container, Header, Body} from 'native-base';
+import {Button, Content, Text, Container} from 'native-base';
 import CardList from '../../components/card/CardList';
 import {TEST_IDS} from '../../constants';
 import useThings from '../../hooks/useThings';

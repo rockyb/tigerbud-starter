@@ -6,12 +6,12 @@ import {
   Input,
   Button,
   Content,
-  Container,
   Item,
   Header,
   Body,
+  Container,
 } from 'native-base';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import React from 'react';
 import I18n from '../../localisation/I18n';
 import {TEST_IDS} from '../../constants/index';
@@ -71,12 +71,13 @@ export default class SignIn extends ASignIn {
   showComponent(theme) {
     return (
       <SafeAreaView>
-        <Header noShadow>
-          <Body>
-            <Text headerTitle>{I18n.t('sign_in_intro')} </Text>
-          </Body>
-        </Header>
-
+        <View testID={TEST_IDS.AUTH.CONTAINER}>
+          <Header noShadow>
+            <Body>
+              <Text headerTitle>{I18n.t('sign_in_intro')} </Text>
+            </Body>
+          </Header>
+        </View>
         <Content style={styles.content}>
           <Item rounded style={styles.input}>
             {this.renderUsernameField(theme)}

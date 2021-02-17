@@ -53,7 +53,7 @@ const ThingsScreen = ({navigation}) => {
           bordered
           style={styles.buttonEdit}
           onPress={() => navigation.navigate('Edit', props)}
-          testID={TEST_IDS.THINGS.EDIT.BUTTON}>
+          testID={TEST_IDS.THINGS.BUTTON}>
           <Icon type="MaterialIcons" name="edit" />
           <Text>{I18n.t('edit')}</Text>
         </Button>
@@ -91,6 +91,14 @@ const ThingsScreen = ({navigation}) => {
         <OpenDrawerButton navigation={navigation} />
       </CustomHeader>
       <Content style={styles.content}>
+        <Button
+          iconLeft
+          bordered
+          style={styles.buttonEdit}
+          onPress={() => navigation.navigate('Feed')}
+          testID={TEST_IDS.DRAWER.OPEN}>
+          <Text>Test</Text>
+        </Button>
         <CardList {...listProps} renderCardFooter={renderCardFooter} />
       </Content>
     </Container>

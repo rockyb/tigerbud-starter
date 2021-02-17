@@ -10,16 +10,12 @@ const DetailsScreen = ({route: {params}, navigation}) => {
   return (
     <Container>
       <CustomHeader
+        testID={TEST_IDS.THINGS.FEED.BUTTON}
         onPress={() => navigation.goBack('Feed')}
         title={I18n.t('details')}
       />
 
       <Content style={styles.content}>
-        <Button
-          onPress={() => navigation.goBack('Feed')}
-          testID={TEST_IDS.THINGS.FEED.BUTTON}>
-          <Text>{I18n.t('Feed')}</Text>
-        </Button>
         <Card {...params} renderFooter={null} />
       </Content>
     </Container>

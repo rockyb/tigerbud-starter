@@ -3,14 +3,14 @@ import {Header, Left, Right, Text, Body, Button, Icon} from 'native-base';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import PropTypes from 'prop-types';
 
-const CustomHeader = ({children, onPress, title}) => {
+const CustomHeader = ({children, onPress, title, testID}) => {
   return (
     <>
       {onPress && children && title && (
         <SafeAreaView style={styles.droidSafeArea}>
           <Header noShadow>
             <Left>
-              <Button transparent onPress={onPress}>
+              <Button transparent onPress={onPress} testID={testID}>
                 <Icon
                   type="MaterialIcons"
                   style={styles.icon}
@@ -50,7 +50,7 @@ const CustomHeader = ({children, onPress, title}) => {
         <SafeAreaView style={styles.droidSafeArea}>
           <Header noShadow>
             <Left>
-              <Button transparent onPress={onPress}>
+              <Button transparent onPress={onPress} testID={testID}>
                 <Icon
                   type="MaterialIcons"
                   style={styles.icon}

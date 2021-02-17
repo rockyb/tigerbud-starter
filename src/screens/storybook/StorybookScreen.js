@@ -2,7 +2,7 @@
 import React from 'react';
 import {SafeAreaView, Dimensions, StyleSheet} from 'react-native';
 import StoryBook from '../../../storybook';
-
+import {TEST_IDS} from '../../constants';
 const deviceHeight = Dimensions.get('window').height;
 
 const StorybookScreen = (props) => {
@@ -13,7 +13,9 @@ const StorybookScreen = (props) => {
   });
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView
+      style={styles.container}
+      testID={TEST_IDS.STORYBOOK.STORYBOOK}>
       <StoryBook {...props} />
     </SafeAreaView>
   );
