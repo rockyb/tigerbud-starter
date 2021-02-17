@@ -30,6 +30,6 @@ describe('Basics', () => {
     //click into the first card and then click back
     await element(by.id(TEST_IDS.THINGS.DETAILS.BUTTON)).atIndex(0).tap();
     //predefined ID for the header back control
-    await element(by.id('header-back')).tap();
+    await element(by.id(TEST_IDS.THINGS.FEED.BUTTON)).atIndex(0).tap();
   });
 });
