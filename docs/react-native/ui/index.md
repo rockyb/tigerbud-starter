@@ -1,10 +1,10 @@
-# TigerBud 🍑 React Native App
+# TigerBud  React Native App
 
 The UI components used in Tigerbud are built on the NativeBase UI library. NativeBase is a free and open source UI component library for React Native to build native mobile apps for iOS and Android platforms.
 
 The advantage of using NativeBase Library is to make it easy to theme the components with very little change to components themselves.
 
-The components are constructed in pure React Native platform along with some JavaScript functionality with rich set of customisable properties.
+The components are constructed in pure React Native platform along with some JavaScript functionality with rich set of customizable properties.
 
 ## Table of contents
 

@@ -38,7 +38,31 @@ Tigerbud is built in [React Native](https://reactnative.dev/) and backed by [AWS
 
 ## Getting started
 
-### Install dependencies
+### Install Dependencies
+
+#### iOS
+
+You will need Node, Watchman, the React Native command line interface, and Xcode.
+While you can use any editor of your choice to develop your app, you will need to install Xcode in order to set up the necessary tooling to build your React Native app for iOS.
+
+[Read More iOs Setup](./docs/react-native/setup/ios.md)
+
+#### Android
+
+You will need Node, Watchman, the React Native command line interface, a JDK, and Android Studio.
+While you can use any editor of your choice to develop your app, you will need to install Android Studio in order to set up the necessary tooling to build your React Native app for Android.
+[Read More Android Setup](./docs/react-native/setup/android.md)
+
+### Node & Watchman
+
+We recommend installing Node and Watchman using [Homebrew](https://brew.sh/). Run the following commands in a Terminal after installing Homebrew:
+
+```bash
+brew install node
+brew install watchman
+```
+
+#### Backend
 
 Our first step is to ensure that the Amplify CLI is installed globally. Full instructions can be found [here](https://docs.amplify.aws/cli/start/install).
 
@@ -126,7 +150,13 @@ Tigerbud comes with a pre-configured Amplify backend which includes:
 
 ### NativeBase
 
-Custom themed, etc.
+The UI components used in Tigerbud are built on the NativeBase UI library. NativeBase is a free and open source UI component library for React Native to build native mobile apps for iOS and Android platforms.
+
+The advantage of using NativeBase Library is to make it easy to theme the components with very little change to the components themselves.
+
+The components are constructed in pure React Native platform along with some JavaScript functionality with a rich set of customizable properties.
+
+[Read more](./docs/react-native/ui/index.md)
 
 ### React Navigation v5
 
