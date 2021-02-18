@@ -7,7 +7,7 @@ import {LogBox} from 'react-native';
 // Ignore log notification by message
 LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
 //Ignore all log notifications
-//LogBox.ignoreAllLogs();
+LogBox.ignoreAllLogs();
 
 const App = () => {
   return (

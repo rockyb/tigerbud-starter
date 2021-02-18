@@ -38,8 +38,6 @@ export const TEST_IDS = {
       TITLE: 'EDIT_TITLE',
       DESCRIPTION: 'EDIT_DESCRIPTION',
     },
-    SCREEN: 'THING_SCREEN',
-
     CONTAINER: 'THING_CONTAINER',
     FEED: {
       BUTTON: 'FEED_BUTTON',

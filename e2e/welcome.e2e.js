@@ -1,6 +1,5 @@
 /* eslint-env detox/detox */
 const {TEST_IDS} = require('../src/constants');
-//const {reloadApp} = require('detox-expo-helpers');
 
 describe('Basics', () => {
   it('should have welcome screen', async () => {
@@ -12,31 +11,16 @@ describe('Basics', () => {
     await waitFor(element(by.id(TEST_IDS.WELCOME.CONTENT)))
       .toBeVisible()
       .withTimeout(2000);
-
-    //click the button and wait until the tabs show
     await element(by.id(TEST_IDS.WELCOME.BUTTON)).tap();
     await waitFor(element(by.id(TEST_IDS.NAV.TABS.FEED)))
       .toBeVisible()
       .withTimeout(2000);
   });
 
-  it('should click navigation Tab Option and back to feed ', async () => {
-    //check the tabs are showing and wait for the cards to load
+  it('should  start navigation Bottom click and back to feed ', async () => {
     await expect(element(by.id(TEST_IDS.NAV.TABS.FEED))).toBeVisible();
-    // await waitFor(element(by.id(TEST_IDS.NAV.TABS.FEED)))
-    //   .toBeVisible()
-    //   .withTimeout(2000);
-
-    //Click login tab
     await element(by.id(TEST_IDS.NAV.TABS.LOGIN)).atIndex(0).tap();
-    // await waitFor(element(by.id(TEST_IDS.NAV.TABS.LOGIN)))
-    //   .toBeVisible()
-    //   .withTimeout(2000);
-
-    //Click Storybook tab
     await element(by.id(TEST_IDS.NAV.TABS.STORYBOOK)).atIndex(0).tap();
-
-    //Click Feed tab
     await element(by.id(TEST_IDS.NAV.TABS.FEED)).atIndex(0).tap();
   });
 
@@ -44,13 +28,11 @@ describe('Basics', () => {
     await expect(
       element(by.id(TEST_IDS.THINGS.DETAILS.BUTTON)).atIndex(0),
     ).toBeVisible();
-    //click into the first card and then click back
     await element(by.id(TEST_IDS.THINGS.DETAILS.BUTTON)).atIndex(0).tap();
-    //predefined ID for the header back control
     await element(by.id(TEST_IDS.THINGS.FEED.BUTTON)).atIndex(0).tap();
   });
 
-  it('should start  check Auth links ', async () => {
+  it('should start  check Login links ', async () => {
     //Start login auth
     await element(by.id(TEST_IDS.NAV.TABS.LOGIN)).atIndex(0).tap();
     await expect(element(by.id(TEST_IDS.NAV.TABS.LOGIN))).toBeVisible();
@@ -62,7 +44,6 @@ describe('Basics', () => {
 
 describe('Login flow', () => {
   it('should fill the e-mail', async () => {
-    // await device.disableSynchronization();
     await element(by.id(TEST_IDS.AUTH.USERNAME_INPUT)).typeText(
       'juliana.leon@tigerspike.com',
     );
@@ -73,13 +54,9 @@ describe('Login flow', () => {
   it('should tap login button', async () => {
     await element(by.id(TEST_IDS.AUTH.SIGN_IN_BUTTON)).tap();
   });
-});
 
-// describe('Your Things Flow', () => {
-//   it('Tap test button', async () => {
-//     await element(by.id(TEST_IDS.NAV.TABS.FEED)).atIndex(0).tap();
-//   });
-//   it('Tap test2 button', async () => {
-//     await element(by.id(TEST_IDS.NAV.TABS.LOGIN)).atIndex(0).tap();
-//   });
-// });
+  it('check THINGS PAGE', async () => {
+    await element(by.id(TEST_IDS.THINGS.EDIT.BUTTON)).toBeVisible();
+    await element(by.id(TEST_IDS.THINGS.EDIT.BUTTON)).atIndex(0).tap();
+  });
+});
