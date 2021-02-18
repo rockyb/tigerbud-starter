@@ -30,7 +30,7 @@ Tigerbud is built in [React Native](https://reactnative.dev/) and backed by [AWS
   - [Husky](#husky)
     - [Pre-commit](#husky)
     - [Adding hooks](#husky)
-  - [Storybook](#husky)
+  - [Storybook](#storybook)
   - [Internationalisation](#internationalisation)
   - [Error boundaries](#error-boundaries)
   - [Authentication context](#authentication-context)
@@ -104,6 +104,24 @@ amplify console
 
 and then select the `Amplify console` option.
 
+### Start Project
+
+```bash
+yarn install
+```
+
+```bash
+cd ios pod install && cd ..
+```
+
+```bash
+yarn ios
+```
+
+```bash
+yarn android
+```
+
 ### Troubleshooting
 
 #### Project initialisation error
@@ -158,11 +176,20 @@ The components are constructed in pure React Native platform along with some Jav
 
 [Read more](docs/react-native/ui/index.md)
 
+## Customise Tigerbud
+
+Customizing NativeBase will be a cakewalk for you. That is due to the fact, NativeBase has organized its code in modular pattern. It provides separate set of files for customizing each component.
+
+[Read more](docs/react-native/ui/customizing.md)
+
 ### React Navigation v5
 
 Stack, Tab and Drawer navigation.
 
 ### Internationalisation
+
+Tigerbud use react-native-localize
+A toolbox for your React Native app localization.
 
 ### Detox
 
@@ -183,12 +210,37 @@ Example E2E test, fully configured for Android and iOS automation.
 
 ### Husky
 
-Pre-commit checks to ensure that generated VTLs are not committed to the repo.
+Pre-commit checks to ensure that generated VTL are not committed to the repo.
 Unit tests automated on commit.
 
-### Error boundaries
+#### Adding Hooks
 
-## Customise Tigerbud
+To add a hook, you can use `husky add <file> [cmd]` (don't forget to run `husky install` before).
+
+```bash
+npx husky add .husky/pre-commit "npm test"
+```
+
+Try to make a commit
+
+```bash
+git commit -m "Keep calm and commit"
+```
+
+If npm test command fails, your commit will be automatically aborted.
+
+#### Uninstall
+
+```bash
+yarn remove husky && git config --unset core.hooksPath
+```
+
+### Error Boundaries
+
+Tigerbud use react-native-error-boundary
+This component catches JavaScript errors anywhere in their child component tree. Native errors are not handled.
+
+[Read more](https://github.com/carloscuesta/react-native-error-boundary)
 
 ## License
 
@@ -213,7 +265,7 @@ limitations under the License.
 - [React Native](https://reactnative.dev/)
 - [Flipper](https://fbflipper.com/)
 - [React Navigation v5](https://reactnavigation.org/docs/5.x/getting-started)
-- [NativeBase](https://nativebase.io/)
-- [Detox](https://github.com/tigerspike/tigerbud-starter)
-- [Husky](https://github.com/tigerspike/tigerbud-starter)
-- [Localisation](https://github.com/tigerspike/tigerbud-starter)
+- [NativeBase](https://docs.nativebase.io/)
+- [Detox](https://github.com/wix/Detox)
+- [Husky](https://github.com/typicode/husky)
+- [Localisation](https://github.com/zoontek/react-native-localize)
