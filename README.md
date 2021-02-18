@@ -1,4 +1,4 @@
-# <img src="./docs/TigerBud-Glyph.svg" alt="Tigerbud logo" title="Tigerbud" align="left" height="35" /> Tigerbud Starter
+# <img src="docs/TigerBud-Glyph.svg" alt="Tigerbud logo" title="Tigerbud" align="left" height="35" /> Tigerbud Starter
 
 ## :star: &nbsp; Star us on GitHub — it helps!
 
@@ -45,13 +45,13 @@ Tigerbud is built in [React Native](https://reactnative.dev/) and backed by [AWS
 You will need Node, Watchman, the React Native command line interface, and Xcode.
 While you can use any editor of your choice to develop your app, you will need to install Xcode in order to set up the necessary tooling to build your React Native app for iOS.
 
-[Read More iOs Setup](./docs/react-native/setup/ios.md)
+[Read More iOS Setup](docs/react-native/setup/ios.md)
 
 #### Android
 
 You will need Node, Watchman, the React Native command line interface, a JDK, and Android Studio.
 While you can use any editor of your choice to develop your app, you will need to install Android Studio in order to set up the necessary tooling to build your React Native app for Android.
-[Read More Android Setup](./docs/react-native/setup/android.md)
+[Read More Android Setup](docs/react-native/setup/android.md)
 
 ### Node & Watchman
 
@@ -132,7 +132,7 @@ This should now deploy a new app environment under the specified name. You can t
 amplify env remove sampledev
 ```
 
-[Read More]('./docs/storybook.md)
+[Read More]('docs/storybook.md)
 
 #### Other
 
@@ -156,7 +156,7 @@ The advantage of using NativeBase Library is to make it easy to theme the compon
 
 The components are constructed in pure React Native platform along with some JavaScript functionality with a rich set of customizable properties.
 
-[Read more](./docs/react-native/ui/index.md)
+[Read more](docs/react-native/ui/index.md)
 
 ### React Navigation v5
 
@@ -165,6 +165,19 @@ Stack, Tab and Drawer navigation.
 ### Internationalisation
 
 ### Detox
+
+Example e2e test, fully configured for android and iOS automation
+[Read More](docs/react-native/tools/detox.md)
+
+### Storybook
+
+Storybook for React Native
+
+```bash
+yarn storybook
+```
+
+[Read More](docs/react-native/tools/storybook.md)
 
 Example E2E test, fully configured for Android and iOS automation.
 
