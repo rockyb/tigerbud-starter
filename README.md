@@ -42,13 +42,13 @@ Tigerbud is built in [React Native](https://reactnative.dev/) and backed by [AWS
 
 Our first step is to ensure that the Amplify CLI is installed globally. Full instructions can be found [here](https://docs.amplify.aws/cli/start/install).
 
-``` bash
+```bash
 npm install -g @aws-amplify/cli
 ```
 
 You can verify your installation by running:
 
-``` bash
+```bash
 amplify --version
 ```
 
@@ -56,7 +56,7 @@ amplify --version
 
 You can also simply run:
 
-``` bash
+```bash
 amplify
 ```
 
@@ -66,7 +66,7 @@ This will present you with a list of possible commands to use with the [Amplify 
 
 To initialise a new project from the tigerbud starter repository run the following command:
 
-``` bash
+```bash
 amplify init --app git@github.com:tigerspike/tigerbud-starter.git
 ```
 
@@ -74,7 +74,7 @@ This will deploy a new amplify project into an enviroment named `sampledev`.
 
 To access your new environment run:
 
-``` bash
+```bash
 amplify console
 ```
 
@@ -86,7 +86,7 @@ and then select the `Amplify console` option.
 
 If you see the following error pop up right when you try to initialise the project:
 
-``` bash
+```bash
 Note: Amplify does not have knowledge of the url provided
 Invalid remote github url
 ```
@@ -97,16 +97,18 @@ This likely means that you don't have SSH keys configured on your machine to tal
 
 If you attempt to initialise more than one new application into the same AWS account you may get a clash of resource names due to the environment always being set to `sampledev`. To recover your project run the following to specify a new environment name and re-deploy.
 
-``` bash
+```bash
 amplify env add
 amplify push
 ```
 
 This should now deploy a new app environment under the specified name. You can then clean up the environment named `sampledev` by running
 
-``` bash
+```bash
 amplify env remove sampledev
 ```
+
+[Read More]('./docs/storybook.md)
 
 #### Other
 
@@ -168,7 +170,7 @@ limitations under the License.
 - [React Native](https://reactnative.dev/)
 - [Flipper](https://fbflipper.com/)
 - [React Navigation v5](https://reactnavigation.org/docs/5.x/getting-started)
-- [Native base](https://github.com/tigerspike/tigerbud-starter)
+- [NativeBase](https://nativebase.io/)
 - [Detox](https://github.com/tigerspike/tigerbud-starter)
 - [Husky](https://github.com/tigerspike/tigerbud-starter)
 - [Localisation](https://github.com/tigerspike/tigerbud-starter)

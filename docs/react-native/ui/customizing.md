@@ -47,7 +47,7 @@ Pass the variable i.e., platform/material/commonColors.js as the parameter of th
 The theme you pass should be a function.
 Now your project is ready for theme customization.
 
-``` javascript
+```javascript
 import React, { Component } from 'react';
 import { Container, Content, Text, StyleProvider } from 'native-base';
 import getTheme from './native-base-theme/components';

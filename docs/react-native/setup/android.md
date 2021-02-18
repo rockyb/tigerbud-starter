@@ -4,7 +4,7 @@
 
 Open the simulator. Then run:
 
-``` bash
+```bash
 yarn react-native run-android
 cd android && ./gradlew clean
 cd .. && yarn react-native run-android

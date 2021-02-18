@@ -8,13 +8,13 @@ yada
 
 yada
 
-yada
+Yada
 
 [TOC]
 
-## Getting Started
+# Getting Started
 
-### Installing Dependencies
+## Installing Dependencies
 
 To do this, we are using 🧶[Yarn](https://classic.yarnpkg.com/en/docs/getting-started).
 
@@ -26,22 +26,22 @@ The **package** contains the _shared code_ and a _package.json_ file describing 
 
 Then in your **terminal**, run the following commands:
 
-```bashell
+```shell
 yarn install
 yarn start
 ```
 
-### Installing & Building a React Native App
+## Installing & Building a React Native App
 
 Check out the [React Native Documentation](https://reactnative.dev/docs/getting-started) for info beyond the setup described here.
 
-#### 🛠 Tools to install
+### 🛠 Tools to install
 
 - [**Node**](https://nodejs.org/en/about/) is a JavaScript runtime environment that executes JavaScript code outside of a browser.
 
 - [**Watchman**](https://facebook.github.io/watchman/) is a tool by Facebook for watching changes in the filesystem. It is highly recommended you install it for better performance.
 
-  ```bash
+  ```sh
   brew install node
   brew install watchman
   ```
@@ -51,9 +51,9 @@ Check out the [React Native Documentation](https://reactnative.dev/docs/getting-
   - **Command Line Tools**: Open Xcode, then choose "Preferences..." from the Xcode menu. Go to the Locations panel and install the tools by selecting the most recent version in the Command Line Tools dropdown.
   - **iOS Simulator**: Open **Xcode > Preferences...** and select the **Components** tab. Select a simulator with the corresponding version of iOS you wish to use.
 
-- the **React Native CLI** (command line interface): React Native has a built-in command line interface. Rather than install and manage a specific version of the CLI globally, we recommend you access the current version at runtime using `npx`, which ships with Node.js. With `npx react-native`, the current stable version of the CLI will be downloaded and executed at the time the command is run.
+- the **React Native CLI** (command line interface): React Native has a built-in command line interface. Rather than install and manage a specific version of the CLI globally, we recommend you access the current version at runtime using `npx`, which ships with Node.js. With `npx react-native `, the current stable version of the CLI will be downloaded and executed at the time the command is run.
 
-#### _iOS_
+#### <u>IOS</u>
 
 ##### iOS Tools
 
@@ -63,7 +63,7 @@ The following tools also need to be installed when developing for Android.
 
   Using the default Ruby install will require you to use `sudo` when installing gems. (This is only an issue for the duration of the gem installation, though.)
 
-  ```bash
+  ```sh
   sudo gem install cocoapods
   ```
 
@@ -71,7 +71,7 @@ The following tools also need to be installed when developing for Android.
 
 You can use React Native's built-in command line interface to generate a new project. Let's create a new React Native project called "AwesomeProject":
 
-```bash
+```sh
 yarn react-native init AwesomeProject
 ```
 
@@ -79,12 +79,12 @@ yarn react-native init AwesomeProject
 
 Eiter run the command below after changing into your project directory or run it directly from Xcode.
 
-```bash
+```sh
 cd AwesomeProject
 yarn react-native run-ios
 ```
 
-#### _Android_
+#### <u>Android</u>
 
 ##### Android Tools
 
@@ -98,7 +98,7 @@ The following tools also need to be installed when developing for Android.
 
   In your **terminal**, run the following commands:
 
-  ```bash
+  ```sh
   brew tap AdoptOpenJDK/openjdk
   brew cask install adoptopenjdk8
   ```
@@ -147,29 +147,29 @@ The following tools also need to be installed when developing for Android.
 
   > Please make sure you use the correct Android SDK path. You can find the actual location of the SDK in the Android Studio "Preferences" dialog, under **Appearance & Behavior** → **System Settings** → **Android SDK**.
 
-##### ⚛️ Creating a new application
+  ##### ⚛️ Creating a new application
 
-> If you previously installed a global `react-native-cli` package, please remove it as it may cause unexpected issues.
+  > If you previously installed a global `react-native-cli` package, please remove it as it may cause unexpected issues.
 
 React Native has a built-in command line interface, which you can use to generate a new project. You can access it without installing anything globally using `npx`, which ships with Node.js. Let's create a new React Native project called "AwesomeProject":
 
-```bash
+```sh
 npx react-native init AwesomeProject
 ```
 
 This is not necessary if you are integrating React Native into an existing application, if you "ejected" from Expo, or if you're adding Android support to an existing React Native project (see [Platform Specific Code](https://reactnative.dev/docs/platform-specific-code)). You can also use a third-party CLI to init your React Native app, such as [Ignite CLI](https://github.com/infinitered/ignite).
 
-> _[Optional] Using a specific version or template_
+> <u>[Optional] Using a specific version or template</u>
 >
 > If you want to start a new project with a specific React Native version, you can use the `--version` argument:
 >
-> ```bash
+> ```sh
 > npx react-native init AwesomeProject --version X.XX.X
 > ```
 >
 > You can also start a project with a custom React Native template, like TypeScript, with `--template` argument:
 >
-> ```bash
+> ```sh
 >   npx react-native init AwesomeTSProject --template react-native-template-typescript
 > ```
 
@@ -203,7 +203,7 @@ Click "Next" then "Finish" to create your AVD. At this point you should be able 
 
 Run `npx react-native run-android` inside your React Native project folder:
 
-```bash
+```sh
 cd AwesomeProject
 npx react-native run-android
 ```
@@ -222,11 +222,11 @@ Read the [React Navigation docs here](https://reactnavigation.org/docs/4.x/getti
 
 Run the folllowing command in your terminal to install required dependencies for React Navigation:
 
-```bash
+```sh
 yarn add react-navigation react-navigation-tabs react-navigation-stack react-navigation-drawer
 ```
 
-```bash
+```
 yarn add react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
 ```
 
@@ -295,13 +295,13 @@ Now let's set up Storybook.
 
 > For more detailed info on how to manually set up Storybook, [check this out](https://storybook.js.org/docs/guides/guide-react-native/).
 
-```bash
+```
     npx -p @storybook/cli sb init --type react_native
 ```
 
 if you have an issue with this command you can try to install using npm instead:
 
-```bash
+```
    npx -p @storybook/cli sb init --use-npm --type react_native
 ```
 
@@ -311,3 +311,11 @@ Create a `configs` directory in `App/src/configs` and add
 const config = {storybook: true / false};
 module.exports = config;
 ```
+
+### Native Base Theme
+
+### Updating icons and app name
+
+### i18n Localisation
+
+### Error Boundary

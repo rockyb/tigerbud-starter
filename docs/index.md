@@ -59,7 +59,7 @@ Ensure you have valid AWS credentials in `~/aws/credentials` for the target AWS 
 
 ## Spinning Up TigerBud Video
 
-[![TigerBut Setup](https://img.youtube.com/vi/vTbFhDH3OIs/0.jpg)](https://youtu.be/vTbFhDH3OIs "TigerBut Setup")
+[![TigerBut Setup](https://img.youtube.com/vi/vTbFhDH3OIs/0.jpg)](https://youtu.be/vTbFhDH3OIs 'TigerBut Setup')
 
 Install AWS Amplify CLI globaly
 
@@ -132,13 +132,13 @@ To run Android open Android Studio and hit the Run. Alternatively you can run th
 
 We use eslint to check the quality of the code base. To lint the source code, you can use the command below.
 
-``` bash
+```bash
 yarn lint
 ```
 
 To fixed code:
 
-``` bash
+```bash
 lint --fix
 ```
 

@@ -6,13 +6,13 @@ Need to install the [Reactotron desktop app](https://github.com/infinitered/reac
 
 Start by turning the web browser debug off
 
-``` bash
+```bash
 command + D
 ```
 
 then
 
-``` bash
+```bash
 cd ios
 react-native link @react-native-community/async-storage
 yarn --clearCache
@@ -21,19 +21,19 @@ pod install
 
 Rebuild and restart the app with
 
-``` bash
+```bash
 react-native run-ios
 ```
 
 or
 
-``` bash
+```bash
 react-native run-android
 ```
 
 and finally
 
-``` bash
+```bash
 yarn start
 ```
 
