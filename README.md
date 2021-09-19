@@ -12,7 +12,9 @@ Tigerbud is built in [React Native](https://reactnative.dev/) and backed by [AWS
   - [Install dependencies](#install-dependencies)
   - [Initialise project](#initialise-project)
   - [Troubleshooting](#troubleshooting)
+    - [Project initialisation error](#project-initialisation-error)
     - [Multiple applications](#multiple-applications)
+    - [Other](#other)
 - [What do you get?](#what-do-you-get)
   - [AWS Amplify](#aws-amplify)
   - [Native base](#native-base)
@@ -80,6 +82,17 @@ and then select the `Amplify console` option.
 
 ### Troubleshooting
 
+#### Project initialisation error
+
+If you see the following error pop up right when you try to initialise the project:
+
+``` bash
+Note: Amplify does not have knowledge of the url provided
+Invalid remote github url
+```
+
+This likely means that you don't have SSH keys configured on your machine to talk to GitHub. If that's the case, you should follow some of the steps in [this documentation](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) to either [generate a new SSH key](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) or [reuse an existing one in your computer](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/checking-for-existing-ssh-keys). You then have to [add one of those keys](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) to your GitHub account. After that is done, try re-running the initialisation command (`amplify init --app git@github.com:tigerspike/tigerbud-starter.git`).
+
 #### Multiple applications
 
 If you attempt to initialise more than one new application into the same AWS account you may get a clash of resource names due to the environment always being set to `sampledev`. To recover your project run the following to specify a new environment name and re-deploy.
@@ -94,6 +107,10 @@ This should now deploy a new app environment under the specified name. You can t
 ``` bash
 amplify env remove sampledev
 ```
+
+#### Other
+
+If you happen into any other problems with the setup, please feel free to [open an issue](https://github.com/tigerspike/tigerbud-starter/issues) and we'll get back to you as soon as possible.
 
 ## What do you get?
 
