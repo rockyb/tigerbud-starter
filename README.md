@@ -17,9 +17,9 @@ Tigerbud is built in [React Native](https://reactnative.dev/) and backed by [AWS
     - [Other](#other)
 - [What do you get?](#what-do-you-get)
   - [AWS Amplify](#aws-amplify)
-  - [Native base](#native-base)
-    - [Theming](#native-base)
-    - [Fonts & Icons](#native-base)
+  - [NativeBase](#nativebase)
+    - [Theming](#nativebase)
+    - [Fonts & Icons](#nativebase)
   - [React Navigation v5](#react-navigation-v5)
     - [Tab navigation](#react-navigation-5)
     - [Stack navigation](#react-navigation-5)
@@ -122,7 +122,7 @@ Tigerbud comes with a pre-configured Amplify backend which includes:
 - AppSync with GraphQL schema defining the types `User` and `Thing` with authorisation rules applied to protect user data.
 - Lambda resolvers demonstrating how to setup field level resolution and custom query resolution.
 
-### Native base
+### NativeBase
 
 Custom themed, etc.
 

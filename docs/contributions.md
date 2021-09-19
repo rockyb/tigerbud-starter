@@ -3,9 +3,9 @@
 Thank you for your interest in contributing to the TigerBud Project!
 You can contribute by submitting a bug, creating pull requests or even by improving documentation. Beneath is the manual to be accompanied strictly earlier than submitting your pull requests / issues.
 
-# Roles:
+## Roles
 
-## Maintainers
+### Maintainers
 
 Maintainer form the core product team that ensure product decisions are strategically aligned and that the product is of high quality.
 
@@ -23,30 +23,29 @@ Support from the maintainer team will be given to onboard any nominated maintain
 
 Maintainers will also have the authority to approve the addition / removal of other maintainers from the core team.
 
-## Contributers
+### Contributers
 
 The role of a contributor is looser and can effectively be anyone, internal or external, who would like to request a new feature, report a bug or to change the product code.
 
 Contributors include any individual creating or commenting on an issue or pull request. They do not have the authority to accept any change and do not have write access to the project.
 
-## Steering Committee
+### Steering Committee
 
-## Review Checklist
+### Review Checklist
 
-# Coding Style
+## Coding Style
 
-To keep project away from disputes we make use of ESLint, which is really a handy linting tool that enforces strict coding styles and makes sure your files are free from dead code
+To keep project away from disputes we make use of ESLint, which is really a handy linting tool that enforces strict coding styles and makes sure your files are free from dead code.
 
-cd NamOfProject
-
-```
+``` bash
+cd NameOfProject
 yarn lint
 ```
 
-# Git Flow
+## Git Flow
 
 ... WIP ...
 
-# Development Environment
+## Development Environment
 
 ... WIP ...

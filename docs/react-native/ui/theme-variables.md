@@ -1,8 +1,6 @@
 # Theme variables Cheat sheet
 
-Cheatsheet use values from theme/variables/platform.js
-
-https://docs.nativebase.io/docs/ThemeVariables.html
+Cheatsheet uses values from `theme/variables/platform.js`. Check the [ThemeVariables documentation](https://docs.nativebase.io/docs/ThemeVariables.html).
 
 ## Brand colors
 

@@ -5,7 +5,7 @@ Customizing NativeBase will be a cakewalk for you. That is due to the fact, Nati
 NativeBase is built on top of React Native. Hence with any component you can pass the style property which will be merged to the default style of that component.
 Visit [NativeBase Customizer](https://nativebase.io/nativebase-customizer) home page for more information.
 
-## Table of contents:
+## Table of contents
 
 [Theme and Variables](#What-are-themes-and-variables-and-how-to-change-them)
 [Set Up](#Setup-to-theme-NativeBase-apps)
@@ -14,7 +14,7 @@ Visit [NativeBase Customizer](https://nativebase.io/nativebase-customizer) home 
 [Button](#Button)
 [Theme Custom Component](#Theme-Custom-Component)
 
-### What are themes and variables and how to change them?
+## What are themes and variables and how to change them?
 
 NativeBase comes with a theme folder which comprises of two sub-folders
 
@@ -47,7 +47,7 @@ Pass the variable i.e., platform/material/commonColors.js as the parameter of th
 The theme you pass should be a function.
 Now your project is ready for theme customization.
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Content, Text, StyleProvider } from 'native-base';
 import getTheme from './native-base-theme/components';
@@ -70,13 +70,13 @@ import material from './native-base-theme/variables/material';
 
 ```
 
-- The <StyleProvider> with theme can be applied to any component of NativeBase.
+- The `<StyleProvider>` with theme can be applied to any component of NativeBase.
 - The theme holds good with all its descendants.
 - The above code for theme change works this way:
 - Go to native-base-theme/variables/platform.js and modify color code for textColor.
 - Similarly you can customize theme for rest of the NativeBase components by modifying color code of their respective attributes, some of which are explained below.
 
-# Theme Color
+## Theme Color
 
 To change the basic theme context of NativeBase, make necessary changes to the following variables:
 
@@ -86,7 +86,7 @@ To change the basic theme context of NativeBase, make necessary changes to the f
 - Danger color: brandDanger
 - Warning color: brandWarning
 
-# Theme Font
+## Theme Font
 
 Having different font types in your React Native apps is not tough any more. NativeBase provides you with a set of nine font families.
 

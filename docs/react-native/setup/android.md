@@ -1,18 +1,13 @@
-Folow this instructions for android : 
+# Folow these instructions for Android
 
-https://reactnative.dev/docs/getting-started
+[Getting started with React Native](https://reactnative.dev/docs/getting-started)
 
+Open the simulator. Then run:
 
-Open the simulator ...
-
-Then  this:
+``` bash
 yarn react-native run-android
-
 cd android && ./gradlew clean
-
 cd .. && yarn react-native run-android
+```
 
-
-if still not working need go to Android Studio and open the project and Update the stuff they asking for and run the priject form there 
-
-
+If still not working need go to Android Studio, open the project, update the stuff they ask for and run the project from there.
