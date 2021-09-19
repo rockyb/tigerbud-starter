@@ -1,0 +1,11 @@
+{
+  "MD013": false,
+  "MD026": {
+    "punctuation": ".,;:。，；："
+  },
+  "MD033": {
+    "allowed_elements": [
+      "img"
+    ]
+  }
+}
