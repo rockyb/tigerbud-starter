@@ -1,45 +1,40 @@
-We can use Reactraton to debug the app and also open storybook
+# Reactotron instructions
 
-Need Install https://github.com/infinitered/reactotron Desktop
+We can use Reactraton to debug the app and also open storybook.
 
-Turn the webbrowser debug off
+Need to install the [Reactotron desktop app](https://github.com/infinitered/reactotron) first.
 
-- comand + D
+Start by turning the web browser debug off
+
+``` bash
+command + D
+```
 
 then
-cd ios
 
-```
+``` bash
+cd ios
 react-native link @react-native-community/async-storage
-```
-
-```
 yarn --clearCache
-
-```
-
-Go to:
-cd ios
-
-```
 pod install
-
 ```
 
-Open
-Rebuild and restart the app.
+Rebuild and restart the app with
 
-````
+``` bash
 react-native run-ios
 ```
 
 or
-```
+
+``` bash
 react-native run-android
 ```
 
+and finally
+
+``` bash
 yarn start
+```
 
-
-Open Reactotron App desktop from your applications
-````
+Open Reactotron App desktop from your applications.

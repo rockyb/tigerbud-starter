@@ -23,22 +23,22 @@ This is the ReactNative application for "TigerBud 🍑".
   - [Running the tests](#Running-the-tests)
 - [UI Components Documentation](#UI-Components-Documentation)
 - [Compatibility Versions](#Compatibility-Versions)
-- [About the creators](#)
+- [About the creators](#about-the-creators)
 - [Contributors](#Contributors)
 
-# Screens
+## Screens
 
-![](./image/screen1.gif)
-![](./image/logScreen.gif)
-![](./image/storybook.gif)
+![screen 1](./image/screen1.gif)
+![log screen](./image/logScreen.gif)
+![storybook](./image/storybook.gif)
 
-# Technologies
+## Technologies
 
 Technologies used in Native Starter Kit
 
 - [React Native](https://github.com/facebook/react-native)
   - React Native helps in making the development work easier and allowing the developers to focus on the core app features in every new release. It is the fastest-developing mobile app development that essentially permits you to create an isolated product with often outcomes.
-- [AWS Amplify ](https://docs.amplify.aws/start/q/integration/react-native)
+- [AWS Amplify](https://docs.amplify.aws/start/q/integration/react-native)
 
   - AWS Amplify is a development platform for building secure, scalable mobile and web applications.
     Amplify covers the complete mobile application development workflow from version control, code testing, to production deployment, and it easily scales with your business from thousands of users to tens of millions.
@@ -51,7 +51,7 @@ Technologies used in Native Starter Kit
   - Routers fall into the category of StackNavigator , DrawerNavigator , and TabNavigator.
   - We can also nest these Routers for more complex transitions.
 
-# Deploy the API and authentication
+## Deploy the API and authentication
 
 The API and authentication are pre-defined in the `amplify/backend` configuration directory and can be deployed by following these steps:
 
@@ -67,13 +67,13 @@ Install AWS Amplify CLI globaly
     yarn add aws-amplify -g
 ```
 
-# Create AWS credentials
+## Create AWS credentials
 
-Follow the instructions to create [AWS credentials ](./create-iam-user.md).
+Follow the instructions to create [AWS credentials](./create-iam-user.md).
 
-# Installation
+## Installation
 
-## Clone the Repository and Initialise Amplify Project
+### Clone the Repository and Initialise Amplify Project
 
 ```bash
     amplify init --app git@github.com:tigerspike/tigerbud-starter.git
@@ -81,13 +81,13 @@ Follow the instructions to create [AWS credentials ](./create-iam-user.md).
 
 Follow the steps in the console to set up.
 
-## Lauch the local AppSync & DynamoDb emulators
+### Lauch the local AppSync & DynamoDb emulators
 
 ```bash
     amplify mock
 ```
 
-# Run App
+## Run App
 
 In the frontend directory, make sure you have installed dependencies by running:
 
@@ -95,12 +95,12 @@ In the frontend directory, make sure you have installed dependencies by running:
     yarn install
 ```
 
-## Simulate for iOS
+### Simulate for iOS
 
 To install pod dependencies you may need to run the following command in the /ios folder
 In your terminal go to folder ios
 
-### Install pods
+#### Install pods
 
 ```bash
     pod install
@@ -116,7 +116,7 @@ To run IOS run this command and it will be done for you.
     yarn ios
 ```
 
-## Simulate for Android
+### Simulate for Android
 
 To run Android open Android Studio and hit the Run. Alternatively you can run this command and it will be done for you.
 
@@ -128,27 +128,27 @@ To run Android open Android Studio and hit the Run. Alternatively you can run th
 
 ```
 
-## ESLint
+### ESLint
 
 We use eslint to check the quality of the code base. To lint the source code, you can use the command below.
 
-```
+``` bash
 yarn lint
 ```
 
 To fixed code:
 
-```
+``` bash
 lint --fix
 ```
 
-## Run StoryBook
+### Run StoryBook
 
 ```bash
 yarn storybook
 ```
 
-## Running the storybook in the simulator and devices
+### Running the storybook in the simulator and devices
 
 App/src/config/config.js => flag 'storybook' to true
 
@@ -156,7 +156,7 @@ restart the bundler and storybook will run
 
 [See Storybook documentation](./react-native/tools/storybook.md)
 
-## Reactatron debugger
+### Reactatron debugger
 
 Reactatron is a standalone desktop app that helps with debugging the app.
 Simply run the app and reacatron together and these features are available:
@@ -171,32 +171,32 @@ Simply run the app and reacatron together and these features are available:
 Alternatively, by running 'Reactatron' with the simulator you can easily toggle
 between the app and storybook but clicking on 'Custom Commands' -> 'storybook'
 
-## Running the tests
+### Running the tests
 
 [See Jest documentation](./react-native/tools/jest.md)
 
-### Unit Tests
+#### Unit Tests
 
 ```bash
 yarn test
 ```
 
-# UI Components Documentation
+## UI Components Documentation
 
 The UI components used in Tigerbud are built on the [NativeBase UI library](https://nativebase.io/). NativeBase is a free and open source UI component library for React Native to build native mobile apps for iOS and Android platforms.
 The Components are constructed in pure [React Native](https://github.com/facebook/react-native) platform along with some JavaScript functionality with rich set of customisable properties.
 
-## [Follow UI Components Documentation](./react-native/ui/index.md)
+### [Follow UI Components Documentation](./react-native/ui/index.md)
 
-# Compatibility Versions
-
-... WIP ...
-
-# About the creators
+## Compatibility Versions
 
 ... WIP ...
 
-# Contributors
+## About the creators
+
+... WIP ...
+
+## Contributors
 
 This project exists thanks to all the people who contribute. ....
 

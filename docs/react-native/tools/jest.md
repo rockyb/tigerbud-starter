@@ -1,4 +1,4 @@
-### Run coverage report
+# Run coverage report
 
 ```bash
 yarn coverage

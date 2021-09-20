@@ -6,7 +6,7 @@ The advantage of using NativeBase Library is to make it easy to theme the compon
 
 The components are constructed in pure React Native platform along with some JavaScript functionality with rich set of customisable properties.
 
-## Table of contents:
+## Table of contents
 
 - [How to use Native Base Components in your app](#how-to-use-native-base-components-in-your-app)
 - [Theme Customization](#theme-customization)
@@ -16,11 +16,11 @@ The components are constructed in pure React Native platform along with some Jav
 
 ## How to use Native Base Components in your app
 
-A common way to use NativeBase screen structure is to have all the components within <Container> and import the components you will use for your screen.
+A common way to use NativeBase screen structure is to have all the components within `<Container>` and import the components you will use for your screen.
 
 Example structure
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 export default class AnatomyExample extends Component {
@@ -56,13 +56,13 @@ export default class AnatomyExample extends Component {
 }
 ```
 
-# Theme Customization
+## Theme Customization
 
 Inside the App/src forder we have the /theme folder which comprises of two sub-folders
 
-![](./image/appImage.png)
+![app image](./image/appImage.png)
 
-![](./image/themeImage.png)
+![theme image](./image/themeImage.png)
 
 - components: Theme styling files for all the NativeBase components. This is where you would change the style properties of the components if you need to.
 
@@ -88,13 +88,13 @@ Check [NativeBase Cheat Sheet](https://docs.nativebase.io/docs/CheatSheet.html)
 - Pass the variable i.e., platform/material/commonColors.js as the parameter of theme function, which is passed as a value to style prop of component StyleProvider.
 - The theme you pass should be a function.
 
-## How to create new theme.
+## How to create new theme
 
 [Customizing NativeBase](https://nativebase.io/nativebase-customizer) components is now made far more easier with NativeBase Customizer. Components can be customized visually with a friendly user interface. You can either download the variable.js file for the customized theme or the whole demo app at the end.
 
 Visit NativeBase Customizer home page for more information.
 
-# List Of UI Components build with Nativebase Library.<a name="#listOfComponents"></a>
+## List of UI Components build with NativeBase library
 
 - [Anatomy](#Anatomy)
 - [Header](#Anatomy-Header)
@@ -130,15 +130,15 @@ Visit NativeBase Customizer home page for more information.
 ## Anatomy
 
 Automatically animates view to its new position.
-A common way to use NativeBase screen structure is to have all the components within <Container>
+A common way to use NativeBase screen structure is to have all the components within `<Container>`
 
 - All the components should be included within the Container.
-- Container takes mainly three components: <Header>, <Content> and <Footer>.
+- Container takes mainly three components: `<Header>`, `<Content>` and `<Footer>`.
 - Container comes with its predefined stylesheet, with an added advantage of accepting user-defined styles.
-- Usage of Container's Header component is very similar to your HTML <head>. So is with Footer.
+- Usage of Container's Header component is very similar to your HTML `<head>`. So is with Footer.
 - The Content component of Container is nothing but the body section of your screen.
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Title, Content, Text, StyleProvider } from 'native-base';
 import getTheme from '../../native-base-theme/components';
@@ -164,12 +164,12 @@ export default class AnatomyExample extends Component {
 | Property | Default | Option |                                            Description                                             |
 | :------: | :-----: | :----: | :------------------------------------------------------------------------------------------------: |
 |  Header  |    -    |   -    |           Renders as Header (navbar) of your screen. Input values: Button, Title (Text).           |
-| Content  |    -    |   -    | Represents the main content of your screen. There can be only one <Content> component in a screen. |
+| Content  |    -    |   -    | Represents the main content of your screen. There can be only one `<Content>` component in a screen. |
 |  Footer  |    -    |   -    |                     Renders as Footer of your screen. Input values: FooterTab                      |
 
 ### Anatomy Header
 
-```
+``` javascript
 import { Header, Left, Right, Body, Icon } from 'native-base';
   <Header>
     <Left>
@@ -194,7 +194,7 @@ import { Header, Left, Right, Body, Icon } from 'native-base';
 - User can add custom styles while defining Content within their app.
 - Replacing Component: React Native Keyboard Aware Scroll View's KeyboardAwareScrollView
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Footer, Text } from 'native-base';
 export default class ContentExample extends Component {
@@ -245,7 +245,7 @@ Contents:
 - [Header and Content style](#Header-and-Content-style)
 - [Custom Header and Content](#Custom-Header-and-Content)
 
-```
+``` javascript
 import React, { Component } from "react";
 import { Container, Header, Content, Accordion } from "native-base";
 const dataArray = [
@@ -285,13 +285,13 @@ export default class AccordionExample extends Component {
 
 ### Icon and Expanded Icon
 
-```
+``` javascript
      <Accordion dataArray={dataArray} icon="add" expandedIcon="remove" />
 ```
 
 ### Icon and Expanded Icon style
 
-```
+``` javascript
      <Accordion
         dataArray={dataArray}
         icon="add"
@@ -304,7 +304,7 @@ export default class AccordionExample extends Component {
 
 ### Header and Content style
 
-```
+``` javascript
       <Accordion
         dataArray={dataArray}
         headerStyle={{ backgroundColor: "#b7daf8" }}
@@ -314,7 +314,7 @@ export default class AccordionExample extends Component {
 
 ### Custom Header and Content
 
-```
+``` javascript
 import React, { Component } from "react";
 import { Container, Header, Content, Icon, Accordion, Text, View } from "native-base";
 const dataArray = [
@@ -381,9 +381,9 @@ ActionSheet is a wrapper around the React Native [ActionSheetIOS](https://reactn
 [What is ActionSheet?](https://developer.apple.com/design/human-interface-guidelines/ios/views/action-sheets/)
 An action sheet is a specific style of alert that appears in response to a control or action, and presents a set of two or more choices related to the current context. Use an action sheet to let people initiate tasks, or to request confirmation before performing a potentially destructive operation.
 
-For ActionSheet to work, you need to wrap your topmost component inside <Root> from native-base.
+For ActionSheet to work, you need to wrap your topmost component inside `<Root>` from native-base.
 
-```
+``` javascript
 import { Root } from "native-base";
 import { StackNavigator } from "react-navigation";
 const AppNavigator = StackNavigator(
@@ -400,7 +400,7 @@ export default () =>
 
 Example:
 
-```
+``` javascript
 import React, { Component } from "react";
 import { Container, Header, Button, Content, ActionSheet, Text } from "native-base";
 var BUTTONS = ["Option 0", "Option 1", "Option 2", "Delete", "Cancel"];
@@ -452,7 +452,7 @@ export default class ActionSheetExample extends Component {
 
 Badges are numerical indicators of how many items are associated with an element. Badges can notify you that there are new or unread messages or notifications. These can be very effective in alerting the user to new things on your app.
 
-```
+``` javascript
 import { Badge, Text, Icon } from 'native-base';
 
   <Badge>
@@ -510,7 +510,7 @@ Contents:
 
 Syntax:
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Button, Text } from 'native-base';
 export default class ButtonExample extends Component {
@@ -552,7 +552,7 @@ Configuration:
 |   danger    |    -    | boolean |         Red background color for button         |
 |    dark     |    -    | boolean |        Black background color for button        |
 
-#### Button Theme:
+### Button Theme
 
 - Primary (default)
 - Success
@@ -564,7 +564,7 @@ Configuration:
 
 Syntax:
 
-```
+``` javascript
   <Button light><Text> Light </Text></Button>
   <Button primary><Text> Primary </Text></Button>
   <Button success><Text> Success </Text></Button>
@@ -580,7 +580,7 @@ Include `transparent` prop with Button. This will render button with no border a
 
 Syntax:
 
-```
+``` javascript
   <Button transparent light>
     <Text>Light</Text>
   </Button>
@@ -609,7 +609,7 @@ Syntax:
 
 Include `bordered` prop with Button to apply outline button style.
 
-```
+``` javascript
 <Button bordered light>
   <Text>Light</Text>
 </Button>
@@ -637,7 +637,7 @@ Include `bordered` prop with Button to apply outline button style.
 
 Include `rounded` prop with Button to easily style your buttons with slightly rounded edges.
 
-```
+``` javascript
   <Button rounded light>
     <Text>Light</Text>
   </Button>
@@ -655,7 +655,7 @@ A block level button spans the entire width of the parent element. Create block 
 
 Syntax:
 
-```
+``` javascript
 <Button block light>
     <Text>Light</Text>
 </Button>
@@ -667,7 +667,7 @@ Adding full to a button will make the button take 100% of its parent’s width. 
 
 Syntax:
 
-```
+``` javascript
   <Button full light>
     <Text>Light</Text>
   </Button>
@@ -683,7 +683,7 @@ This goes as simple as this: include your choice of icon using Icon component wi
 
 Syntax:
 
-```
+``` javascript
 <Button iconLeft light>
   <Icon name='arrow-back' />
   <Text>Back</Text>
@@ -701,7 +701,7 @@ Include the following props with your `Button`.
 `small`: for small size button.
 `large`: for large size button.
 
-```
+``` javascript
 <Button small primary>
   <Text>Default Small</Text>
 </Button>
@@ -717,7 +717,7 @@ The `disabled`prop of Button is of type boolean. When present, it specifies that
 
 Syntax:
 
-```
+``` javascript
 <Button disabled >
     <Text>Button</Text>
 </Button>
@@ -740,7 +740,7 @@ Contents:
 
 General Syntax:
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Card, CardItem, Body, Text } from 'native-base';
 export default class CardExample extends Component {
@@ -765,12 +765,12 @@ export default class CardExample extends Component {
 }
 ```
 
-#### Card
+### Card
 
 - This component adds a box-shadow by default.
 - Also provides default spacing and alignment between cards.
 
-#### CardItem
+### CardItem
 
 - This is the child component of Card.
 - Works very similar to the list items of list.
@@ -811,7 +811,7 @@ Card Footer: Include `footer` prop with last instance of CardItem within Card.
 
 Syntax:
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Card, CardItem, Text, Body } from 'native-base';
 export default class CardHeaderFooterExample extends Component {
@@ -848,7 +848,7 @@ export default class CardHeaderFooterExample extends Component {
 Include bordered prop with `<CardItem>` to have borderBottom for card item.
 Syntax
 
-```
+``` javascript
 import React, { Component } from "react";
 import { Container, Header, Content, Card, CardItem, Text, Body } from "native-base";
 export default class CardItemBordered extends Component {
@@ -888,7 +888,7 @@ export default class CardItemBordered extends Component {
 
 Include button prop with `<CardItem>` to achieve onClick function with card items.
 
-```
+``` javascript
 import React, { Component } from "react";
 import { Container, Header, Content, Card, CardItem, Text, Body } from "native-base";
 export default class CardItemButton extends Component {
@@ -925,7 +925,7 @@ export default class CardItemButton extends Component {
 A transparent card can be created using `transparent` props with`<CardItem>`.
 Syntax:
 
-```
+``` javascript
 import React, { Component } from "react";
 import { Container, Header, Content, Card, CardItem, Text, Body } from "native-base";
 export default class CardTransparentExample extends Component {
@@ -955,7 +955,7 @@ export default class CardTransparentExample extends Component {
 Include `CardItem` subsequently within `Card` to create a card with lists.
 Syntax:
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Card, CardItem, Text, Icon, Right } from 'native-base';
 export default class CardListExample extends Component {
@@ -987,7 +987,7 @@ Include image with `CardItem` within Card along with some text before and after 
 
 Syntax:
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Image } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
@@ -1045,7 +1045,7 @@ To mixup Image with other NativeBase components in a single CardItem, include th
 
 Syntax:
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Image } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
@@ -1095,7 +1095,7 @@ export default class CardShowcaseExample extends Component {
 Check Box allows the user to select a number of items from a set of choices.
 Replacing Component: React Native [TouchableOpacity](https://facebook.github.io/react-native/docs/touchableopacity.html)
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, ListItem, CheckBox, Text, Body } from 'native-base';
 export default class CheckBoxExample extends Component {
@@ -1143,7 +1143,7 @@ export default class CheckBoxExample extends Component {
 
 Date Picker allows the user to select a date from a time range.
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, DatePicker, Text } from 'native-base';
 export default class DatePickerExample extends Component {
@@ -1203,7 +1203,7 @@ Looking at data one piece at a time is more efficient when you consider people y
 Deck Swiper helps you evaluate one option at a time, instead of selecting from a set of options.
 Replacing Component: React Native [View](https://facebook.github.io/react-native/docs/view.html)
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Image } from 'react-native';
 import { Container, Header, View, DeckSwiper, Card, CardItem, Thumbnail, Text, Left, Body, Icon } from 'native-base';
@@ -1268,7 +1268,7 @@ export default class DeckSwiperExample extends Component {
 
 Swipe Deck with callback function.
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Image } from 'react-native';
 import { Container, Header, View, DeckSwiper, Card, CardItem, Thumbnail, Text, Left, Body, Icon } from 'native-base';
@@ -1337,9 +1337,9 @@ export default class DeckSwiperAdvancedExample extends Component {
 FABs (Floating Action Buttons) are used for a special type of promoted action. They are distinguished by a circled icon floating above the UI in a fixed position and have special motion behaviors. When clicked, it may contain more related actions.
 Replacing Component: [React Native Animated](https://facebook.github.io/react-native/docs/animated.html)
 
-Note: Always prefer to place FAB inside <Container/>. Placing FAB inside <Content/> is not encouraged, as <Content/> is an implementation of <ScrollView/>.
+Note: Always prefer to place FAB inside `<Container/>`. Placing FAB inside `<Content/>` is not encouraged, as `<Content/>` is an implementation of `<ScrollView/>`.
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, View, Button, Icon, Fab } from 'native-base';
 export default class FABExample extends Component {
@@ -1389,7 +1389,7 @@ export default class FABExample extends Component {
 
 #### Multiple FABs
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, View, Fab, Button, Icon } from 'native-base';
 ​export default class FABMultipleExample extends Component {
@@ -1440,7 +1440,7 @@ Contents
 - [Footer with icons and text](Icon-Footer-with-Text)
 - [Footer Badge](Footer-with-badge)
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Footer, FooterTab, Button, Text } from 'native-base';
 export default class FooterTabsExample extends Component {
@@ -1480,7 +1480,7 @@ export default class FooterTabsExample extends Component {
 
 #### Icon Footer
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Footer, FooterTab, Button, Icon } from 'native-base';
 export default class FooterTabsIconExample extends Component {
@@ -1513,7 +1513,7 @@ export default class FooterTabsIconExample extends Component {
 
 #### Icon Footer with Text
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
 export default class FooterTabsIconTextExample extends Component {
@@ -1550,7 +1550,7 @@ export default class FooterTabsIconTextExample extends Component {
 
 #### Footer with badge
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text, Badge } from 'native-base';
 export default class FooterTabsBadgeExample extends Component {
@@ -1595,9 +1595,9 @@ Input is a NativeBase component built on top of React Native's TextInput. A foun
 Props provide configurability for several features, such as auto-correction, auto-capitalization, placeholder text, and different keyboard types, such as a numeric keypad.
 Provides a number of attributes that follows styling and interaction guidelines for each platform, so that they are intuitive for users to interact with.
 
-#### Note: Form in NativeBase is just a wrapper around the inputs and hence has no onSubmit function.
+**Note: Form in NativeBase is just a wrapper around the inputs and hence has no onSubmit function.**
 
-#### When using floatingLabel, use getRef to get the reference of <Input/> component. Always wrap floatingLabel component with <Form/>.
+**When using floatingLabel, use getRef to get the reference of `<Input/>` component. Always wrap floatingLabel component with `<Form/>`.**
 
 Replacing Component:
 
@@ -1621,7 +1621,7 @@ Contents:
 [Disabled Textbox](Disabled-Textbox)
 [Textarea](Textarea)
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Form, Item, Input } from 'native-base';
 export default class FormExample extends Component {
@@ -1668,7 +1668,7 @@ export default class FormExample extends Component {
 
 The fixedLabel property creates an Input component, whose Label is fixed at the left of Input and does not hide when text is entered. The input aligns on the same position, regardless of the length of the label. It can be used with placeholder as well.
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
 export default class FixedLabelExample extends Component {
@@ -1699,7 +1699,7 @@ export default class FixedLabelExample extends Component {
 
 The inlineLabel property creates an Input component, whose Label is in-line with Input and does not hide when text is entered. It can be used with placeholder as well.
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
 export default class InlineLabelExample extends Component {
@@ -1730,7 +1730,7 @@ export default class InlineLabelExample extends Component {
 
 The floatingLabel property creates an Input component, whose Label animates upward when input is selected and animates downward when input is erased.
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
 export default class FloatingLabelExample extends Component {
@@ -1761,7 +1761,7 @@ export default class FloatingLabelExample extends Component {
 
 The stackedLabel property creates an Input component that places the label on top of input element which appears like a stack. This can also be used along with placeholder.
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
 export default class StackedLabelExample extends Component {
@@ -1789,9 +1789,9 @@ export default class StackedLabelExample extends Component {
 
 #### Picker Input
 
-Include picker prop with <Item> to have picker type of input field.
+Include picker prop with `<Item>` to have picker type of input field.
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Form, Item, Picker } from 'native-base';
 export default class PickerInputExample extends Component {
@@ -1843,7 +1843,7 @@ export default class PickerInputExample extends Component {
 
 To use the regular textbox which is rectangular in shape, include the regular prop with Item.
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Container, Header, Content, Input, Item } from 'native-base';
 export default class RegularTextboxExample extends Component {
@@ -1862,14 +1862,15 @@ export default class RegularTextboxExample extends Component {
 }
 ```
 
-# Navigation
+## Navigation
 
 ...
+
 [Documentation for Navigation](#navihgation.md)
 
-# Customize
-
-[Documentation for Customized Theme ](#customizing.md)
-or check [nativeBase documentation](https://docs.nativebase.io/Customize.html#Customize)
+## Customize
 
 ...
+
+[Documentation for Customized Theme](#customizing.md)
+or check [nativeBase documentation](https://docs.nativebase.io/Customize.html#Customize)

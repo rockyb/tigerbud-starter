@@ -1,122 +1,159 @@
-<a href="https://github.com/tigerspike/tigerbud-starter">
-    <img src="./docs/TigerBud-Glyph.svg" alt="Tigerbud logo" title="Tigerbud" align="left" height="35" />
-</a>
+# <img src="./docs/TigerBud-Glyph.svg" alt="Tigerbud logo" title="Tigerbud" align="left" height="35" /> Tigerbud Starter
 
-# &nbsp; Tigerbud Starter
-
-#### :star: &nbsp; Star us on GitHub — it helps!
+## :star: &nbsp; Star us on GitHub — it helps!
 
 Tigerbud is an essential starter kit to rapidly build mobile applications supported by modern, scalable, serverless AWS technologies. For beginners and professionals alike, for those who want to experiment, to learn and for those who already know enough, but want to give their budding project a head start.
 
-Tigerbud is built in React Native and backed by AWS Amplify.
+Tigerbud is built in [React Native](https://reactnative.dev/) and backed by [AWS Amplify](https://aws.amazon.com/amplify/).
 
 ## Table of contents
 
-- [Getting Started](#getting-started)
-  - [Install Dependancies](#install-dependancies)
-  - [Initialise Project](#initialise-project)
-  - [Troubleshooting](#trouble-shooting)
-    - [Deployment Fails](#deployment-fails)
+- [Getting started](#getting-started)
+  - [Install dependencies](#install-dependencies)
+  - [Initialise project](#initialise-project)
+  - [Troubleshooting](#troubleshooting)
+    - [Project initialisation error](#project-initialisation-error)
+    - [Multiple applications](#multiple-applications)
+    - [Other](#other)
 - [What do you get?](#what-do-you-get)
   - [AWS Amplify](#aws-amplify)
-  - [Native Base](#native-base)
-    - [Theming](#theming)
-    - [Fonts & Icons](#fonts-&-icons)
-  - [React Navigation 5](#react-navigation-5)
-    - [Tab Navigation](#tab-navigation)
-    - [Stack Navigation](#stack-navigation)
-    - [Drawer Navigation](#drawer-navigation)
+  - [NativeBase](#nativebase)
+    - [Theming](#nativebase)
+    - [Fonts & Icons](#nativebase)
+  - [React Navigation v5](#react-navigation-v5)
+    - [Tab navigation](#react-navigation-5)
+    - [Stack navigation](#react-navigation-5)
+    - [Drawer navigation](#react-navigation-5)
   - [Detox](#detox)
     - [iOS](#detox)
     - [Android](#detox)
   - [Husky](#husky)
-    - [Pre Commit](#pre-commit)
-    - [Adding Hooks](#adding-hooks)
+    - [Pre-commit](#husky)
+    - [Adding hooks](#husky)
   - [Storybook](#husky)
   - [Internationalisation](#internationalisation)
-  - [Error Boundaries](#error-boundaries)
-  - [Authentication Context](#authentication-context)
-  - [Loading Context](#loading-context)
+  - [Error boundaries](#error-boundaries)
+  - [Authentication context](#authentication-context)
+  - [Loading context](#loading-context)
 
-## Getting Started
+## Getting started
 
-### Install Dependancies
+### Install dependencies
 
-Our first step is to ensure that the Amplify CLI is installed globally. Full instructions can be found [here](https://docs.amplify.aws/cli/start/install)
+Our first step is to ensure that the Amplify CLI is installed globally. Full instructions can be found [here](https://docs.amplify.aws/cli/start/install).
 
-```
+``` bash
 npm install -g @aws-amplify/cli
 ```
 
-### Initialise Project
+You can verify your installation by running:
+
+``` bash
+amplify --version
+```
+
+(At the time of writing the latest version is `v6.0.0`, but the CLI is being frequently updated so you may see a more recent version.)
+
+You can also simply run:
+
+``` bash
+amplify
+```
+
+This will present you with a list of possible commands to use with the [Amplify CLI](https://docs.amplify.aws/cli/).
+
+### Initialise project
 
 To initialise a new project from the tigerbud starter repository run the following command:
-```
+
+``` bash
 amplify init --app git@github.com:tigerspike/tigerbud-starter.git
 ```
 
-This will deploy a new amplify project into an enviroment named `sampledev`. 
+This will deploy a new amplify project into an enviroment named `sampledev`.
 
 To access your new environment run:
 
-```
+``` bash
 amplify console
 ```
+
+and then select the `Amplify console` option.
+
 ### Troubleshooting
 
-If you attempt to initialise many new applications into the same account you may get a clash of resource names due to the environment always being set to `sampledev`. To recover your project run the following to specify an new env name and re-deploy.
+#### Project initialisation error
 
+If you see the following error pop up right when you try to initialise the project:
+
+``` bash
+Note: Amplify does not have knowledge of the url provided
+Invalid remote github url
 ```
+
+This likely means that you don't have SSH keys configured on your machine to talk to GitHub. If that's the case, you should follow some of the steps in [this documentation](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) to either [generate a new SSH key](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) or [reuse an existing one in your computer](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/checking-for-existing-ssh-keys). You then have to [add one of those keys](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) to your GitHub account. After that is done, try re-running the initialisation command (`amplify init --app git@github.com:tigerspike/tigerbud-starter.git`).
+
+#### Multiple applications
+
+If you attempt to initialise more than one new application into the same AWS account you may get a clash of resource names due to the environment always being set to `sampledev`. To recover your project run the following to specify a new environment name and re-deploy.
+
+``` bash
 amplify env add
 amplify push
 ```
-This should now deploy a new app environment under the specified name. You can now clean up the environment named `sampledev` by running
 
-```
+This should now deploy a new app environment under the specified name. You can then clean up the environment named `sampledev` by running
+
+``` bash
 amplify env remove sampledev
 ```
+
+#### Other
+
+If you happen into any other problems with the setup, please feel free to [open an issue](https://github.com/tigerspike/tigerbud-starter/issues) and we'll get back to you as soon as possible.
 
 ## What do you get?
 
 ### AWS Amplify
 
 Tigerbud comes with a pre-configured Amplify backend which includes:
+
 - Cognito with UserPool and API Key auth and a post authentication trigger setup to sync Cognito users with DynamoDb.
 - AppSync with GraphQL schema defining the types `User` and `Thing` with authorisation rules applied to protect user data.
 - Lambda resolvers demonstrating how to setup field level resolution and custom query resolution.
 
-### Native Base
+### NativeBase
 
-custom themed etc
+Custom themed, etc.
 
-### React Navigation 5
+### React Navigation v5
 
-Stack, Tab and Drawer navigation
+Stack, Tab and Drawer navigation.
 
 ### Internationalisation
 
 ### Detox
 
-Example e2e test, fully configured for android and iOS automation
+Example E2E test, fully configured for Android and iOS automation.
 
 ### Husky
 
-Pre-commit checks to ensure that generated VTL are not committed to the repo.
-Unit tests automated on commit
+Pre-commit checks to ensure that generated VTLs are not committed to the repo.
+Unit tests automated on commit.
 
-### Error Boundaries
+### Error boundaries
 
 ## Customise Tigerbud
 
 ## License
 
-Copyright 2020 Tigerspike Concentrix
+Copyright 2020 Concentrix Tigerspike
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+<http://www.apache.org/licenses/LICENSE-2.0>
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -126,12 +163,12 @@ limitations under the License.
 
 ## Links
 
-- [Github](https://github.com/tigerspike/tigerbud-starter)
+- [GitHub](https://github.com/tigerspike/tigerbud-starter)
 - [Amplify](https://docs.amplify.aws/start/q/integration/react-native)
 - [React Native](https://reactnative.dev/)
 - [Flipper](https://fbflipper.com/)
-- [React Navigation 5](https://reactnavigation.org/docs/getting-started)
-- [Native Base](https://github.com/tigerspike/tigerbud-starter)
+- [React Navigation v5](https://reactnavigation.org/docs/5.x/getting-started)
+- [Native base](https://github.com/tigerspike/tigerbud-starter)
 - [Detox](https://github.com/tigerspike/tigerbud-starter)
 - [Husky](https://github.com/tigerspike/tigerbud-starter)
 - [Localisation](https://github.com/tigerspike/tigerbud-starter)
