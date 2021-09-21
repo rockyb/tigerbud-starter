@@ -13,7 +13,6 @@ module.exports = {
         inlineRequires: false,
       },
     }),
-
     allowOptionalDependencies: true,
   },
   resolver: {

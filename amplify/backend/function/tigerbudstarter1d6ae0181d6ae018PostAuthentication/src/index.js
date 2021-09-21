@@ -7,14 +7,14 @@ const ssm = new AWS.SSM({
 });
 
 exports.handler = async (event) => {
-  // get user id from token.
+  // get user ID from token
   const userId = event.request.userAttributes.sub;
 
   let data = await ssm
     .getParameter({Name: `APPSYNC-API-ID-${process.env.ENV}`})
     .promise();
 
-  //Building the table name
+  // building the table name
   const TableName = `User-${data.Parameter.Value}-${process.env.ENV}`;
 
   // check if user exists in dynamo,

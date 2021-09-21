@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
 export type CreateUserInput = {
@@ -55,6 +56,38 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
+export type User = {
+  __typename: "User",
+  id?: string,
+  createdAt?: string | null,
+  updatedAt?: string | null,
+  things?: ModelThingConnection,
+};
+
+export type ModelThingConnection = {
+  __typename: "ModelThingConnection",
+  items?:  Array<Thing | null > | null,
+  nextToken?: string | null,
+};
+
+export type Thing = {
+  __typename: "Thing",
+  id?: string,
+  thingUserId?: string,
+  type?: Type | null,
+  title?: string,
+  image?: string | null,
+  description?: string,
+  createdAt?: string | null,
+  updatedAt?: string | null,
+  user?: User,
+};
+
+export enum Type {
+  card = "card",
+}
+
+
 export type CreateThingInput = {
   id?: string | null,
   thingUserId: string,
@@ -65,11 +98,6 @@ export type CreateThingInput = {
   createdAt?: string | null,
   updatedAt?: string | null,
 };
-
-export enum Type {
-  card = "card",
-}
-
 
 export type ModelThingConditionInput = {
   type?: ModelTypeInput | null,
@@ -100,7 +128,7 @@ export type UpdateThingInput = {
 };
 
 export type DeleteThingInput = {
-  id?: string | null,
+  id: string,
 };
 
 export type ModelThingFilterInput = {
@@ -150,135 +178,139 @@ export enum ModelSortDirection {
 
 
 export type CreateUserMutationVariables = {
-  input: CreateUserInput,
+  input?: CreateUserInput,
   condition?: ModelUserConditionInput | null,
 };
 
 export type CreateUserMutation = {
-  createUser:  {
+  createUser?:  {
     __typename: "User",
     id: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    things:  {
+    createdAt?: string | null,
+    updatedAt?: string | null,
+    things?:  {
       __typename: "ModelThingConnection",
-      nextToken: string | null,
+      nextToken?: string | null,
     } | null,
   } | null,
 };
 
 export type CreateThingMutationVariables = {
-  input: CreateThingInput,
+  input?: CreateThingInput,
   condition?: ModelThingConditionInput | null,
 };
 
 export type CreateThingMutation = {
-  createThing:  {
+  createThing?:  {
     __typename: "Thing",
     id: string,
     thingUserId: string,
-    type: Type | null,
+    type?: Type | null,
     title: string,
-    image: string | null,
+    image?: string | null,
     description: string,
-    createdAt: string | null,
-    updatedAt: string | null,
+    createdAt?: string | null,
+    updatedAt?: string | null,
     user:  {
       __typename: "User",
       id: string,
-      createdAt: string | null,
-      updatedAt: string | null,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     },
   } | null,
 };
 
 export type UpdateThingMutationVariables = {
-  input: UpdateThingInput,
+  input?: UpdateThingInput,
   condition?: ModelThingConditionInput | null,
 };
 
 export type UpdateThingMutation = {
-  updateThing:  {
+  updateThing?:  {
     __typename: "Thing",
     id: string,
     thingUserId: string,
-    type: Type | null,
+    type?: Type | null,
     title: string,
-    image: string | null,
+    image?: string | null,
     description: string,
-    createdAt: string | null,
-    updatedAt: string | null,
+    createdAt?: string | null,
+    updatedAt?: string | null,
     user:  {
       __typename: "User",
       id: string,
-      createdAt: string | null,
-      updatedAt: string | null,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     },
   } | null,
 };
 
 export type DeleteThingMutationVariables = {
-  input: DeleteThingInput,
+  input?: DeleteThingInput,
   condition?: ModelThingConditionInput | null,
 };
 
 export type DeleteThingMutation = {
-  deleteThing:  {
+  deleteThing?:  {
     __typename: "Thing",
     id: string,
     thingUserId: string,
-    type: Type | null,
+    type?: Type | null,
     title: string,
-    image: string | null,
+    image?: string | null,
     description: string,
-    createdAt: string | null,
-    updatedAt: string | null,
+    createdAt?: string | null,
+    updatedAt?: string | null,
     user:  {
       __typename: "User",
       id: string,
-      createdAt: string | null,
-      updatedAt: string | null,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     },
   } | null,
 };
 
+export type GetThingCountQuery = {
+  getThingCount?: number | null,
+};
+
 export type GetUserQueryVariables = {
-  id: string,
+  id?: string,
 };
 
 export type GetUserQuery = {
-  getUser:  {
+  getUser?:  {
     __typename: "User",
     id: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    things:  {
+    createdAt?: string | null,
+    updatedAt?: string | null,
+    things?:  {
       __typename: "ModelThingConnection",
-      nextToken: string | null,
+      nextToken?: string | null,
     } | null,
   } | null,
 };
 
 export type GetThingQueryVariables = {
-  id: string,
+  id?: string,
 };
 
 export type GetThingQuery = {
-  getThing:  {
+  getThing?:  {
     __typename: "Thing",
     id: string,
     thingUserId: string,
-    type: Type | null,
+    type?: Type | null,
     title: string,
-    image: string | null,
+    image?: string | null,
     description: string,
-    createdAt: string | null,
-    updatedAt: string | null,
+    createdAt?: string | null,
+    updatedAt?: string | null,
     user:  {
       __typename: "User",
       id: string,
-      createdAt: string | null,
-      updatedAt: string | null,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     },
   } | null,
 };
@@ -290,20 +322,20 @@ export type ListThingsQueryVariables = {
 };
 
 export type ListThingsQuery = {
-  listThings:  {
+  listThings?:  {
     __typename: "ModelThingConnection",
-    items:  Array< {
+    items?:  Array< {
       __typename: "Thing",
       id: string,
       thingUserId: string,
-      type: Type | null,
+      type?: Type | null,
       title: string,
-      image: string | null,
+      image?: string | null,
       description: string,
-      createdAt: string | null,
-      updatedAt: string | null,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     } | null > | null,
-    nextToken: string | null,
+    nextToken?: string | null,
   } | null,
 };
 
@@ -317,19 +349,19 @@ export type ThingsByDateQueryVariables = {
 };
 
 export type ThingsByDateQuery = {
-  thingsByDate:  {
+  thingsByDate?:  {
     __typename: "ModelThingConnection",
-    items:  Array< {
+    items?:  Array< {
       __typename: "Thing",
       id: string,
       thingUserId: string,
-      type: Type | null,
+      type?: Type | null,
       title: string,
-      image: string | null,
+      image?: string | null,
       description: string,
-      createdAt: string | null,
-      updatedAt: string | null,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     } | null > | null,
-    nextToken: string | null,
+    nextToken?: string | null,
   } | null,
 };

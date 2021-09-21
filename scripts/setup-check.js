@@ -7,10 +7,16 @@ const fs = require('fs');
     await showBanner(
       'tigerbud',
       '⚠️  You must configure the Amplify project to run the app. ⚠️',
-      'magenta','red'
+      'magenta',
+      'red',
     );
     process.exit(1);
   } else {
-    await showBanner('tigerbud',"Project configured correctly ✅",'magenta','green');
+    await showBanner(
+      'tigerbud',
+      'Project configured correctly ✅',
+      'magenta',
+      'green',
+    );
   }
 })();

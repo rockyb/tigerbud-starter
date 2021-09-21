@@ -5,7 +5,7 @@
   "Parameters": {
     "AppSyncApiId": {
       "Type": "String",
-      "Description": "The id of the AppSync API associated with this project."
+      "Description": "The ID of the AppSync API associated with this project."
     },
     "AppSyncApiName": {
       "Type": "String",
@@ -67,7 +67,10 @@
       ]
     },
     "AlwaysFalse": {
-      "Fn::Equals": ["true", "false"]
+      "Fn::Equals": [
+        "true",
+        "false"
+      ]
     }
   },
   "Outputs": {
