@@ -1,0 +1,21 @@
+{
+  "files.exclude": {
+    // configure these as you wish for your VS Code editor
+    "amplify/.config": false,
+    "amplify/**/*-parameters.json": false,
+    "amplify/**/amplify.state": false,
+    "amplify/**/transform.conf.json": false,
+    "amplify/#current-cloud-backend": false,
+    "amplify/backend/amplify-meta.json": false,
+    "amplify/backend/awscloudformation": false
+  },
+  "files.insertFinalNewline": true,
+  "[json]": {
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.suggestionActions.enabled": false,
+  "javascript.suggestionActions.enabled": false,
+}
