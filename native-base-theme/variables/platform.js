@@ -46,7 +46,7 @@ export default {
   androidRipple: true,
   androidRippleColor: 'rgba(256, 256, 256, 0.3)',
   androidRippleColorDark: 'rgba(0, 0, 0, 0.15)',
-  buttonUppercaseAndroidText: true,
+  buttonUppercaseAndroidText: false,
 
   // Badge
   badgeBg: '#ED1727',
@@ -310,7 +310,7 @@ export default {
   deviceWidth,
   deviceHeight,
   isIphoneX,
-  inputGroupRoundedBorderRadius: 30,
+  inputGroupRoundedBorderRadius: 4,
 
   // iPhoneX SafeArea
   Inset: {

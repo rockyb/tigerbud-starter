@@ -1,16 +1,15 @@
-/* eslint-disable react/display-name */
-import {Button, Text} from 'native-base';
 import React from 'react';
+import {Button, Content, Text, Container} from 'native-base';
 import CardList from '../../components/card/CardList';
 import {TEST_IDS} from '../../constants';
 import useThings from '../../hooks/useThings';
 import I18n from '../../localisation/I18n';
-
+import {styles} from './styles';
+import CustomHeader from '../../components/customHeader/CustomHeader';
 const FeedScreen = ({navigation}) => {
   const renderCardFooter = (props) => {
     return (
       <Button
-        transparent
         onPress={() => navigation.navigate('Details', props)}
         testID={TEST_IDS.THINGS.DETAILS.BUTTON}>
         <Text>{I18n.t('details')}</Text>
@@ -23,7 +22,14 @@ const FeedScreen = ({navigation}) => {
     type: 'card', //<- this is required to make the sort work
     sortDirection: 'DESC',
   });
-  return <CardList {...listProps} renderCardFooter={renderCardFooter} />;
+  return (
+    <Container>
+      <CustomHeader title={I18n.t('feed')} />
+      <Content style={styles.content}>
+        <CardList {...listProps} renderCardFooter={renderCardFooter} />
+      </Content>
+    </Container>
+  );
 };
 
 export default FeedScreen;

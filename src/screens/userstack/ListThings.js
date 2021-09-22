@@ -1,5 +1,5 @@
 import get from 'lodash-es/get';
-import {Button, Text, Toast, View} from 'native-base';
+import {Button, Text, Content, Container, Toast, View, Icon} from 'native-base';
 import React, {useContext} from 'react';
 import {StyleSheet} from 'react-native';
 import CardList from '../../components/card/CardList';
@@ -11,6 +11,9 @@ import * as mutations from '../../graphql/mutations';
 import {API} from 'aws-amplify';
 import ThingContext from '../../contexts/ThingContext';
 import LoaderContext from '../../contexts/LoaderContext';
+import variables from '../../../native-base-theme/variables/tigerbud';
+import OpenDrawerButton from '../../navigation/OpenDrawerButton';
+import CustomHeader from '../../components/customHeader/CustomHeader';
 
 const ThingsScreen = ({navigation}) => {
   const {loggedInUser} = useContext(AuthContext);
@@ -39,22 +42,29 @@ const ThingsScreen = ({navigation}) => {
 
   /**
    * To render the buttons in the footer of the cards in the list
-   * 
-   * @param {object} props 
+   *
+   * @param {object} props
    */
   const renderCardFooter = (props) => {
     return (
       <View style={styles.buttonContainer}>
         <Button
-          transparent
+          iconLeft
+          bordered
+          style={styles.buttonEdit}
           onPress={() => navigation.navigate('Edit', props)}
           testID={TEST_IDS.THINGS.EDIT.BUTTON}>
+          <Icon type="MaterialIcons" name="edit" />
           <Text>{I18n.t('edit')}</Text>
         </Button>
         <Button
-          transparent
+          iconLeft
+          bordered
+          dark
+          style={styles.buttonDelete}
           onPress={() => deleteThing(props.id)}
           testID={TEST_IDS.THINGS.DELETE.BUTTON}>
+          <Icon type="MaterialIcons" name="delete" />
           <Text>{I18n.t('delete')}</Text>
         </Button>
       </View>
@@ -75,14 +85,40 @@ const ThingsScreen = ({navigation}) => {
     },
   });
 
-  return <CardList {...listProps} renderCardFooter={renderCardFooter} />;
+  return (
+    <Container>
+      <CustomHeader title={I18n.t('your_things')}>
+        <OpenDrawerButton
+          navigation={navigation}
+          testID={TEST_IDS.DRAWER.OPEN}
+        />
+      </CustomHeader>
+      <Content style={styles.content}>
+        <CardList {...listProps} renderCardFooter={renderCardFooter} />
+      </Content>
+    </Container>
+  );
 };
 
 const styles = StyleSheet.create({
+  content: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignContent: 'center',
+    flex: 1,
+    paddingTop: 20,
+    padding: 10,
+  },
   buttonContainer: {
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
+  },
+  buttonEdit: {
+    marginRight: 20,
+  },
+  buttonDelete: {
+    color: variables.brandDark,
   },
 });
 

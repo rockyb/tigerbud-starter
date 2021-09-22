@@ -1,9 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import { Container, Header, Title } from 'native-base';
-import { withKnobs } from '@storybook/addon-knobs';
+import {storiesOf} from '@storybook/react-native';
+import {Container, Header, Title} from 'native-base';
+import {withKnobs} from '@storybook/addon-knobs';
 
-storiesOf('Toast')
+storiesOf('Toast', module)
   .addDecorator(withKnobs)
   .add(
     'Toast',
@@ -15,6 +15,6 @@ storiesOf('Toast')
       </Container>
     ),
     {
-      notes: ' Note: ...'
-    }
+      notes: ' Note: ...',
+    },
   );

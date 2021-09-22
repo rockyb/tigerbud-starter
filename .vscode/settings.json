@@ -10,12 +10,15 @@
     "amplify/backend/awscloudformation": false
   },
   "files.insertFinalNewline": true,
-  "[json]": {
-    "editor.tabSize": 2
-  },
+  "javascript.suggestionActions.enabled": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[json]": {
+    "editor.tabSize": 2
+  },
+  "[markdown]": {
+    "editor.tabSize": 2
+  },
   "typescript.suggestionActions.enabled": false,
-  "javascript.suggestionActions.enabled": false,
 }

@@ -6,6 +6,9 @@ const CreateThingDrawerItem = ({navigation}) => {
     <DrawerItem
       label="Create Thing"
       onPress={() => navigation.navigate('Create')}
+      activeBackgroundColor="red"
+      activeTintColor="green"
+      inactiveTintColor="purple"
     />
   );
 };

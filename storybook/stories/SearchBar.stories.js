@@ -1,18 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import {
-  Container,
-  Header,
-  Item,
-  Input,
-  Icon,
-  Button,
-  Text
-} from 'native-base';
+import {storiesOf} from '@storybook/react-native';
+import {Container, Header, Item, Input, Icon, Button, Text} from 'native-base';
 
-import { withKnobs } from '@storybook/addon-knobs';
+import {withKnobs} from '@storybook/addon-knobs';
 
-storiesOf('Search Bar')
+storiesOf('Search Bar', module)
   .addDecorator(withKnobs)
   .add(
     'Search Bar',
@@ -31,6 +23,6 @@ storiesOf('Search Bar')
       </Container>
     ),
     {
-      notes: ' Note: ...'
-    }
+      notes: ' Note: ...',
+    },
   );

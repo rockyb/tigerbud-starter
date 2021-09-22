@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import {storiesOf} from '@storybook/react-native';
 import {
   Container,
   Header,
@@ -10,11 +10,11 @@ import {
   Text,
   Label,
   Picker,
-  Icon
+  Icon,
 } from 'native-base';
-import { withKnobs } from '@storybook/addon-knobs';
+import {withKnobs} from '@storybook/addon-knobs';
 
-storiesOf('Forms')
+storiesOf('Forms', module)
   .addDecorator(withKnobs)
   .add(
     'Forms',
@@ -64,11 +64,10 @@ storiesOf('Forms')
               <Picker
                 mode="dropdown"
                 iosIcon={<Icon name="arrow-down" />}
-                style={{ width: undefined }}
+                style={{width: undefined}}
                 placeholder="Select your SIM"
-                placeholderStyle={{ color: '#bfc6ea' }}
-                placeholderIconColor="#007aff"
-              >
+                placeholderStyle={{color: '#bfc6ea'}}
+                placeholderIconColor="#007aff">
                 <Picker.Item label="Wallet" value="key0" />
                 <Picker.Item label="ATM Card" value="key1" />
                 <Picker.Item label="Debit Card" value="key2" />
@@ -81,6 +80,6 @@ storiesOf('Forms')
       </Container>
     ),
     {
-      notes: '  notes...'
-    }
+      notes: '  notes...',
+    },
   );

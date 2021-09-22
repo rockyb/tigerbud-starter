@@ -19,7 +19,7 @@ This is the ReactNative application for "TigerBud 🍑".
   - [ESLint](#ESLint)
   - [Run StoryBook](#Run-StoryBook)
     - [Running the storybook in the simulator and devices](#Running-the-storybook-in-the-simulator-and-devices)
-  - [Reactatron debugger](#Reactatron-debugger)
+  - [Reactotron debugger](#Reactotron-debugger)
   - [Running the tests](#Running-the-tests)
 - [UI Components Documentation](#UI-Components-Documentation)
 - [Compatibility Versions](#Compatibility-Versions)
@@ -28,8 +28,8 @@ This is the ReactNative application for "TigerBud 🍑".
 
 ## Screens
 
-![screen 1](./image/screen1.gif)
-![log screen](./image/logScreen.gif)
+![navigation](./image/navigation.gif)
+![login screen](./image/login-screen.gif)
 ![storybook](./image/storybook.gif)
 
 ## Technologies
@@ -59,12 +59,12 @@ Ensure you have valid AWS credentials in `~/aws/credentials` for the target AWS 
 
 ## Spinning Up TigerBud Video
 
-[![TigerBut Setup](https://img.youtube.com/vi/vTbFhDH3OIs/0.jpg)](https://youtu.be/vTbFhDH3OIs "TigerBut Setup")
+[![TigerBut Setup](https://img.youtube.com/vi/vTbFhDH3OIs/0.jpg)](https://youtu.be/vTbFhDH3OIs 'TigerBut Setup')
 
 Install AWS Amplify CLI globaly
 
 ```bash
-    yarn add aws-amplify -g
+yarn add aws-amplify -g
 ```
 
 ## Create AWS credentials
@@ -76,7 +76,7 @@ Follow the instructions to create [AWS credentials](./create-iam-user.md).
 ### Clone the Repository and Initialise Amplify Project
 
 ```bash
-    amplify init --app git@github.com:tigerspike/tigerbud-starter.git
+amplify init --app git@github.com:tigerspike/tigerbud-starter.git
 ```
 
 Follow the steps in the console to set up.
@@ -84,7 +84,7 @@ Follow the steps in the console to set up.
 ### Lauch the local AppSync & DynamoDb emulators
 
 ```bash
-    amplify mock
+amplify mock
 ```
 
 ## Run App
@@ -92,7 +92,7 @@ Follow the steps in the console to set up.
 In the frontend directory, make sure you have installed dependencies by running:
 
 ```bash
-    yarn install
+yarn install
 ```
 
 ### Simulate for iOS
@@ -103,17 +103,17 @@ In your terminal go to folder ios
 #### Install pods
 
 ```bash
-    pod install
+pod install
 ```
 
 ```bash
-    cd ios
+cd ios
 ```
 
 To run IOS run this command and it will be done for you.
 
 ```bash
-    yarn ios
+yarn ios
 ```
 
 ### Simulate for Android
@@ -124,21 +124,20 @@ To run Android open Android Studio and hit the Run. Alternatively you can run th
 - Run the following command in your terminal
 
 ```bash
-    yarn android
-
+yarn android
 ```
 
 ### ESLint
 
 We use eslint to check the quality of the code base. To lint the source code, you can use the command below.
 
-``` bash
+```bash
 yarn lint
 ```
 
 To fixed code:
 
-``` bash
+```bash
 lint --fix
 ```
 
@@ -156,9 +155,9 @@ restart the bundler and storybook will run
 
 [See Storybook documentation](./react-native/tools/storybook.md)
 
-### Reactatron debugger
+### Reactotron debugger
 
-Reactatron is a standalone desktop app that helps with debugging the app.
+Reactotron is a standalone desktop app that helps with debugging the app.
 Simply run the app and reacatron together and these features are available:
 
 - toggle between storybook and app
@@ -166,9 +165,9 @@ Simply run the app and reacatron together and these features are available:
 - api and network stack
 - store/state tracking
 
-[See Reactatron documentation](./react-native/tools/reactotron.md)
+[See Reactotron documentation](./react-native/tools/reactotron.md)
 
-Alternatively, by running 'Reactatron' with the simulator you can easily toggle
+Alternatively, by running 'Reactotron' with the simulator you can easily toggle
 between the app and storybook but clicking on 'Custom Commands' -> 'storybook'
 
 ### Running the tests
@@ -199,5 +198,7 @@ The Components are constructed in pure [React Native](https://github.com/faceboo
 ## Contributors
 
 This project exists thanks to all the people who contribute. ....
+
+<!-- TODO fix below link -->
 
 ## [How to become contributor](./contributions.md)

@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import {storiesOf} from '@storybook/react-native';
 import {
   Container,
   Header,
@@ -12,9 +12,9 @@ import {
   Right,
   Body,
   Icon,
-  Text
+  Text,
 } from 'native-base';
-import { withKnobs } from '@storybook/addon-knobs';
+import {withKnobs} from '@storybook/addon-knobs';
 
 import AnatomyNotes from '../notes/AnatomyNotes';
 
@@ -47,5 +47,5 @@ storiesOf('Anatomy', module)
         </Footer>
       </Container>
     ),
-    { notes: AnatomyNotes }
+    {notes: AnatomyNotes},
   );

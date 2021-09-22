@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import {storiesOf} from '@storybook/react-native';
 import {
   Container,
   Header,
@@ -10,12 +10,12 @@ import {
   Icon,
   Segment,
   Text,
-  Title
+  Title,
 } from 'native-base';
 
-import { withKnobs } from '@storybook/addon-knobs';
+import {withKnobs} from '@storybook/addon-knobs';
 
-storiesOf('Segment')
+storiesOf('Segment', module)
   .addDecorator(withKnobs)
   .add(
     'Segment',
@@ -96,6 +96,6 @@ storiesOf('Segment')
       </Container>
     ),
     {
-      notes: ' Note: ...'
-    }
+      notes: ' Note: ...',
+    },
   );

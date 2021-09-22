@@ -37,7 +37,7 @@ Contributors include any individual creating or commenting on an issue or pull r
 
 To keep project away from disputes we make use of ESLint, which is really a handy linting tool that enforces strict coding styles and makes sure your files are free from dead code.
 
-``` bash
+```bash
 cd NameOfProject
 yarn lint
 ```

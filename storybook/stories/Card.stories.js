@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import { Image } from 'react-native';
+import {storiesOf} from '@storybook/react-native';
+import {Image} from 'react-native';
 import {
   Container,
   Header,
@@ -13,13 +13,13 @@ import {
   Right,
   Left,
   Thumbnail,
-  Button
+  Button,
 } from 'native-base';
 
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import {withKnobs, text, boolean} from '@storybook/addon-knobs';
 const uri = 'https://facebook.github.io/react-native/docs/assets/favicon.png';
 
-storiesOf('Card')
+storiesOf('Card', module)
   .addDecorator(withKnobs)
   .add(
     'Card',
@@ -68,8 +68,7 @@ storiesOf('Card')
             {/* Card Button  */}
             <CardItem
               button
-              onPress={() => alert('This is another card item Button')}
-            >
+              onPress={() => alert('This is another card item Button')}>
               <Text>Another Item Card Button </Text>
             </CardItem>
           </Card>
@@ -97,7 +96,7 @@ storiesOf('Card')
           <Card>
             <CardItem>
               <Left>
-                <Thumbnail source={{ uri: 'Image URL' }} />
+                <Thumbnail source={{uri: 'Image URL'}} />
                 <Body>
                   <Text>NativeBase</Text>
                   <Text note>GeekyAnts</Text>
@@ -106,8 +105,8 @@ storiesOf('Card')
             </CardItem>
             <CardItem cardBody>
               <Image
-                source={{ uri: uri }}
-                style={{ height: 200, width: null, flex: 1 }}
+                source={{uri: uri}}
+                style={{height: 200, width: null, flex: 1}}
               />
             </CardItem>
             <CardItem>
@@ -132,6 +131,6 @@ storiesOf('Card')
       </Container>
     ),
     {
-      notes: ' Note: Card'
-    }
+      notes: ' Note: Card',
+    },
   );

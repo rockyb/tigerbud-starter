@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import {storiesOf} from '@storybook/react-native';
 import {
   Container,
   Header,
@@ -9,12 +9,12 @@ import {
   Button,
   Icon,
   Title,
-  Text
+  Text,
 } from 'native-base';
 
-import { withKnobs } from '@storybook/addon-knobs';
+import {withKnobs} from '@storybook/addon-knobs';
 
-storiesOf('Header')
+storiesOf('Header', module)
   //.addDecorator(BufferView)
   .addDecorator(withKnobs)
   .add(
@@ -93,6 +93,6 @@ storiesOf('Header')
       </Container>
     ),
     {
-      notes: ' Note: ...'
-    }
+      notes: ' Note: ...',
+    },
   );

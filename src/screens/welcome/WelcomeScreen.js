@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import {Button, Container, Content, H1, Text} from 'native-base';
 import React from 'react';
 import {Dimensions, Image, StyleSheet} from 'react-native';
@@ -19,11 +18,9 @@ const WelcomeScreen = ({exitWelcome}) => {
         />
         <Content style={styles.content}>
           <H1 style={styles.title}>{I18n.t('welcome')}!</H1>
-
           <Text style={styles.text}>{I18n.t('intro1')}</Text>
           <Text style={styles.text}>{I18n.t('intro2')}</Text>
           <Button
-            rounded
             style={styles.button}
             onPress={exitWelcome}
             testID={TEST_IDS.WELCOME.BUTTON}>
@@ -50,8 +47,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   logo: {
-    marginTop: deviceHeight / 8,
-    height: deviceHeight / 4,
+    marginTop: deviceHeight / 20,
+    height: deviceHeight / 5,
     resizeMode: 'contain',
     alignSelf: 'center',
     aspectRatio: 1,
@@ -59,23 +56,24 @@ const styles = StyleSheet.create({
   title: {
     color: '#fff',
     alignSelf: 'center',
-    marginTop: 50,
+    marginTop: 20,
     marginBottom: 10,
+    fontSize: 28,
     fontFamily: 'Poppins-Light',
   },
   text: {
     textAlign: 'center',
     marginVertical: 10,
     color: '#fff',
-    paddingHorizontal: 25,
-    fontSize: 14,
+    paddingHorizontal: 35,
+    fontSize: 17,
     fontFamily: 'Poppins-Light',
   },
   button: {
     display: 'flex',
     justifyContent: 'center',
-    minWidth: 140,
+    minWidth: '90%',
     alignSelf: 'center',
-    marginTop: 50,
+    marginTop: deviceHeight / 10,
   },
 });

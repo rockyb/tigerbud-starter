@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import {storiesOf} from '@storybook/react-native';
 import {
   Container,
   Header,
@@ -8,12 +8,12 @@ import {
   Text,
   Radio,
   Right,
-  Left
+  Left,
 } from 'native-base';
 
-import { withKnobs } from '@storybook/addon-knobs';
+import {withKnobs} from '@storybook/addon-knobs';
 
-storiesOf('Custom Radio Button')
+storiesOf('Custom Radio Button', module)
   .addDecorator(withKnobs)
   .add(
     'Custom radio Button',
@@ -51,6 +51,6 @@ storiesOf('Custom Radio Button')
       </Container>
     ),
     {
-      notes: ' Note: ...'
-    }
+      notes: ' Note: ...',
+    },
   );

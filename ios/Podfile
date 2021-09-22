@@ -10,6 +10,14 @@ target 'tigerbudStarter' do
 
 
 
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
+
+
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
+
+  pod 'RNAWSCognito', :path => '../node_modules/amazon-cognito-identity-js'
+
   target 'tigerbudStarterTests' do
     inherit! :complete
     # Pods for testing

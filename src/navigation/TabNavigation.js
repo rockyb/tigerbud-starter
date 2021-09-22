@@ -8,24 +8,48 @@ import StorybookScreen from '../screens/storybook/StorybookScreen';
 import WelcomeScreen from '../screens/welcome/WelcomeScreen';
 import AuthContainer from './AuthContainer';
 import {FeedStack} from './StackNavigation';
+import {Icon} from '../components/icon/Icon';
+import variables from '../../native-base-theme/variables/tigerbud';
 
 //Tabnavigation
 const Tab = createBottomTabNavigator();
+const Home = I18n.t('home');
+const User = I18n.t('user');
+const Storybook = I18n.t('storybook');
+
 const Tabs = () => (
   <NavigationContainer>
     <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarIcon: ({focused, color, size}) => {
+          let iconName;
+          if (route.name === Home) {
+            iconName = focused ? 'HomeActive' : 'Home';
+          } else if (route.name === User) {
+            iconName = focused ? 'Log' : 'Log';
+          } else if (route.name === Storybook) {
+            iconName = focused ? 'StoryBook' : 'StoryBook';
+          }
+          return (
+            <Icon name={iconName} height={size} width={size} fill={color} />
+          );
+        },
+      })}
       tabBarOptions={{
-        activeTintColor: '#B586F8',
+        activeTintColor: '#6825AD',
         inactiveTintColor: '#131313',
         showLabel: true,
         labelStyle: {
-          fontSize: 14,
-          fontWeight: '100',
+          fontSize: 11,
+          paddingTop: 5,
+          fontWeight: '400',
         },
         style: {
-          borderTopWidth: 1,
+          paddingTop: 10,
+          borderTopWidth: 0,
           position: 'absolute',
-          elevation: 0,
+          elevation: 1,
+          backgroundColor: variables.brandBgLight,
         },
         tabStyle: {
           justifyContent: 'center',
@@ -34,21 +58,21 @@ const Tabs = () => (
         },
       }}>
       <Tab.Screen
-        name={I18n.t('home')}
+        name={Home}
         component={FeedStack}
         options={{
           tabBarTestID: TEST_IDS.NAV.TABS.FEED,
         }}
       />
       <Tab.Screen
-        name={I18n.t('user')}
+        name={User}
         component={AuthContainer}
         options={{
           tabBarTestID: TEST_IDS.NAV.TABS.LOGIN,
         }}
       />
       <Tab.Screen
-        name={I18n.t('storybook')}
+        name={Storybook}
         component={StorybookScreen}
         options={{
           tabBarTestID: TEST_IDS.NAV.TABS.STORYBOOK,

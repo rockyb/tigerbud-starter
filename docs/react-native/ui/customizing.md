@@ -1,8 +1,8 @@
 # Customize
 
-Customizing NativeBase will be a cakewalk for you. That is due to the fact, NativeBase has organized its code in modular pattern. It provides separate set of files for customizing each component.
+Customizing `NativeBase` will be a cakewalk for you. That is due to the fact, `NativeBase` has organized its code in modular pattern. It provides separate set of files for customizing each component.
 
-NativeBase is built on top of React Native. Hence with any component you can pass the style property which will be merged to the default style of that component.
+`NativeBase` is built on top of React Native. Hence with any component you can pass the style property which will be merged to the default style of that component.
 Visit [NativeBase Customizer](https://nativebase.io/nativebase-customizer) home page for more information.
 
 ## Table of contents
@@ -16,24 +16,24 @@ Visit [NativeBase Customizer](https://nativebase.io/nativebase-customizer) home 
 
 ## What are themes and variables and how to change them?
 
-NativeBase comes with a theme folder which comprises of two sub-folders
+`NativeBase` comes with a theme folder which comprises of two sub-folders
 
-components: Theme styling files for all the NativeBase components. This is where you would change the style properties of the components if you need to.
+components: Theme styling files for all the `NativeBase` components. This is where you would change the style properties of the components if you need to.
 
 Example, if you need to change the height of Button component, you'll need to change height in native-base-theme/components/Button.js.
 
 variables: Contains three preset theme variable files, namely Platform, material, commonColor. You can change the variables (for color, fontFamily, iconFamily etc) for a uniform look and feel throughout your app.
 Three themes to start with
-NativeBase is packed with three preset themes.
+`NativeBase` is packed with three preset themes.
 
-Platform: The default theme of NativeBase which maps to the design of the platform where the app runs i.e., platform-specific theme for iOS and Android.
+Platform: The default theme of `NativeBase` which maps to the design of the platform where the app runs i.e., platform-specific theme for iOS and Android.
 Material: Sometimes, you need Material design for both the platforms. Not everyone is a fan of it, but Google does use Material design on iOS. This theme is not 100% material yet but, it can be used today.
 CommonColor: Most of the brands use a common color scheme for both the platforms. But they also follow platform specific icons, font and orientation of the components. CommonColor theme is best suited for such use-cases.
 Check Theme and Variables to know list of customizable variables. Before going ahead of modifying in your node_modules/native-base/theme, check the procedure below to generate new theme for you to play with.
 
 ## Setup to theme NativeBase apps
 
-To setup customized theme with your app, you should first eject NativeBase theme, which creates a copy of NativeBase theme at your project root. And then you are ready to have fun customizing theme for your app.
+To setup customized theme with your app, you should first eject `NativeBase` theme, which creates a copy of `NativeBase` theme at your project root. And then you are ready to have fun customizing theme for your app.
 
 Run this command from your terminal after installing native-base.
 
@@ -47,7 +47,7 @@ Pass the variable i.e., platform/material/commonColors.js as the parameter of th
 The theme you pass should be a function.
 Now your project is ready for theme customization.
 
-``` javascript
+```javascript
 import React, { Component } from 'react';
 import { Container, Content, Text, StyleProvider } from 'native-base';
 import getTheme from './native-base-theme/components';
@@ -74,7 +74,7 @@ import material from './native-base-theme/variables/material';
 - The theme holds good with all its descendants.
 - The above code for theme change works this way:
 - Go to native-base-theme/variables/platform.js and modify color code for textColor.
-- Similarly you can customize theme for rest of the NativeBase components by modifying color code of their respective attributes, some of which are explained below.
+- Similarly you can customize theme for rest of the `NativeBase` components by modifying color code of their respective attributes, some of which are explained below.
 
 ## Theme Color
 
@@ -88,9 +88,9 @@ To change the basic theme context of NativeBase, make necessary changes to the f
 
 ## Theme Font
 
-Having different font types in your React Native apps is not tough any more. NativeBase provides you with a set of nine font families.
+Having different font types in your React Native apps is not tough any more. `NativeBase` provides you with a set of nine font families.
 
-To include these fonts into your app, go to native-base-theme/platform.js (you can change this in any of the three theme variable files) and replace value for fontFamily with your choice of font name. NativeBase allows you to add more font styles on your own.
+To include these fonts into your app, go to native-base-theme/platform.js (you can change this in any of the three theme variable files) and replace value for fontFamily with your choice of font name. `NativeBase` allows you to add more font styles on your own.
 
 Font families included with NativeBase:
 

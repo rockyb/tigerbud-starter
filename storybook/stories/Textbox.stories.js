@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import {storiesOf} from '@storybook/react-native';
 import {
   Container,
   Content,
@@ -9,11 +9,11 @@ import {
   Header,
   Icon,
   Form,
-  Textarea
+  Textarea,
 } from 'native-base';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import {withKnobs, boolean} from '@storybook/addon-knobs';
 
-storiesOf('Textbox')
+storiesOf('Textbox', module)
   .addDecorator(withKnobs)
   .add(
     'Textbox',
@@ -25,8 +25,7 @@ storiesOf('Textbox')
         <Content padder>
           <Item
             regular={boolean('Regular Textbox', false)}
-            rounded={boolean('Rounded Textbox', false)}
-          >
+            rounded={boolean('Rounded Textbox', false)}>
             <Input placeholder="Textbox options" />
           </Item>
 
@@ -63,6 +62,6 @@ storiesOf('Textbox')
       </Container>
     ),
     {
-      notes: '  notes...'
-    }
+      notes: '  notes...',
+    },
   );

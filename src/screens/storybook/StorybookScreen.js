@@ -1,19 +1,24 @@
 /* eslint-disable react/display-name */
-import {Container, Content} from 'native-base';
 import React from 'react';
-import SafeAreaView from 'react-native-safe-area-view';
+import {SafeAreaView, Dimensions, StyleSheet} from 'react-native';
 import StoryBook from '../../../storybook';
+import {TEST_IDS} from '../../constants';
+const deviceHeight = Dimensions.get('window').height;
 
 const StorybookScreen = (props) => {
-  return (
-    <StoryBook {...props} />
-  );
-};
+  const styles = StyleSheet.create({
+    container: {
+      height: Platform.OS === 'android' ? deviceHeight - 50 : deviceHeight - 80,
+    },
+  });
 
-StorybookScreen.navigationOptions = () => {
-  return {
-    headerShown: false,
-  };
+  return (
+    <SafeAreaView
+      style={styles.container}
+      testID={TEST_IDS.STORYBOOK.STORYBOOK}>
+      <StoryBook {...props} />
+    </SafeAreaView>
+  );
 };
 
 export default StorybookScreen;
