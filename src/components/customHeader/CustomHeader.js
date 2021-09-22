@@ -1,6 +1,6 @@
 import React from 'react';
 import {Header, Left, Right, Text, Body, Button, Icon} from 'native-base';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {Platform, SafeAreaView, StyleSheet} from 'react-native';
 import PropTypes from 'prop-types';
 
 const CustomHeader = ({children, onPress, title, testID}) => {

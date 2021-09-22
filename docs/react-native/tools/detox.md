@@ -24,4 +24,4 @@ detox test  --configuration android
 
 Open Xcode 10, File > Project Settings > Build System. Change build place to:
 
-<img src="../../image/iosBuildDetox.png" alt="info" title="info" align="left"  />
+<img src="../../image/ios-build-detox.png" alt="info" title="info" align="left"  />

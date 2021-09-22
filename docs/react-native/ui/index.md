@@ -1,4 +1,4 @@
-# TigerBud  React Native App
+# TigerBud React Native App
 
 The UI components used in Tigerbud are built on the NativeBase UI library. NativeBase is a free and open source UI component library for React Native to build native mobile apps for iOS and Android platforms.
 
@@ -71,9 +71,9 @@ export default class AnatomyExample extends Component {
 
 Inside the App/src forder we have the /theme folder which comprises of two sub-folders
 
-![app image](./image/appImage.png)
+![app image](../../image/app-folder.png)
 
-![theme image](./image/themeImage.png)
+![theme image](../../image/theme-folder.png)
 
 - components: Theme styling files for all the NativeBase components. This is where you would change the style properties of the components if you need to.
 
@@ -2030,7 +2030,7 @@ export default class RegularTextboxExample extends Component {
 
 ...
 
-[Documentation for Navigation](#navihgation.md)
+[Documentation for Navigation](#navigation.md)
 
 ## Customize
 
