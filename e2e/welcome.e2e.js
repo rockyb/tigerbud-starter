@@ -7,7 +7,7 @@ describe('Basics', () => {
   });
 
   it('should show tabs after welcome click', async () => {
-    //wait for the welcome content
+    // wait for the welcome content
     await waitFor(element(by.id(TEST_IDS.WELCOME.CONTENT)))
       .toBeVisible()
       .withTimeout(2000);
@@ -33,7 +33,7 @@ describe('Basics', () => {
   });
 
   it('should start  check Login links ', async () => {
-    //Start login auth
+    // start login auth
     await element(by.id(TEST_IDS.NAV.TABS.LOGIN)).atIndex(0).tap();
     await expect(element(by.id(TEST_IDS.NAV.TABS.LOGIN))).toBeVisible();
     await element(by.id(TEST_IDS.AUTH.SIGN_UP_BUTTON)).tap();

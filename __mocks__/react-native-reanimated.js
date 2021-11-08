@@ -1,4 +1,5 @@
 const mockView = require('react-native').View;
+
 export default {
   Value: jest.fn(),
   event: jest.fn(),
