@@ -37,13 +37,6 @@ To set up all the dependencies, we need to start with a package (a.k.a. a module
 
 You can 🛠[install Yarn](https://yarnpkg.com/getting-started/install) using 🍺[HomeBrew](https://brew.sh).
 
-Then in your terminal, run the following commands:
-
-```bash
-yarn install
-yarn start
-```
-
 #### iOS
 
 You will need `Node`, `Watchman`, the `React Native` command line interface, and `Xcode`. While you can use any editor of your choice to develop your app, you will need to install `Xcode` in order to set up the necessary tooling to build your `React Native` app for `iOS`.
@@ -83,7 +76,7 @@ You can verify your installation by running:
 amplify --version
 ```
 
-(At the time of writing the latest version is `v6.0.0`, but the CLI is being frequently updated so you may see a more recent version.)
+(At the time of writing the latest version is `v6.3.1`, but the CLI is being frequently updated so you may see a more recent version.)
 
 You can also simply run:
 
@@ -93,17 +86,21 @@ amplify
 
 This will present you with a list of possible commands to use with the [Amplify CLI](https://docs.amplify.aws/cli/).
 
+You should setup a mechanism to interact with AWS via the CLI. `Amplify` enables this interaction either via a [named profile](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) or directly inserting your AWS user's access keys (less recommended). To wire this up with a new AWS IAM user, we recommend you run the command `amplify configure` and follow the steps, as described in [this documentation](https://docs.amplify.aws/cli/start/install/#configure-the-amplify-cli).
+
 ### Initialise project
 
 With all the dependencies out of the way, it's time to proper dig into it!
 
-To initialise a new project from the `Tigerbud` starter repository run the following command:
+We suggest you begin from an empty folder. To initialise a new app from the `Tigerbud` starter repository into your current folder, run the following command:
 
 ```bash
 amplify init --app git@github.com:tigerspike/tigerbud-starter.git
 ```
 
-This will deploy a new `Amplify` project into an enviroment named `sampledev`.
+Follow the prompts to use either an AWS profile or the access keys of your AWS user that will manage the project. In case of any errors during this process, you may want to clean up your folder with `rm -rf * && rm -rf .*` and try the initialisation command again.
+
+If all goes well a new `Amplify` project will be deployed into an enviroment named `sampledev`.
 
 To access your new environment run:
 
@@ -127,7 +124,13 @@ Then `iOS`-specific ones with:
 cd ios && pod install && cd ..
 ```
 
-Then you're ready to start either the `iOS` app:
+Start the Metro listener with:
+
+```bash
+yarn start
+```
+
+and leave it running in a terminal. Jump on another tab or window and you're ready to start either the `iOS` app:
 
 ```bash
 yarn ios

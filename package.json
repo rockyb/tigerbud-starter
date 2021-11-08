@@ -8,8 +8,8 @@
     "start": "yarn setup-check && react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "storybook": "start-storybook -p 7007 ",
-    "build-storybook": "build-storybook ",
+    "storybook": "start-storybook -p 7007",
+    "build-storybook": "build-storybook",
     "setup-check": "node scripts/setup-check.js",
     "postinstall": "husky install && sed -i '' '/s.resources/d' ./node_modules/react-native-vector-icons/RNVectorIcons.podspec"
   },
@@ -72,21 +72,5 @@
     "node-banner": "^1.4.0",
     "react-dom": "16.13.1",
     "react-test-renderer": "16.13.1"
-  },
-  "jest": {
-    "preset": "react-native",
-    "transformIgnorePatterns": [
-      "node_modules/(?!react-native|react-navigation|@react-navigation/.*)/"
-    ],
-    "setupFiles": [
-      "./node_modules/react-native-gesture-handler/jestSetup.js",
-      "./jestSetup.js"
-    ],
-    "testPathIgnorePatterns": [
-      "__tests__/utils/*"
-    ],
-    "modulePathIgnorePatterns": [
-      "<rootDir>/amplify/#current-cloud-backend"
-    ]
   }
 }
