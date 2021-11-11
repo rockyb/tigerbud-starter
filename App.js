@@ -1,12 +1,12 @@
 import {Root} from 'native-base';
-import React, {useEffect} from 'react';
+import React from 'react';
 import Main from './src/Main';
 
 import {LogBox} from 'react-native';
 
-// Ignore log notification by message
+// Ignore log notification by message.
 LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
-//Ignore all log notifications
+// Ignore all log notifications.
 LogBox.ignoreAllLogs();
 
 const App = () => {

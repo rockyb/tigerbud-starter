@@ -11,7 +11,7 @@ import {FeedStack} from './StackNavigation';
 import {Icon} from '../components/icon/Icon';
 import variables from '../../native-base-theme/variables/tigerbud';
 
-// tab navigation
+// Tab navigation.
 const Tab = createBottomTabNavigator();
 const Home = I18n.t('home');
 const User = I18n.t('user');
