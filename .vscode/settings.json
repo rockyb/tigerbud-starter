@@ -1,6 +1,6 @@
+// configure these as you wish for your VS Code editor
 {
   "files.exclude": {
-    // configure these as you wish for your VS Code editor
     "amplify/.config": false,
     "amplify/**/*-parameters.json": false,
     "amplify/**/amplify.state": false,
