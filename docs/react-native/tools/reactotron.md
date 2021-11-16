@@ -14,7 +14,6 @@ then
 
 ```bash
 cd ios
-react-native link @react-native-community/async-storage
 yarn --clearCache
 pod install
 ```

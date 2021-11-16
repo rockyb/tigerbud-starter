@@ -1,6 +1,9 @@
+// configure these as you wish for your VS Code editor
 {
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
   "files.exclude": {
-    // configure these as you wish for your VS Code editor
     "amplify/.config": false,
     "amplify/**/*-parameters.json": false,
     "amplify/**/amplify.state": false,
@@ -12,6 +15,9 @@
   "files.insertFinalNewline": true,
   "javascript.suggestionActions.enabled": false,
   "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {

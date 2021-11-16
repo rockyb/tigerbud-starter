@@ -6,7 +6,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
  * If aws-exports file does not exist then you need to configure the Amplify project.
  * Check the README for more information on how to do this.
  */
-import config from '../aws-exports';
+import config from './aws-exports';
 import Boundary from './components/errors/Boundary';
 import {AuthProvider} from './contexts/AuthContext';
 import {ThingProvider} from './contexts/ThingContext';

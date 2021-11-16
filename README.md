@@ -76,7 +76,7 @@ You can verify your installation by running:
 amplify --version
 ```
 
-(At the time of writing the latest stable version is `v6.4.0`, but the CLI is being frequently updated so you may see a more recent version.)
+(At the time of writing the latest stable version is `v7.3.3`, but the CLI is being frequently updated so you may see a more recent version.)
 
 You can also simply run:
 
