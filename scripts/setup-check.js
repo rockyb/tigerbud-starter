@@ -2,7 +2,7 @@ const showBanner = require('node-banner');
 const fs = require('fs');
 
 (async () => {
-  const path = './aws-exports.js';
+  const path = './src/aws-exports.js';
   if (!fs.existsSync(path)) {
     await showBanner(
       'tigerbud',
